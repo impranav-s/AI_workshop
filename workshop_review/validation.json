@@ -1,0 +1,15 @@
+{
+  "independent_bundle_build_exit": 0,
+  "pages": 40,
+  "all_40_rendered_pages_match_delivered_pdf": true,
+  "overfull_boxes": 0,
+  "missing_references": 0,
+  "sample_data_and_analysis_unchanged": true,
+  "source_baseline": "2ca6cca201ad74a137fe9fb68cc6516e4fae1110",
+  "main_preserved": "303c8213509c3a19ac8b27a9db618dfd893f2d8a",
+  "all_40_pages_visually_inspected": true,
+  "original_theme_and_assets_retained": true,
+  "pipeline_make_clean_and_make_all_exit": 0,
+  "final_pdf_sha256": "143f2873e3f7918d5f6ef972207e2f3e9f309cf85695561f63887cf32ec0b489",
+  "actual_checkout_pdf_matches_all_40_reviewed_pages": true
+}

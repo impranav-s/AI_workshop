@@ -4,12 +4,14 @@
 
 This repository serves as a **template for reproducible research projects** created by **Tomas Larroucau** and accompanies the workshop: *"Git, GitHub, and VS Code: Agentic AI for Project Management and Research Productivity."*
 
+Workshop: **Monday, October 26, 2026**. The 40-slide deck covers Git, GitHub, VS Code and agentic harnesses, then orchestration, writing, and integrations. Allow 90 minutes, with additional discussion up to two hours.
+
 ## 🎯 Purpose
 
 This template demonstrates best practices for:
 - **Version control** with Git and GitHub
 - **Reproducible data analysis** workflows
-- **Integration of AI coding agents** (GitHub Copilot, local AI assistants)
+- **Integration of AI agents** (GitHub Copilot, Codex, Claude Code)
 - **Collaborative research** through issues, pull requests, and project boards
 - **Automated workflows** for analysis and document compilation
 
@@ -20,7 +22,6 @@ AI_workshop/
 ├── AGENTS.md                      # Instructions for AI coding agents
 ├── Makefile                       # Automation workflow
 ├── README.md                      # This file
-├── mindmap.html                   # Interactive project visualization (Open in browser)
 │
 ├── .github/                       # GitHub-specific files
 │   ├── copilot-instructions.md   # Copilot workspace configuration
@@ -62,11 +63,11 @@ AI_workshop/
 
 ### Workshop Prerequisites
 
-To fully participate in the workshop and follow the hands-on exercises, you will need:
+For the workshop, prepare the accounts and software below. Python, LaTeX, and Make are needed only to run the template locally.
 
 **1. Accounts**
 - **GitHub Account:** Create a free account at [github.com](https://github.com).
-- **GitHub Education (Recommended):** Students and faculty should apply for the [GitHub Student Developer Pack](https://education.github.com/pack) to upgrade to Copilot Pro features. *Note: Copilot is now free, but the Education pack unlocks advanced models and higher limits.*
+- **GitHub Education (Recommended):** Check the [student or teacher eligibility requirements](https://education.github.com/). Verification and benefit activation are separate steps; complete them before the workshop. Access and usage limits depend on the plan.
 
 **2. Software**
 - **Visual Studio Code:** Download and install from [code.visualstudio.com](https://code.visualstudio.com).
@@ -74,38 +75,50 @@ To fully participate in the workshop and follow the hands-on exercises, you will
   - *Windows Users:* We recommend installing "Git for Windows" which includes Git Bash.
   - *Mac Users:* Git often comes pre-installed, or can be installed via Xcode command line tools (`xcode-select --install`).
 
-**3. VS Code Extensions**
-- **GitHub Copilot:** Search for "GitHub Copilot" in the VS Code Extensions view (Ctrl+Shift+X) and install. *Required for Module I & II.*
-- Sign in to your GitHub account within VS Code to activate.
+**3. AI Agent Access**
+- Set up **one** agent using its official instructions: [GitHub Copilot](https://code.visualstudio.com/docs/copilot/setup), [Codex CLI](https://learn.chatgpt.com/docs/codex/cli) or [IDE extension](https://learn.chatgpt.com/docs/codex/ide), or [Claude Code](https://code.claude.com/docs/en/quickstart).
+- Sign in and test a request before the workshop. Provider subscriptions, Copilot access, and API billing are separate routes; you do not need every tool installed.
+- In VS Code, use the provider's extension or supported agent integration. See the [current harness and interface requirements](https://code.visualstudio.com/docs/agents/run/agent-harnesses).
 
-**4. Module II: Agentic AI Setup**
-- **MCP GitHub Server:** We will configure the Model Context Protocol (MCP) to connect AI agents with your GitHub repository. Ensure you have your GitHub credentials ready.
+**4. Optional Integrations**
+- GitHub MCP connects an agent to GitHub tools. Configure it for the selected harness, authenticate, and check permissions before use. It is optional for following the workshop.
+- Overleaf Git integration and GitHub synchronization require eligible Premium access. Local LaTeX compilation is an alternative.
 
 ### Project Requirements (For Code Execution)
 
 To run the analysis scripts and compile the documents locally:
 
-- **Python 3.8+** (Anaconda distribution recommended)
-- **LaTeX Distribution** (TeXLive, MikTeX, or MacTeX)
-- **Make Utility** (Optional, for automation)
+- **Python** compatible with `scripts/requirements.txt`; use a current supported environment
+- **LaTeX Distribution** (TeX Live, MiKTeX, or MacTeX), including Beamer, TikZ, and `twemojis`
+- **Make Utility** for the `make` commands below
 
 ### Installation
 
 1. **Clone this repository:**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/tlarroucau/AI_workshop.git
    cd AI_workshop
    ```
 
 2. **Install Python dependencies:**
    ```bash
-   pip install -r scripts/requirements.txt
+   python -m pip install -r scripts/requirements.txt
    ```
 
 3. **Run the complete workflow:**
    ```bash
    make all
    ```
+
+To compile only the slides, without running the analysis pipeline:
+
+```bash
+cd tex/slides
+pdflatex -interaction=nonstopmode -halt-on-error workshop_slides.tex
+pdflatex -interaction=nonstopmode -halt-on-error workshop_slides.tex
+```
+
+The original slide assets are in `tex/slides/figures/`. LaTeX Workshop can compile and display the PDF in VS Code. Installation details and source links for the workshop's agent features and optional skills are in [workshop_review/source_notes.md](workshop_review/source_notes.md).
 
 ## 🔧 Makefile Targets
 
@@ -149,17 +162,19 @@ These files help AI assistants understand:
 
 ## 🎓 Workshop Modules
 
-### Module I: Git, GitHub, and VS Code Fundamentals
-- VS Code as an integrated development environment
-- Git basics: commits, branches, merges
-- GitHub workflows: pull requests, issues, project boards
-- Collaborative development practices
+### Git
+- Commits, branches, merges, worktrees, and conflict resolution
 
-### Module II: Agentic AI Integration
-- VS Code Chat modes: Ask, Edit, Agent
-- GitHub Copilot in the cloud and locally
-- AI-assisted code review and refactoring
-- Complementary tools: Refine, NotebookLM, Elicit
+### GitHub
+- Issues, project boards, pull requests, and collaboration
+
+### VS Code and Agentic Harnesses
+- An environment for reading, writing, editing, Git, and agent work
+- Copilot, Codex, and Claude Code; interfaces, instructions, and skills
+
+### Advanced Topics and Integrations
+- Orchestration, independent review, and AI-assisted writing
+- MCP, Overleaf, Refine, NotebookLM, and Elicit
 
 ## 📝 Using This Template
 
@@ -202,7 +217,7 @@ This template uses the **ASU + W. P. Carey School of Business** color palette:
 | ASU Gold | `#FFC627` | Highlights, footer accent, treatment group |
 | ASU Dark Gray | `#484848` | Body text, secondary elements |
 
-The Beamer slide theme and matplotlib figures apply these colors consistently across all generated artifacts.
+The analysis figures use these colors. The workshop slides retain the original Madrid theme.
 
 ---
 
