@@ -1,15 +1,17 @@
 # Research Project Template: Git, GitHub, and Agentic AI Workshop
 
+> **Local review status:** This is the first revised deck. The stronger scientific example is still being selected; the README exercise is superseded as the proposed centerpiece. See [implementation status](workshop_review/IMPLEMENTATION_STATUS.md).
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This repository serves as a **template for reproducible research projects** created by **Tomas Larroucau** and accompanies the workshop: *"Git, GitHub, and VS Code: Agentic AI for Project Management and Research Productivity."*
+This repository serves as a **template for reproducible research projects** created by **Tomas Larroucau** and accompanies the workshop: *"Git, GitHub, and VS Code: Agentic AI for Research, from One Task to Orchestration."*
 
 ## 🎯 Purpose
 
 This template demonstrates best practices for:
 - **Version control** with Git and GitHub
 - **Reproducible data analysis** workflows
-- **Integration of AI coding agents** (GitHub Copilot, local AI assistants)
+- **Integration of research agents** (Claude Code, Codex, and GitHub Copilot)
 - **Collaborative research** through issues, pull requests, and project boards
 - **Automated workflows** for analysis and document compilation
 
@@ -20,7 +22,6 @@ AI_workshop/
 ├── AGENTS.md                      # Instructions for AI coding agents
 ├── Makefile                       # Automation workflow
 ├── README.md                      # This file
-├── mindmap.html                   # Interactive project visualization (Open in browser)
 │
 ├── .github/                       # GitHub-specific files
 │   ├── copilot-instructions.md   # Copilot workspace configuration
@@ -60,64 +61,74 @@ AI_workshop/
 
 ## 🚀 Quick Start
 
+### Monday, October 26, 2026: 90-minute workshop
+
+The session demonstrates one reviewable research task, compares Claude Code and Codex, and shows how to coordinate parallel work. The main deck ends at slide 29; the remaining slides are reference material.
+
 ### Workshop Prerequisites
 
-To fully participate in the workshop and follow the hands-on exercises, you will need:
+To follow the demonstration, bring a browser and the workshop materials. For the local exercise, install **VS Code** and **Git**, and open a copy of this repository. The exercise edits the README; it does not require Python, LaTeX, or an MCP server. If setup is incomplete, work with a partner or review the prepared diff.
 
-**1. Accounts**
-- **GitHub Account:** Create a free account at [github.com](https://github.com).
-- **GitHub Education (Recommended):** Students and faculty should apply for the [GitHub Student Developer Pack](https://education.github.com/pack) to upgrade to Copilot Pro features. *Note: Copilot is now free, but the Education pack unlocks advanced models and higher limits.*
+To run an agent yourself, install and sign in to **one** supported agent. Claude Code and Codex are demonstrated; both subscriptions are not required. Check your account's current access and allowance before the workshop. Native provider subscriptions, Copilot access, and API billing are separate routes. A GitHub account is needed for hosted issues and pull requests, but the local exercise stops before sharing.
 
-**2. Software**
-- **Visual Studio Code:** Download and install from [code.visualstudio.com](https://code.visualstudio.com).
-- **Git:** Download and install from [git-scm.com](https://git-scm.com/downloads).
-  - *Windows Users:* We recommend installing "Git for Windows" which includes Git Bash.
-  - *Mac Users:* Git often comes pre-installed, or can be installed via Xcode command line tools (`xcode-select --install`).
+Useful extensions include LaTeX Workshop, Python/Jupyter, GitHub Pull Requests and Issues, and your chosen agent's extension. Install only what your project needs. MCP setup is optional for this session.
 
-**3. VS Code Extensions**
-- **GitHub Copilot:** Search for "GitHub Copilot" in the VS Code Extensions view (Ctrl+Shift+X) and install. *Required for Module I & II.*
-- Sign in to your GitHub account within VS Code to activate.
+### Get the project
 
-**4. Module II: Agentic AI Setup**
-- **MCP GitHub Server:** We will configure the Model Context Protocol (MCP) to connect AI agents with your GitHub repository. Ensure you have your GitHub credentials ready.
+```bash
+git clone https://github.com/tlarroucau/AI_workshop.git
+cd AI_workshop
+git status
+```
 
-### Project Requirements (For Code Execution)
+Open the folder in VS Code and read `README.md`, `AGENTS.md`, and `Makefile`. The October 26 revision is a local review copy until the author chooses to publish it; cloning the public repository does not automatically include these proposed edits.
 
-To run the analysis scripts and compile the documents locally:
+### Build only the workshop slides
 
-- **Python 3.8+** (Anaconda distribution recommended)
-- **LaTeX Distribution** (TeXLive, MikTeX, or MacTeX)
-- **Make Utility** (Optional, for automation)
+In this revised source bundle, a LaTeX distribution with Beamer and TikZ is sufficient to build the deck. With Make installed:
 
-### Installation
+```bash
+make slides-only
+```
 
-1. **Clone this repository:**
-   ```bash
-   git clone <your-repo-url>
-   cd AI_workshop
-   ```
+Without Make:
 
-2. **Install Python dependencies:**
-   ```bash
-   pip install -r scripts/requirements.txt
-   ```
+```bash
+cd tex/slides
+pdflatex -halt-on-error -interaction=nonstopmode workshop_slides.tex
+pdflatex -halt-on-error -interaction=nonstopmode workshop_slides.tex
+```
 
-3. **Run the complete workflow:**
-   ```bash
-   make all
-   ```
+The result is `tex/slides/workshop_slides.pdf`. `comparison.tex` and the included `figures/` assets must remain beside the main source.
+
+### Run the full research workflow (optional)
+
+The analysis uses Python and the packages in `scripts/requirements.txt`. Full document builds also need LaTeX and Make. Use an isolated Python environment; the dependencies are lower bounds rather than a locked reproducible environment.
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r scripts/requirements.txt
+make check-env PYTHON=python
+make all PYTHON=python
+```
+
+On Windows, activate the environment with `.venv\Scripts\activate` and use a shell with Make available, or run the documented steps individually. Choose a currently supported Python version compatible with your installed packages; the full pipeline has not been revalidated as part of this slide-only revision.
+
+`make all`, `make paper`, and `make slides` run analysis dependencies and regenerate outputs. `make slides-only` compiles the deck from existing assets. Inspect the Makefile before running a target. `make clean` removes generated data, figures, tables, and PDFs.
 
 ## 🔧 Makefile Targets
 
 | Target | Description |
 |--------|-------------|
-| `make data` | Generate/process sample data |
+| `make data` | Check for sample data; generate it only if missing |
 | `make analysis` | Run statistical analysis |
 | `make figures` | Generate plots and visualizations |
 | `make tables` | Create LaTeX tables |
 | `make update-outputs` | Copy analysis outputs to paper/slides directories |
 | `make paper` | Compile research paper PDF |
-| `make slides` | Compile presentation slides |
+| `make slides` | Run analysis, copy outputs, and compile slides |
+| `make slides-only` | Compile the Beamer deck from existing assets |
 | `make all` | Run complete pipeline |
 | `make clean` | Remove generated files |
 
@@ -140,6 +151,9 @@ This repository includes instructions for AI coding agents:
 
 - **`.github/copilot-instructions.md`** - GitHub Copilot workspace instructions
 - **`AGENTS.md`** - General AI agent guidelines for this project
+- **`CLAUDE.md`** - Imports shared guidance for Claude Code when present
+
+The workshop comparison also illustrates provider-specific skill locations. Product features depend on the installed version, interface, account, and organization settings. See the official sources in `workshop_review/source_notes.md`.
 
 These files help AI assistants understand:
 - Project structure and conventions
@@ -147,19 +161,18 @@ These files help AI assistants understand:
 - Common workflows and tasks
 - Domain-specific context
 
-## 🎓 Workshop Modules
+## 🎓 Workshop Structure
 
-### Module I: Git, GitHub, and VS Code Fundamentals
-- VS Code as an integrated development environment
-- Git basics: commits, branches, merges
-- GitHub workflows: pull requests, issues, project boards
-- Collaborative development practices
+- **0–7 minutes:** Research workflow and the goal for the session
+- **7–18:** VS Code as a research environment; inspect the project template
+- **18–31:** Git, shared issues, pull requests, and review
+- **31–43:** Ten practical Claude Code/Codex comparisons
+- **43–58:** Demonstrate a bounded task, inspect its diff, and verify its claims
+- **58–68:** Short exercise or paired review
+- **68–82:** Orchestration, worktrees, resources, and verified closeout
+- **82–90:** Questions and a concrete next step
 
-### Module II: Agentic AI Integration
-- VS Code Chat modes: Ask, Edit, Agent
-- GitHub Copilot in the cloud and locally
-- AI-assisted code review and refactoring
-- Complementary tools: Refine, NotebookLM, Elicit
+The comparison distinguishes the model, agent harness, and interface. Durable project instructions and reusable skills support reading, writing, analysis, and review. Parallel agents need clear ownership, isolated writing directories, and a shared record of decisions. The Command Center example is a generic private-demo illustration; the bundle contains no dashboard code or screenshots.
 
 ## 📝 Using This Template
 
@@ -192,17 +205,9 @@ MIT License - Feel free to use this template for your research projects.
 
 Template created by Tomas Larroucau for ASU's AI Strategic Plan workshop series.
 
-## 🎨 Branding
+## 🎨 Presentation Style
 
-This template uses the **ASU + W. P. Carey School of Business** color palette:
-
-| Color | Hex | Usage |
-|-------|-----|-------|
-| ASU Maroon | `#8C1D40` | Headers, primary accents, control group |
-| ASU Gold | `#FFC627` | Highlights, footer accent, treatment group |
-| ASU Dark Gray | `#484848` | Body text, secondary elements |
-
-The Beamer slide theme and matplotlib figures apply these colors consistently across all generated artifacts.
+The workshop slides use Beamer's **Madrid** theme and default blue palette, following the repository's current slide source. Some existing research figures retain the ASU palette. The October 26 revision preserves the Beamer style, selected Git diagrams, and the original dinosaur-builder illustration.
 
 ---
 

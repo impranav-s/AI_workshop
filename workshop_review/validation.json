@@ -1,0 +1,21 @@
+{
+  "pages": 43,
+  "teaching_pages": 29,
+  "reference_pages": 14,
+  "page_dimensions_pt": [
+    453.5429992675781,
+    255.1179962158203
+  ],
+  "pdf_sha256": "95da29c8e00c86d97b16a0cf750e88a0e2146d650af3c2d9d8a55dc6f1f80abf",
+  "source_sha256": "0419a83f92c458b2900942bca9a17ee00014ccf235ad6d1ff9b2e60ed85425c3",
+  "comparison_sha256": "34553257247f6e4ca7fe22270f3d01eb0d2b9cc1d8f6d5793e7a860d4d64d29c",
+  "latex_warnings": [],
+  "text_outside_pages": [],
+  "original_checkout_unchanged": true,
+  "build": "make slides-only (two pdflatex passes, halt-on-error)",
+  "research_pipeline_executed": false,
+  "visual_review": "All 43 final PDF pages rendered at 2x scale and visually inspected in eight numbered contact sheets; no clipping, overlap, or unreadable body text remains.",
+  "patch_check": "Full source patch and standalone README demo patch each passed git apply --check against baseline copies.",
+  "archive_rebuild": "Archive CRC check passed; extracted source builds independently with make slides-only; all 43 rebuilt page texts match the delivered deck.",
+  "limits": "Full analysis pipeline and a live multi-provider classroom session were not executed."
+}

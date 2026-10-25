@@ -1,7 +1,7 @@
 # Makefile for Research Project Template
 # This automates the complete workflow from data analysis to document compilation
 
-.PHONY: all clean data analysis figures tables paper slides cv help update-outputs
+.PHONY: all clean data analysis figures tables paper slides slides-only cv help update-outputs
 
 # Python interpreter
 PYTHON := python3
@@ -63,7 +63,8 @@ help:
 	@echo "  make tables    - Generate tables only"
 	@echo "  make update-outputs - Copy outputs to paper/slides folders"
 	@echo "  make paper     - Compile research paper"
-	@echo "  make slides    - Compile presentation slides"
+	@echo "  make slides    - Run analysis, update outputs, compile presentation"
+	@echo "  make slides-only - Compile presentation from existing assets"
 	@echo "  make cv        - Compile CV"
 	@echo "  make clean     - Remove all generated files"
 	@echo "  make help      - Show this help message"
@@ -137,6 +138,13 @@ slides: update-outputs
 	@cd $(TEX_SLIDES_DIR) && \
 		pdflatex -interaction=nonstopmode workshop_slides.tex > /dev/null && \
 		pdflatex -interaction=nonstopmode workshop_slides.tex > /dev/null
+	@echo "Slides compiled: $(SLIDES_PDF)"
+
+# Build the workshop deck without rerunning the research pipeline.
+slides-only:
+	@cd $(TEX_SLIDES_DIR) && \
+		pdflatex -halt-on-error -interaction=nonstopmode workshop_slides.tex > /dev/null && \
+		pdflatex -halt-on-error -interaction=nonstopmode workshop_slides.tex > /dev/null
 	@echo "Slides compiled: $(SLIDES_PDF)"
 
 # Compile CV
