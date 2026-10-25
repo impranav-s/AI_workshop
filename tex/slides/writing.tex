@@ -1,0 +1,123 @@
+\begin{frame}{AI-Assisted Writing Starts with the Argument}
+\begin{enumerate}\setlength{\itemsep}{0.2cm}
+\item \textbf{Claims:} What do we know, and what evidence supports it?
+\item \textbf{Interpretation:} What economic mechanism does the evidence establish?
+\item \textbf{Exhibits:} Specify the figure or table that lets a reader assess the claim.
+\item \textbf{Prose:} Write the paragraph around the verified evidence.
+\end{enumerate}
+\par\vspace{0.2cm}
+\begin{block}{A useful first request}
+Read the approved results and the surrounding section. List the claims each exhibit supports, the qualifications it needs, and any missing evidence. Then propose the paragraph's argument.
+\end{block}
+\small Keep missing results explicit. A fluent paragraph cannot supply an estimate, citation, or identification argument.
+\end{frame}
+
+\begin{frame}{Four Layers of Writing Direction}
+\small
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.45cm}>{\raggedright\arraybackslash}p{10.2cm}}
+\toprule
+\textbf{Layer} & \textbf{What it controls in this task} \\
+\midrule
+Task prompt & Revise these two sentences using the approved claims. Preserve their meaning and return a diff. \\
+General instructions & Reader, author voice, notation, evidence rules. Put persistent project guidance in \texttt{AGENTS.md} / \texttt{CLAUDE.md}. \\
+Output style & How the agent responds. Claude: \texttt{/output-style explanatory} for teaching. Specify manuscript voice separately. \\
+Reusable skill & Read neighboring prose, trace claims to evidence, edit, check notation, render the exhibit, and review. \\
+\bottomrule
+\end{tabular}
+\par\vspace{0.25cm}
+\normalsize An output-style setting cannot establish the argument or verify a claim.
+\par\vfill
+\sources{Local author skills; \href{https://code.claude.com/docs/en/output-styles}{Claude output styles}; \href{https://learn.chatgpt.com/docs/build-skills}{Codex skills}. Codex instructions / personality are not an equivalent output-style system.}
+\end{frame}
+
+\begin{frame}{Author Instructions: Write for the Paper's Reader}
+\begin{columns}[t]
+\begin{column}{0.56\textwidth}
+\begin{itemize}\setlength{\itemsep}{0.15cm}
+\item Use established terms; do not coin labels.
+\item Remove stock trailing clauses and contrastive padding.
+\item State the economic argument directly.
+\item Keep chat history and internal workflow out of the manuscript.
+\item Introduce notation only when necessary; define every new symbol.
+\end{itemize}
+\end{column}
+\begin{column}{0.40\textwidth}
+\textbf{Skills I use}
+\par\vspace{0.15cm}
+\texttt{econ-write}: organize the economic argument.
+\par\vspace{0.2cm}
+\texttt{academic-draft-editing}: match the draft, check provenance, inspect exhibits.
+\par\vspace{0.2cm}
+\texttt{humanizer}: remove filler while preserving meaning and voice.
+\end{column}
+\end{columns}
+\par\vspace{0.25cm}
+\small For questioning: Matt Pocock's \texttt{grill-me}; \texttt{grill-with-docs} adds repository glossary and decision records. Details and install commands follow in the reference slides.
+\par\vfill
+\sources{Teaching summary of Tomas's user-owned research skills and author instructions. These are preferences for this draft, not a universal ban on technical language or useful contrasts.}
+\end{frame}
+
+\begin{frame}{A Synthetic Paragraph: Give the Agent the Claims}
+\small
+\textbf{Approved content:} Students pay an application cost before the offer is known. The expected value of enrollment and continuation enters their application decision. No estimated magnitude is available.
+\par\vspace{0.15cm}
+\begin{block}{Before: plausible wording, poor direction}
+Our forward-looking access-persistence nexus leverages a dynamic framework, underscoring the pivotal role of expectations. This is not merely about admission but about sustained success. After resolving the implementation issues, we can now show substantial gains.
+\end{block}
+\begin{block}{Author-directed revision}
+Students pay an application cost before learning whether they receive an offer. Their application decision depends on the expected value of enrolling and continuing in the program.
+\end{block}
+\textbf{Direction:} Use only the approved content. Keep the timing and mechanism. Remove coined labels, workflow history, and unsupported results. Introduce no notation.
+\par\vfill
+\sources{Synthetic teaching example written for this workshop; no empirical finding or selected research-demo model is implied.}
+\end{frame}
+
+\begin{frame}{A Real Draft Placeholder Specifies the Exhibit}
+\small
+\textbf{CuposBEA draft: selected sentences from a figure specification}
+\begin{block}{Typeset excerpt}
+Both vertical axes are in rank points of the main outcome, with horizontal zero lines.
+\par\vspace{0.18cm}
+Use the same students, prediction convention, kernel, and bandwidth across panels, with student weights within each track.
+\par\vspace{0.18cm}
+Draw each track over its adequately populated support; suppress windows with fewer than 20 students and report the track sample sizes and support.
+\end{block}
+\normalsize \textbf{What this gives the agent:} units, comparability across panels, weighting, and an explicit support rule.
+\par\vspace{0.2cm}
+\small The full specification also requests uncertainty calculations and an output asset. Those details require the chosen estimator and data.
+\par\vfill
+\sources{Actual author-requested excerpt, typeset for teaching. Surrounding draft, results, model notation, and private asset path omitted. The 20-student rule is this exhibit's specification, not a general statistical recommendation.}
+\end{frame}
+
+\begin{frame}{A Precise Figure and Table Request}
+\small
+\textbf{Synthetic teaching brief; outputs have not been computed.}
+\par\vspace{0.2cm}
+\begin{tabular}{>{\raggedright\arraybackslash}p{2cm}>{\raggedright\arraybackslash}p{10.6cm}}
+\toprule
+Population & Same synthetic student cohort under both fees. Include nonapplicants in the denominator. \\
+Figure & Two panels: enrollment and persistence probabilities for all students. Same five preparation groups on the horizontal axis; baseline and policy means in each. \\
+Table & For each outcome and group: count, both means, difference in percentage points, and interval. Use the figure's underlying output. \\
+Validation & Check denominators, units, groups, and missing values. Name the uncertainty method; separate Monte Carlo error when relevant. \\
+Delivery & Generator, data dictionary, PDF figure, LaTeX table, caption, and draft diff. Mark missing inputs; never invent values. \\
+\bottomrule
+\end{tabular}
+\par\vspace{0.2cm}
+\normalsize \textbf{Before execution:} agree on the fee change, persistence horizon, estimator, and uncertainty procedure.
+\end{frame}
+
+\begin{frame}{The Author Still Reviews the Writing}
+\begin{itemize}\setlength{\itemsep}{0.25cm}
+\item Read the passage as someone who has only the paper.
+\item Check every claim against the source, exhibit, and intended interpretation.
+\item Check whether the edit changes the argument or adds a new qualification.
+\item Recheck the author rules: a model can drift back to default phrasing.
+\end{itemize}
+\par\vspace{0.25cm}
+\begin{block}{Experience and evidence}
+Tomas's preference for OpenAI models for some writing tasks reflects his experience. Better coding performance does not establish better research writing.
+\end{block}
+\small \textbf{Discussion:} Which choices should the agent propose, and which must remain the author's? Check the actual venue's disclosure rules; the author remains responsible for the final text.
+\end{frame}
+

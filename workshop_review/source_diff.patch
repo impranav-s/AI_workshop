@@ -1,7 +1,10 @@
 --- a/README.md
 +++ b/README.md
-@@ -2,14 +2,14 @@
+@@ -1,15 +1,17 @@
+ # Research Project Template: Git, GitHub, and Agentic AI Workshop
  
++> **Local review status:** The writing module and current tool guidance are implemented. The revision case is still being selected; no new simulation has been run. See [implementation status](workshop_review/IMPLEMENTATION_STATUS.md).
++
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
  
 -This repository serves as a **template for reproducible research projects** created by **Tomas Larroucau** and accompanies the workshop: *"Git, GitHub, and VS Code: Agentic AI for Project Management and Research Productivity."*
@@ -17,7 +20,7 @@
  - **Collaborative research** through issues, pull requests, and project boards
  - **Automated workflows** for analysis and document compilation
  
-@@ -20,7 +20,6 @@
+@@ -20,7 +22,6 @@
  ├── AGENTS.md                      # Instructions for AI coding agents
  ├── Makefile                       # Automation workflow
  ├── README.md                      # This file
@@ -25,13 +28,13 @@
  │
  ├── .github/                       # GitHub-specific files
  │   ├── copilot-instructions.md   # Copilot workspace configuration
-@@ -60,64 +59,74 @@
+@@ -60,64 +61,74 @@
  
  ## 🚀 Quick Start
  
 +### Monday, October 26, 2026: 90-minute workshop
 +
-+The session demonstrates one reviewable research task, compares Claude Code and Codex, and shows how to coordinate parallel work. The main deck ends at slide 29; the remaining slides are reference material.
++The session compares Claude Code and Codex, develops a concrete AI-assisted writing workflow, and shows how to coordinate a substantive research task. The proposed Refine-to-revision demonstration still requires a case choice and prepared checkpoints. Slides after the questions slide are reference material.
 +
  ### Workshop Prerequisites
  
@@ -79,7 +82,7 @@
 -   ```bash
 -   make all
 -   ```
-+To follow the demonstration, bring a browser and the workshop materials. For the local exercise, install **VS Code** and **Git**, and open a copy of this repository. The exercise edits the README; it does not require Python, LaTeX, or an MCP server. If setup is incomplete, work with a partner or review the prepared diff.
++To follow the demonstration, bring a browser and the workshop materials. For the local exercise, install **VS Code** and **Git**, and open a copy of this repository. The writing exercise reviews supplied passages and exhibit specifications. Running the full scientific demonstration will require its prepared environment; those requirements will be fixed after the example is selected. If setup is incomplete, follow the instructor or review supplied evidence with a partner.
 +
 +To run an agent yourself, install and sign in to **one** supported agent. Claude Code and Codex are demonstrated; both subscriptions are not required. Check your account's current access and allowance before the workshop. Native provider subscriptions, Copilot access, and API billing are separate routes. A GitHub account is needed for hosted issues and pull requests, but the local exercise stops before sharing.
 +
@@ -97,7 +100,7 @@
 +
 +### Build only the workshop slides
 +
-+In this revised source bundle, a LaTeX distribution with Beamer and TikZ is sufficient to build the deck. With Make installed:
++A LaTeX distribution with Beamer and TikZ is sufficient to build the deck. With Make installed:
 +
 +```bash
 +make slides-only
@@ -111,7 +114,7 @@
 +pdflatex -halt-on-error -interaction=nonstopmode workshop_slides.tex
 +```
 +
-+The result is `tex/slides/workshop_slides.pdf`. `comparison.tex` and the included `figures/` assets must remain beside the main source.
++The result is `tex/slides/workshop_slides.pdf`. `comparison.tex, writing.tex, writing_reference.tex` and the included `figures/` assets must remain beside the main source.
 +
 +### Run the full research workflow (optional)
 +
@@ -146,7 +149,7 @@
  | `make all` | Run complete pipeline |
  | `make clean` | Remove generated files |
  
-@@ -140,6 +149,9 @@
+@@ -140,6 +151,9 @@
  
  - **`.github/copilot-instructions.md`** - GitHub Copilot workspace instructions
  - **`AGENTS.md`** - General AI agent guidelines for this project
@@ -156,7 +159,7 @@
  
  These files help AI assistants understand:
  - Project structure and conventions
-@@ -147,19 +159,18 @@
+@@ -147,19 +161,18 @@
  - Common workflows and tasks
  - Domain-specific context
  
@@ -175,20 +178,20 @@
 -- Complementary tools: Refine, NotebookLM, Elicit
 +## 🎓 Workshop Structure
 +
-+- **0–7 minutes:** Research workflow and the goal for the session
-+- **7–18:** VS Code as a research environment; inspect the project template
-+- **18–31:** Git, shared issues, pull requests, and review
-+- **31–43:** Ten practical Claude Code/Codex comparisons
-+- **43–58:** Demonstrate a bounded task, inspect its diff, and verify its claims
-+- **58–68:** Short exercise or paired review
-+- **68–82:** Orchestration, worktrees, resources, and verified closeout
-+- **82–90:** Questions and a concrete next step
++- **0–5 minutes:** Research workflow and the goal
++- **5–12:** VS Code and the research project
++- **12–22:** Git, issues, and reviewable changes
++- **22–32:** Practical Claude Code/Codex comparisons
++- **32–50:** AI-assisted writing: claims, exhibits, author direction
++- **50–75:** Revision workflow demonstration (case selection and preparation pending)
++- **75–84:** Orchestration, ownership, sessions, and resources
++- **84–90:** Questions and a next step
 +
 +The comparison distinguishes the model, agent harness, and interface. Durable project instructions and reusable skills support reading, writing, analysis, and review. Parallel agents need clear ownership, isolated writing directories, and a shared record of decisions. The Command Center example is a generic private-demo illustration; the bundle contains no dashboard code or screenshots.
  
  ## 📝 Using This Template
  
-@@ -192,17 +203,9 @@
+@@ -192,17 +205,9 @@
  
  Template created by Tomas Larroucau for ASU's AI Strategic Plan workshop series.
  
@@ -422,19 +425,19 @@
 +\toprule
 +\textbf{Minutes} & \textbf{What we do} \\
 +\midrule
-+0--7 & The research workflow and today's goal \\
-+7--18 & VS Code and the project template \\
-+18--31 & Git, issues, and a reviewable change \\
-+31--43 & Claude Code and Codex: ten useful comparisons \\
-+43--58 & Live demo: plan, edit, inspect, verify \\
-+58--68 & Short exercise or paired review \\
-+68--82 & Orchestration: tasks, sessions, worktrees, resources \\
-+82--90 & Questions and one next step \\
++0--5 & The research workflow and today's goal \\
++5--12 & VS Code and the research project \\
++12--22 & Git, issues, and reviewable changes \\
++22--32 & Claude Code and Codex: practical comparisons \\
++32--50 & AI-assisted writing: claims, exhibits, author direction \\
++50--75 & Revision demo: comments, issues, agents, draft \\
++75--84 & Orchestration: ownership, sessions, resources \\
++84--90 & Questions and one next step \\
 +\bottomrule
 +\end{tabular}
-+\par\vspace{0.3cm}
-+\begin{block}{Keep moving}
-+If setup fails, follow the demonstration or work with a partner. The appendix is for later.
++\par\vspace{0.25cm}
++\begin{block}{Preparation decision still open}
++The revision case is being selected. Use clearly labeled prepared checkpoints and keep scientific decisions with the author.
 +\end{block}
 +\end{frame}
 +
@@ -1307,7 +1310,7 @@
 +\end{columns}
 +\par\vspace{0.35cm}
 +\begin{block}{Today's exercise}
-+A README edit works without Python, LaTeX, or an MCP server. Claude Code and Codex are demonstrated; you do not need both subscriptions.
++The writing review needs only the supplied passages. The scientific demo uses prepared inputs and outputs. Install Python and LaTeX only if you plan to run its full pipeline.
 +\end{block}
 +\end{frame}
 +
@@ -1697,8 +1700,8 @@
 +\end{itemize}
 +\end{column}
 +\begin{column}{0.48\textwidth}
-+\begin{block}{Example: clarify the Quick Start}
-+Separate a README-only exercise from a full analysis build. Verify every listed command against the Makefile. Keep analysis and data unchanged.
++\begin{block}{Example: specify a research exhibit}
++Define the population, comparison, units, uncertainty, and output asset. Link the approved model and input version. Assign a writer and an independent checker.
 +\end{block}
 +\end{column}
 +\end{columns}
@@ -1772,7 +1775,7 @@
  \begin{columns}[t]
      \begin{column}{0.5\textwidth}
          \footnotesize
-@@ -1365,636 +345,588 @@
+@@ -1365,636 +345,604 @@
      \end{column}
  \end{columns}
  
@@ -1915,16 +1918,17 @@
 +
 +% Revision item 15; original frame: 39
 +
-+\begin{frame}{Live Demo: One Task, Visible Evidence}
-+\textbf{Task:} Make the README's Quick Start match how the repository actually builds.
-+\par\vspace{0.25cm}
-+\begin{enumerate}\setlength{\itemsep}{0.14cm}
-+\item Trace one existing paper table to its source; read the task brief and Makefile.
-+\item Ask for a plan. State scope and the acceptance criteria.
-+\item Make the edit in an isolated branch or output copy.
-+\item Read the diff and check the commands against the project.
-+\item Ask an independent session to find errors or omissions.
-+\item Show a prepared issue/PR example and explain verified closeout.
++\input{writing.tex}
++
++\begin{frame}{Revision Demo: From Comments to a Verified Draft}
++\textbf{Revision case pending:} CuposBEA or the dropout-matching JMP; use a permitted Refine report or a clearly labeled synthetic comment set.
++\par\vspace{0.2cm}
++\begin{enumerate}\setlength{\itemsep}{0.15cm}
++\item Triage comments into scientific decisions, evidence requests, and writing edits.
++\item Draft issues by argument, files, and dependencies; assign visible task owners.
++\item Parallelize independent work; sequence coupled math, code, and draft edits.
++\item Review checks and exhibits, then inspect proposed PRs and integration.
++\item Verify the revised argument and compiled draft against the original comments.
  \end{enumerate}
 -\end{frame}
 -
@@ -1943,32 +1947,7 @@
 -    \item Agent creates PR linking to original issue
 -    \item Review PR and merge to main
 -    \item Agent updates issue with concise description of changes and closes it
-+\par\vspace{0.25cm}
-+\small Fallback: use the prepared before/after diff if authentication or the live agent stalls. We can inspect a complete change without waiting for a long run.
-+\end{frame}
-+
-+% Revision item 16; original frame: new
-+
-+\begin{frame}{A Prompt You Can Inspect}
-+\begin{block}{Plan first}
-+Read README.md, AGENTS.md, and Makefile. Explain how someone can do a documentation exercise and how they can run a full build. List inconsistencies and propose the smallest README edit. Do not change files yet.
-+\end{block}
-+\begin{block}{Then implement the agreed scope}
-+Edit README.md only. Keep research code and data unchanged. Verify each command against the repository. Return the diff, checks you actually performed, and unresolved questions. Stop before any push or hosted action.
-+\end{block}
-+\par\vspace{0.2cm}
-+\small A prompt expresses intent. Permission settings and a bounded workspace provide additional control.
-+\end{frame}
-+
-+% Revision item 17; original frame: new
-+
-+\begin{frame}{Ten-Minute Exercise: Review a Change}
-+\begin{enumerate}\setlength{\itemsep}{0.25cm}
-+\item \textbf{2 minutes}: Read the task and define what a correct result must include.
-+\item \textbf{4 minutes}: Ask one agent for a README edit, or inspect the prepared diff with a partner.
-+\item \textbf{3 minutes}: Find one claim to verify. Compare it with the Makefile or source file.
-+\item \textbf{1 minute}: Report: ready, needs changes, or blocked. Give one reason.
- \end{enumerate}
+-\end{enumerate}
 -
 -\vspace{0.3cm}
 -\textbf{We'll work through this together - from idea to merged code in minutes!}
@@ -2171,20 +2150,32 @@
 -\begin{table}
 -\small
 -\begin{tabular}{lp{6cm}}
-+\par\vspace{0.3cm}
-+\begin{block}{Success}
-+You can explain what changed, what was checked, and what still needs a human decision.
++\par\vspace{0.2cm}
++\begin{block}{Rehearse the handoffs}
++Prepare the baseline, small checks, and fallback checkpoints. Say which outputs were prepared and which were produced live.
 +\end{block}
 +\end{frame}
 +
-+% Revision item 18; original frame: new
++% Revision item 16; original frame: new
 +
-+\begin{frame}{You Choose the Level of Engagement}
-+\centering
-+\begin{tabular}{>{\raggedright\arraybackslash}p{3.4cm}>{\raggedright\arraybackslash}p{9.3cm}}
++\begin{frame}{A Research Prompt with Clear Ownership}
++\begin{block}{Researcher: choose the question and design}
++Read the model, code, draft, and approved task brief. Identify the assumptions the extension changes and the claims we could support. List decisions I must make before implementation.
++\end{block}
++\begin{block}{Agents: work against the same agreed specification}
++Theory agent: derive and explain. Implementation agent: edit the assigned code in an isolated worktree. Independent checker: construct the small-case reference calculation and challenge assumptions. Draft integrator: use only verified exhibits and approved interpretation.
++\end{block}
++\par\vspace{0.2cm}
++\small Specify inputs, output files, checks, budget, and stop conditions for each role. Ask for mathematical disagreement before accepting a polished draft.
++\end{frame}
++
++% Revision item 17; original frame: new
++
++\begin{frame}{A 25-Minute Demo with Visible Checkpoints}
++\begin{tabular}{rl}
  \toprule
 -\textbf{Tool} & \textbf{Purpose} \\
-+\textbf{You specify} & \textbf{What the agent can help produce} \\
++\textbf{Minutes} & \textbf{What participants inspect} \\
  \midrule
 -\textbf{Refine} & AI-powered writing revision and style improvement \\
 -(refine.ink) & Interactive editing with suggestions \\
@@ -2198,10 +2189,11 @@
 -% \midrule
 -% \textbf{GPT/Claude/Gemini} & General research assistance \\
 -% & Draft writing, brainstorming \\
-+Research question & Alternatives, assumptions, evidence to collect \\[0.15cm]
-+Project design & Task breakdown, dependencies, risks, acceptance criteria \\[0.15cm]
-+Bounded task & A proposed change and evidence that it works \\[0.15cm]
-+Exact implementation & Specific edits, commands, or code you want executed \\
++0--4 & Comments, author decisions, and revision scope \\
++4--12 & Issue drafts, dependency map, and distinct task owners \\
++12--18 & Parallel work, scientific disagreement, and checks \\
++18--23 & Exhibits, candidate PRs, and integration review \\
++23--25 & LaTeX diff and compiled manuscript \\
  \bottomrule
  \end{tabular}
 -\end{table}
@@ -2330,6 +2322,26 @@
 -    \item Practice basic Git commands
 -    \item Run \texttt{make all} to build template
 -    \item Ask your favorite AI agent to explain any concepts from the slides you don't understand
++\par\vspace{0.3cm}
++\textbf{Participant role:} identify one claim and the evidence needed to accept it.
++\par\vspace{0.2cm}
++\small This is the prepared demonstration plan. The case and its checkpoints are not yet selected. If execution stalls, inspect a labeled prepared checkpoint.
++\end{frame}
++
++% Revision item 18; original frame: new
++
++\begin{frame}{You Choose the Level of Engagement}
++\centering
++\begin{tabular}{>{\raggedright\arraybackslash}p{3.4cm}>{\raggedright\arraybackslash}p{9.3cm}}
++\toprule
++\textbf{You specify} & \textbf{What the agent can help produce} \\
++\midrule
++Research question & Alternatives, assumptions, evidence to collect \\[0.15cm]
++Project design & Task breakdown, dependencies, risks, acceptance criteria \\[0.15cm]
++Bounded task & A proposed change and evidence that it works \\[0.15cm]
++Exact implementation & Specific edits, commands, or code you want executed \\
++\bottomrule
++\end{tabular}
 +\par\vspace{0.4cm}
 +Move between levels as needed. Keep ownership of research choices and the decision to accept or share results.
 +\end{frame}
@@ -2343,9 +2355,9 @@
 +\textbf{Session} & \textbf{Task and output} & \textbf{Scope} & \textbf{Status} \\
 +\midrule
 +Planner & Agree scope and task brief & Read-only & Ready \\[0.18cm]
-+Claude Code A & Draft Quick Start edit & README; worktree A & Working \\[0.18cm]
-+Codex B & Check build instructions & Read-only; findings & Working \\[0.18cm]
-+Reviewer C & Review candidate diff & Read-only; findings & Waiting for A \\
++Claude Code A & Derivation and assumptions & Theory; worktree A & Working \\[0.18cm]
++Codex B & Implement agreed model & Code; worktree B & Working \\[0.18cm]
++Reviewer C & Independent reference check & Separate check; findings & Working \\
 +\bottomrule
 +\end{tabular}
 +\par\vspace{0.35cm}
@@ -2385,29 +2397,7 @@
 +
 +% Revision item 21; original frame: new
 +
-+\begin{frame}{Separate Worktrees for Separate Writers}
-+\begin{columns}[t]
-+\begin{column}{0.48\textwidth}
-+\textbf{Branch}
-+\begin{itemize}
-+\item A line of Git history
-+\item Switching branches changes the current checkout
-+\end{itemize}
-+\end{column}
-+\begin{column}{0.48\textwidth}
-+\textbf{Worktree}
-+\begin{itemize}
-+\item A separate working directory
-+\item Lets writers use different branches at once
-+\end{itemize}
-+\end{column}
-+\end{columns}
-+\par\vspace{0.3cm}
-+\begin{block}{Coordination still matters}
-+Agree which files each agent owns. Keep outputs separate, review overlapping edits, and integrate one change at a time. Worktrees isolate files; they do not isolate shared databases or external services.
-+\end{block}
-+\small Commands are in the appendix. Start from an agreed commit and preserve existing work before branching.
-+\end{frame}
++
 +
 +% Revision item 22; original frame: new
 +
@@ -2461,28 +2451,20 @@
 +
 +% Revision item 24; original frame: new
 +
-+\begin{frame}{Allocate Models and Attention by Task}
-+\begin{itemize}\setlength{\itemsep}{0.3cm}
-+\item Use a lower-cost available option for a bounded, easy-to-check task.
-+\item Reserve scarce allowance and deeper reasoning for hard design choices, ambiguous failures, and consequential review.
-+\item Stop duplicate work. Reuse a concise task brief and record useful results.
-+\item Give reviewers the task, diff, and evidence. Ask them to find mistakes independently.
-+\end{itemize}
-+\par\vspace{0.3cm}
-+\begin{block}{Keep the evidence local to the claim}
-+``It worked on this task'' is an observation. ``This model is always best'' requires evidence we do not have here.
-+\end{block}
-+\end{frame}
++
 +
 +% Revision item 25; original frame: new
 +
-+\begin{frame}{Finish the Task, Then Verify Closeout}
-+\begin{enumerate}\setlength{\itemsep}{0.24cm}
-+\item Compare the result with the issue's acceptance criteria.
-+\item Inspect the diff, checks, and rendered outputs where relevant.
-+\item Resolve reviewer findings or record what remains open.
-+\item When sharing is authorized, link the PR to the issue and obtain review.
-+\item After integration, verify the intended result and the issue's status.
++
++
++% Revision item 26; original frame: 43
++
++\begin{frame}{Next Steps and Questions}
++\begin{enumerate}\setlength{\itemsep}{0.35cm}
++\item Choose one bounded scientific or writing task in your project.
++\item Write its scope and acceptance criteria.
++\item Use one agent, inspect the diff, and verify the result.
++\item Add parallel sessions when the tasks can be separated clearly.
  \end{enumerate}
 -
 -\vspace{0.3cm}
@@ -2522,21 +2504,6 @@
 -\end{frame}
 -
 -\begin{frame}{Behind the Scenes: Meta Moment}
-+\par\vspace{0.25cm}
-+\begin{block}{A useful handoff}
-+What changed; where the output is; what was checked; what is blocked; which decision is needed next.
-+\end{block}
-+\end{frame}
-+
-+% Revision item 26; original frame: 43
-+
-+\begin{frame}{Next Steps and Questions}
-+\begin{enumerate}\setlength{\itemsep}{0.35cm}
-+\item Choose one small task in your research project.
-+\item Write its scope and acceptance criteria.
-+\item Use one agent, inspect the diff, and verify the result.
-+\item Add parallel sessions when the tasks can be separated clearly.
-+\end{enumerate}
 +\par\vspace{0.4cm}
 +\textbf{Discussion:} Which part of your workflow would benefit most? What would you need to check before trusting the result?
 +\par\vspace{0.4cm}
@@ -2548,6 +2515,59 @@
 +\appendix
 +
 +\section{Reference}
++
++\input{writing_reference.tex}
++
++\begin{frame}{Separate Worktrees for Separate Writers}
++\begin{columns}[t]
++\begin{column}{0.48\textwidth}
++\textbf{Branch}
++\begin{itemize}
++\item A line of Git history
++\item Switching branches changes the current checkout
++\end{itemize}
++\end{column}
++\begin{column}{0.48\textwidth}
++\textbf{Worktree}
++\begin{itemize}
++\item A separate working directory
++\item Lets writers use different branches at once
++\end{itemize}
++\end{column}
++\end{columns}
++\par\vspace{0.3cm}
++\begin{block}{Coordination still matters}
++Agree which files each agent owns. Keep outputs separate, review overlapping edits, and integrate one change at a time. Worktrees isolate files; they do not isolate shared databases or external services.
++\end{block}
++\small Commands are in the appendix. Start from an agreed commit and preserve existing work before branching.
++\end{frame}
++
++\begin{frame}{Allocate Models and Attention by Task}
++\begin{itemize}\setlength{\itemsep}{0.3cm}
++\item Use a lower-cost available option for a bounded, easy-to-check task.
++\item Reserve scarce allowance and deeper reasoning for hard design choices, ambiguous failures, and consequential review.
++\item Stop duplicate work. Reuse a concise task brief and record useful results.
++\item Give reviewers the task, diff, and evidence. Ask them to find mistakes independently.
++\end{itemize}
++\par\vspace{0.3cm}
++\begin{block}{Keep the evidence local to the claim}
++``It worked on this task'' is an observation. ``This model is always best'' requires evidence we do not have here.
++\end{block}
++\end{frame}
++
++\begin{frame}{Finish the Task, Then Verify Closeout}
++\begin{enumerate}\setlength{\itemsep}{0.24cm}
++\item Compare the result with the issue's acceptance criteria.
++\item Inspect the diff, checks, and rendered outputs where relevant.
++\item Resolve reviewer findings or record what remains open.
++\item When sharing is authorized, link the PR to the issue and obtain review.
++\item After integration, verify the intended result and the issue's status.
++\end{enumerate}
++\par\vspace{0.25cm}
++\begin{block}{A useful handoff}
++What changed; where the output is; what was checked; what is blocked; which decision is needed next.
++\end{block}
++\end{frame}
 +
 +% Revision item 27; original frame: 26
 +
@@ -2803,7 +2823,7 @@
 +\item Inspect the requested permissions and configure only the access the task needs.
 +\end{itemize}
 +\par\vspace{0.3cm}
-+\textbf{For this workshop:} the instructor can use a prepared connection. Participants do not need to configure MCP for the README exercise.
++\textbf{For this workshop:} the instructor can use a prepared connection. Participants do not need to configure MCP for the writing review.
 +\par\vfill
 +\sources{\href{https://modelcontextprotocol.io/docs/learn/architecture}{MCP architecture}; provider setup links in the source notes.}
 +\end{frame}
@@ -2922,7 +2942,7 @@
 +\item Draft a bounded issue and review plan before changing the analysis.
 +\end{enumerate}
 +\par\vspace{0.25cm}
-+\small The original clustered-SE task is already implemented. Audit the existing work, or choose an instructor-approved extension. This optional exercise can replace the README exercise after rehearsal.
++\small The original clustered-SE task is already implemented. Audit the existing work, or choose an instructor-approved extension. This is a reference exercise; the stronger main demonstration is being selected.
 +\end{frame}
 +
 +\begin{frame}{VS Code Session Discovery: Scope Matters}
@@ -3048,3 +3068,232 @@
 +\par\vfill
 +\sources{\href{https://code.claude.com/docs/en/sub-agents}{Claude subagents}, \href{https://code.claude.com/docs/en/advisor}{advisor}; \href{https://learn.chatgpt.com/docs/agent-configuration/subagents}{Codex subagents}, \href{https://learn.chatgpt.com/docs/environments/git-worktrees}{worktrees}, \href{https://learn.chatgpt.com/docs/third-party/github}{review}.}
 +\end{frame}
+--- /dev/null
++++ b/tex/slides/writing.tex
+@@ -0,0 +1,123 @@
++\begin{frame}{AI-Assisted Writing Starts with the Argument}
++\begin{enumerate}\setlength{\itemsep}{0.2cm}
++\item \textbf{Claims:} What do we know, and what evidence supports it?
++\item \textbf{Interpretation:} What economic mechanism does the evidence establish?
++\item \textbf{Exhibits:} Specify the figure or table that lets a reader assess the claim.
++\item \textbf{Prose:} Write the paragraph around the verified evidence.
++\end{enumerate}
++\par\vspace{0.2cm}
++\begin{block}{A useful first request}
++Read the approved results and the surrounding section. List the claims each exhibit supports, the qualifications it needs, and any missing evidence. Then propose the paragraph's argument.
++\end{block}
++\small Keep missing results explicit. A fluent paragraph cannot supply an estimate, citation, or identification argument.
++\end{frame}
++
++\begin{frame}{Four Layers of Writing Direction}
++\small
++\renewcommand{\arraystretch}{1.15}
++\begin{tabular}{>{\raggedright\arraybackslash}p{2.45cm}>{\raggedright\arraybackslash}p{10.2cm}}
++\toprule
++\textbf{Layer} & \textbf{What it controls in this task} \\
++\midrule
++Task prompt & Revise these two sentences using the approved claims. Preserve their meaning and return a diff. \\
++General instructions & Reader, author voice, notation, evidence rules. Put persistent project guidance in \texttt{AGENTS.md} / \texttt{CLAUDE.md}. \\
++Output style & How the agent responds. Claude: \texttt{/output-style explanatory} for teaching. Specify manuscript voice separately. \\
++Reusable skill & Read neighboring prose, trace claims to evidence, edit, check notation, render the exhibit, and review. \\
++\bottomrule
++\end{tabular}
++\par\vspace{0.25cm}
++\normalsize An output-style setting cannot establish the argument or verify a claim.
++\par\vfill
++\sources{Local author skills; \href{https://code.claude.com/docs/en/output-styles}{Claude output styles}; \href{https://learn.chatgpt.com/docs/build-skills}{Codex skills}. Codex instructions / personality are not an equivalent output-style system.}
++\end{frame}
++
++\begin{frame}{Author Instructions: Write for the Paper's Reader}
++\begin{columns}[t]
++\begin{column}{0.56\textwidth}
++\begin{itemize}\setlength{\itemsep}{0.15cm}
++\item Use established terms; do not coin labels.
++\item Remove stock trailing clauses and contrastive padding.
++\item State the economic argument directly.
++\item Keep chat history and internal workflow out of the manuscript.
++\item Introduce notation only when necessary; define every new symbol.
++\end{itemize}
++\end{column}
++\begin{column}{0.40\textwidth}
++\textbf{Skills I use}
++\par\vspace{0.15cm}
++\texttt{econ-write}: organize the economic argument.
++\par\vspace{0.2cm}
++\texttt{academic-draft-editing}: match the draft, check provenance, inspect exhibits.
++\par\vspace{0.2cm}
++\texttt{humanizer}: remove filler while preserving meaning and voice.
++\end{column}
++\end{columns}
++\par\vspace{0.25cm}
++\small For questioning: Matt Pocock's \texttt{grill-me}; \texttt{grill-with-docs} adds repository glossary and decision records. Details and install commands follow in the reference slides.
++\par\vfill
++\sources{Teaching summary of Tomas's user-owned research skills and author instructions. These are preferences for this draft, not a universal ban on technical language or useful contrasts.}
++\end{frame}
++
++\begin{frame}{A Synthetic Paragraph: Give the Agent the Claims}
++\small
++\textbf{Approved content:} Students pay an application cost before the offer is known. The expected value of enrollment and continuation enters their application decision. No estimated magnitude is available.
++\par\vspace{0.15cm}
++\begin{block}{Before: plausible wording, poor direction}
++Our forward-looking access-persistence nexus leverages a dynamic framework, underscoring the pivotal role of expectations. This is not merely about admission but about sustained success. After resolving the implementation issues, we can now show substantial gains.
++\end{block}
++\begin{block}{Author-directed revision}
++Students pay an application cost before learning whether they receive an offer. Their application decision depends on the expected value of enrolling and continuing in the program.
++\end{block}
++\textbf{Direction:} Use only the approved content. Keep the timing and mechanism. Remove coined labels, workflow history, and unsupported results. Introduce no notation.
++\par\vfill
++\sources{Synthetic teaching example written for this workshop; no empirical finding or selected research-demo model is implied.}
++\end{frame}
++
++\begin{frame}{A Real Draft Placeholder Specifies the Exhibit}
++\small
++\textbf{CuposBEA draft: selected sentences from a figure specification}
++\begin{block}{Typeset excerpt}
++Both vertical axes are in rank points of the main outcome, with horizontal zero lines.
++\par\vspace{0.18cm}
++Use the same students, prediction convention, kernel, and bandwidth across panels, with student weights within each track.
++\par\vspace{0.18cm}
++Draw each track over its adequately populated support; suppress windows with fewer than 20 students and report the track sample sizes and support.
++\end{block}
++\normalsize \textbf{What this gives the agent:} units, comparability across panels, weighting, and an explicit support rule.
++\par\vspace{0.2cm}
++\small The full specification also requests uncertainty calculations and an output asset. Those details require the chosen estimator and data.
++\par\vfill
++\sources{Actual author-requested excerpt, typeset for teaching. Surrounding draft, results, model notation, and private asset path omitted. The 20-student rule is this exhibit's specification, not a general statistical recommendation.}
++\end{frame}
++
++\begin{frame}{A Precise Figure and Table Request}
++\small
++\textbf{Synthetic teaching brief; outputs have not been computed.}
++\par\vspace{0.2cm}
++\begin{tabular}{>{\raggedright\arraybackslash}p{2cm}>{\raggedright\arraybackslash}p{10.6cm}}
++\toprule
++Population & Same synthetic student cohort under both fees. Include nonapplicants in the denominator. \\
++Figure & Two panels: enrollment and persistence probabilities for all students. Same five preparation groups on the horizontal axis; baseline and policy means in each. \\
++Table & For each outcome and group: count, both means, difference in percentage points, and interval. Use the figure's underlying output. \\
++Validation & Check denominators, units, groups, and missing values. Name the uncertainty method; separate Monte Carlo error when relevant. \\
++Delivery & Generator, data dictionary, PDF figure, LaTeX table, caption, and draft diff. Mark missing inputs; never invent values. \\
++\bottomrule
++\end{tabular}
++\par\vspace{0.2cm}
++\normalsize \textbf{Before execution:} agree on the fee change, persistence horizon, estimator, and uncertainty procedure.
++\end{frame}
++
++\begin{frame}{The Author Still Reviews the Writing}
++\begin{itemize}\setlength{\itemsep}{0.25cm}
++\item Read the passage as someone who has only the paper.
++\item Check every claim against the source, exhibit, and intended interpretation.
++\item Check whether the edit changes the argument or adds a new qualification.
++\item Recheck the author rules: a model can drift back to default phrasing.
++\end{itemize}
++\par\vspace{0.25cm}
++\begin{block}{Experience and evidence}
++Tomas's preference for OpenAI models for some writing tasks reflects his experience. Better coding performance does not establish better research writing.
++\end{block}
++\small \textbf{Discussion:} Which choices should the agent propose, and which must remain the author's? Check the actual venue's disclosure rules; the author remains responsible for the final text.
++\end{frame}
++
+--- /dev/null
++++ b/tex/slides/writing_reference.tex
+@@ -0,0 +1,100 @@
++\begin{frame}{Matt Pocock's Skills: Ask Better Questions}
++\begin{columns}[t]
++\begin{column}{0.48\textwidth}
++\textbf{\texttt{grill-me}}
++\begin{itemize}
++\item An interview for an idea or plan; useful beyond code.
++\item Uses \texttt{grilling} to ask dependent questions and recommend answers.
++\item Normally works without writing files.
++\end{itemize}
++\end{column}
++\begin{column}{0.48\textwidth}
++\textbf{\texttt{grill-with-docs}}
++\begin{itemize}
++\item Reads the codebase and records agreed domain knowledge.
++\item Uses \texttt{grilling} and \texttt{domain-modeling}.
++\item Maintains a glossary and qualifying architecture decision records.
++\end{itemize}
++\end{column}
++\end{columns}
++\par\vspace{0.3cm}
++\begin{block}{Our research adaptation}
++Interview me about the claim, reader, mechanism, evidence, and exhibit before drafting. Investigate facts available in the project; ask me to resolve scientific decisions.
++\end{block}
++\small This is an adaptation for research writing. \texttt{grill-with-docs} is not a generic paper-interrogation skill.
++\par\vfill
++\sources{Matt Pocock, \href{https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md}{grill-me}, \href{https://github.com/mattpocock/skills/blob/main/skills/engineering/grill-with-docs/SKILL.md}{grill-with-docs}; MIT, 2026. See source notes for dependencies.}
++\end{frame}
++
++\begin{frame}[fragile]{Install the Skill Collection Before the Session}
++\small
++\textbf{Claude Code plugin route}
++\begin{verbatim}
++claude plugin install mattpocock-skills@claude-plugins-official
++\end{verbatim}
++\textbf{Codex plugin route}
++\begin{verbatim}
++codex plugin marketplace add mattpocock/skills
++codex plugin add mattpocock-skills@mattpocock
++\end{verbatim}
++\textbf{Alternative: select editable skills interactively}
++\begin{verbatim}
++npx skills@latest add mattpocock/skills
++\end{verbatim}
++\begin{itemize}
++\item Choose a plugin or copied skills per agent; avoid duplicates.
++\item Preserve dependencies. Copying one \texttt{SKILL.md} is insufficient.
++\item \texttt{grill-me} needs no repository setup. The full engineering workflow has \texttt{/setup-matt-pocock-skills}.
++\end{itemize}
++\par\vfill
++\sources{Commands documented in \href{https://github.com/mattpocock/skills}{Matt Pocock's README}, checked Oct.\ 25, 2026. Availability depends on client/version. These are preparation instructions; no package was installed for this revision.}
++\end{frame}
++
++\begin{frame}[fragile]{Install and Invoke Your Own Research Skill}
++\small
++\textbf{Inspect the full skill folder first:} instructions, scripts, dependencies, and the files it may change.
++\par\vspace{0.25cm}
++\begin{tabular}{>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{6.9cm}>{\raggedright\arraybackslash}p{3.3cm}}
++\toprule
++& \textbf{Repository location} & \textbf{Invoke in the session} \\
++\midrule
++Claude Code & \texttt{.claude/skills/research-edit/SKILL.md} & \texttt{/research-edit} \\
++Codex & \texttt{.agents/skills/research-edit/SKILL.md} & \texttt{\$research-edit} or \texttt{/skills} \\
++\bottomrule
++\end{tabular}
++\par\vspace{0.25cm}
++\textbf{Minimal header; replace the body with the reviewed procedure}
++\begin{verbatim}
++---
++name: research-edit
++description: Edit a research paragraph using approved claims.
++---
++Read the source passage and author-approved evidence first.
++\end{verbatim}
++\small Keep required supporting files beside the skill. Start a fresh session and check discovery. User-level locations are \texttt{\textasciitilde/.claude/skills/} and \texttt{\textasciitilde/.agents/skills/}; cloud surfaces differ.
++\par\vfill
++\sources{\href{https://code.claude.com/docs/en/skills}{Claude skills}; \href{https://learn.chatgpt.com/docs/build-skills}{Codex skills}. Guidance for local sessions; inspect current provider documentation before classroom setup.}
++\end{frame}
++
++\begin{frame}[fragile]{Install One Agent, Then Verify It}
++\small
++\textbf{Official terminal installers for macOS / Linux}
++\begin{verbatim}
++# Claude Code
++curl -fsSL https://claude.ai/install.sh | bash
++claude --version
++
++# Codex
++curl -fsSL https://chatgpt.com/codex/install.sh | sh
++codex --version
++\end{verbatim}
++\begin{enumerate}
++\item Open the teaching project, start \texttt{claude} or \texttt{codex}, and sign in.
++\item Check the working folder, account access, permissions, and available skills.
++\item Ask for a read-only project explanation before permitting an edit.
++\end{enumerate}
++\small Use the official instructions for your OS. Windows users should follow the linked Windows route.
++\par\vfill
++\sources{\href{https://code.claude.com/docs/en/quickstart}{Claude Code Quickstart}; \href{https://learn.chatgpt.com/docs/cli}{Codex CLI}. Verified Oct.\ 25, 2026. Install and authenticate before the workshop; both subscriptions are not required.}
++\end{frame}
++

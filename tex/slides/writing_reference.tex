@@ -1,0 +1,100 @@
+\begin{frame}{Matt Pocock's Skills: Ask Better Questions}
+\begin{columns}[t]
+\begin{column}{0.48\textwidth}
+\textbf{\texttt{grill-me}}
+\begin{itemize}
+\item An interview for an idea or plan; useful beyond code.
+\item Uses \texttt{grilling} to ask dependent questions and recommend answers.
+\item Normally works without writing files.
+\end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{\texttt{grill-with-docs}}
+\begin{itemize}
+\item Reads the codebase and records agreed domain knowledge.
+\item Uses \texttt{grilling} and \texttt{domain-modeling}.
+\item Maintains a glossary and qualifying architecture decision records.
+\end{itemize}
+\end{column}
+\end{columns}
+\par\vspace{0.3cm}
+\begin{block}{Our research adaptation}
+Interview me about the claim, reader, mechanism, evidence, and exhibit before drafting. Investigate facts available in the project; ask me to resolve scientific decisions.
+\end{block}
+\small This is an adaptation for research writing. \texttt{grill-with-docs} is not a generic paper-interrogation skill.
+\par\vfill
+\sources{Matt Pocock, \href{https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md}{grill-me}, \href{https://github.com/mattpocock/skills/blob/main/skills/engineering/grill-with-docs/SKILL.md}{grill-with-docs}; MIT, 2026. See source notes for dependencies.}
+\end{frame}
+
+\begin{frame}[fragile]{Install the Skill Collection Before the Session}
+\small
+\textbf{Claude Code plugin route}
+\begin{verbatim}
+claude plugin install mattpocock-skills@claude-plugins-official
+\end{verbatim}
+\textbf{Codex plugin route}
+\begin{verbatim}
+codex plugin marketplace add mattpocock/skills
+codex plugin add mattpocock-skills@mattpocock
+\end{verbatim}
+\textbf{Alternative: select editable skills interactively}
+\begin{verbatim}
+npx skills@latest add mattpocock/skills
+\end{verbatim}
+\begin{itemize}
+\item Choose a plugin or copied skills per agent; avoid duplicates.
+\item Preserve dependencies. Copying one \texttt{SKILL.md} is insufficient.
+\item \texttt{grill-me} needs no repository setup. The full engineering workflow has \texttt{/setup-matt-pocock-skills}.
+\end{itemize}
+\par\vfill
+\sources{Commands documented in \href{https://github.com/mattpocock/skills}{Matt Pocock's README}, checked Oct.\ 25, 2026. Availability depends on client/version. These are preparation instructions; no package was installed for this revision.}
+\end{frame}
+
+\begin{frame}[fragile]{Install and Invoke Your Own Research Skill}
+\small
+\textbf{Inspect the full skill folder first:} instructions, scripts, dependencies, and the files it may change.
+\par\vspace{0.25cm}
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{6.9cm}>{\raggedright\arraybackslash}p{3.3cm}}
+\toprule
+& \textbf{Repository location} & \textbf{Invoke in the session} \\
+\midrule
+Claude Code & \texttt{.claude/skills/research-edit/SKILL.md} & \texttt{/research-edit} \\
+Codex & \texttt{.agents/skills/research-edit/SKILL.md} & \texttt{\$research-edit} or \texttt{/skills} \\
+\bottomrule
+\end{tabular}
+\par\vspace{0.25cm}
+\textbf{Minimal header; replace the body with the reviewed procedure}
+\begin{verbatim}
+---
+name: research-edit
+description: Edit a research paragraph using approved claims.
+---
+Read the source passage and author-approved evidence first.
+\end{verbatim}
+\small Keep required supporting files beside the skill. Start a fresh session and check discovery. User-level locations are \texttt{\textasciitilde/.claude/skills/} and \texttt{\textasciitilde/.agents/skills/}; cloud surfaces differ.
+\par\vfill
+\sources{\href{https://code.claude.com/docs/en/skills}{Claude skills}; \href{https://learn.chatgpt.com/docs/build-skills}{Codex skills}. Guidance for local sessions; inspect current provider documentation before classroom setup.}
+\end{frame}
+
+\begin{frame}[fragile]{Install One Agent, Then Verify It}
+\small
+\textbf{Official terminal installers for macOS / Linux}
+\begin{verbatim}
+# Claude Code
+curl -fsSL https://claude.ai/install.sh | bash
+claude --version
+
+# Codex
+curl -fsSL https://chatgpt.com/codex/install.sh | sh
+codex --version
+\end{verbatim}
+\begin{enumerate}
+\item Open the teaching project, start \texttt{claude} or \texttt{codex}, and sign in.
+\item Check the working folder, account access, permissions, and available skills.
+\item Ask for a read-only project explanation before permitting an edit.
+\end{enumerate}
+\small Use the official instructions for your OS. Windows users should follow the linked Windows route.
+\par\vfill
+\sources{\href{https://code.claude.com/docs/en/quickstart}{Claude Code Quickstart}; \href{https://learn.chatgpt.com/docs/cli}{Codex CLI}. Verified Oct.\ 25, 2026. Install and authenticate before the workshop; both subscriptions are not required.}
+\end{frame}
+

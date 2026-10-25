@@ -1,0 +1,5 @@
+Both vertical axes are in rank points of the main outcome, with horizontal zero lines.
+
+Use the same students, prediction convention, kernel, and bandwidth across panels, with student weights within each track.
+
+Draw each track over its adequately populated support; suppress windows with fewer than 20 students and report the track sample sizes and support.

@@ -1,55 +1,66 @@
-# Slide-by-slide change map
+# Current slide change map
 
-Original numbers refer to the 47 numbered Beamer frames, not the 50 PDF pages. Final slide numbers equal PDF page numbers.
+Numbers below are final PDF page numbers. The source diff compares editable workshop files with the original main-branch baseline. The first review commit remains available for comparison.
 
-| Final slide | Original frame | Change |
+| Slide | First revision page | Change |
 |---|---|---|
-| 1. Git, GitHub, and VS Code | 1 | Fixed workshop date and updated subtitle. |
-| 2. Why This Workshop? | 3 | Keep two-column motivation; replace absolute safety claims with a concrete learning objective. |
-| 3. Our 90 Minutes | 2 | Replace table of contents with explicit time budget. |
-| 4. The Symbiosis: Agents as Builders | 5 | Retain original illustration and metaphor without portraying models as inherently stupid or chaotic; absorb frame 4. |
-| 5. VS Code: An Integrated Research Environment | 10 | Reframe editor around research; remove unsupported editor ranking. |
-| 6. Reproducible Research Template | 7 | Correct actual raw/processed layout; combine materials frame 6. |
-| 7. Workshop Prerequisites | 8 | Match README; remove mandatory Copilot/MCP and stale education promises. |
-| 8. Git Core Concepts | 22 | Retain five Git concepts and small command example; clarify recorded snapshots. |
-| 9. The Git Workflow | 23 | Retain original workflow diagram; improve scope of history. |
-| 10. GitHub Issues: Shared Research Context | 33 | Use an actual repository documentation problem; durable context is explicitly retrieved, not automatic memory. |
-| 11. GitHub Workflow: Pull Requests | 35 | Retain PR and branching diagram; replace race-to-merge demo cue. |
-| 12. What Is Agentic AI? | 15 | Replace generic autonomy claims with operational loop. |
-| 13. Model, Agent, and Interface | New | Separate model choice from product capabilities; official VS Code source. |
-| 14. Claude Code and Codex: Context and Planning | New | Ten features grouped by use, with surface-specific qualifications and official sources. |
-| 15. Claude Code and Codex: Output, Tools, Control | New | Ten features grouped by use, with surface-specific qualifications and official sources. |
-| 16. Claude Code and Codex: Sessions and Remote Work | New | Ten features grouped by use, with surface-specific qualifications and official sources. |
-| 17. Claude Code and Codex: Delegation and Review | New | Ten features grouped by use, with surface-specific qualifications and official sources. |
-| 18. Live Demo: One Task, Visible Evidence | 39 | Replace already-implemented clustered-SE scenario; budget 15 minutes and a prepared fallback. |
-| 19. A Prompt You Can Inspect | New | Concrete advisory-to-edit transition for either provider. |
-| 20. Ten-Minute Exercise: Review a Change | New | Exercise has a no-installation paired fallback and explicit timing. |
-| 21. You Choose the Level of Engagement | New | Human engagement ranges from question and design through exact implementation. |
-| 22. Parallel Work Needs Distinct Ownership | New | Shared task board, visible sessions, dependency and ownership rules. |
-| 23. One Machine: Clearly Labeled Sessions | New | Correct prior blanket CLI-discovery claim; no mandatory cross-provider application. |
-| 24. Separate Worktrees for Separate Writers | New | Explain isolation and limits without overselling worktrees as a sandbox. |
-| 25. The Orchestrator Keeps the Big Picture | New | Big-picture assistant separated from implementation context. |
-| 26. Several Projects and Machines | New | Safe generic Command Center placeholder; no screenshots, addresses, private code, or connection details. |
-| 27. Allocate Models and Attention by Task | New | Task fit, scarce subscription allowance, independent review; no ranking. |
-| 28. Finish the Task, Then Verify Closeout | New | Verified closeout with explicit authorization boundary; issue closure alone is not proof. |
-| 29. Next Steps and Questions | 43 | Combine next steps and questions; remove unverified one-prompt provenance slogan. |
-| 30. Visualizing Branches | 26 | Retain original branch diagram. |
-| 31. Essential Git Commands | 24 | Remove git add . and direct push-to-main as default teaching path. |
-| 32. Worktree Commands: One Writer per Folder | New | Concrete safe worktree example. |
-| 33. Git Best Practices | 27 | Avoid absolute never-commit-output rule; qualify sample data permissions. |
-| 34. The .gitignore File | 28 | Correct ignore behavior and avoid ignoring all figures needed to compile. |
-| 35. Resolving Merge Conflicts in VS Code | 30 | Keep merge-conflict screenshot and explanation; fit within slide. |
-| 36. Useful VS Code Features | 12 | Consolidate long extension/shortcut lists; remove incorrect duplicate-line shortcut. |
-| 37. MCP: Model Context Protocol | 37 | Correct optional protocol framing; remove token-pasting installation recipe. |
-| 38. Data Privacy and Permissions | 19 | Remove complete-privacy and weaker-local-model blanket claims. |
-| 39. Overleaf, Statistical Software, and VS Code | 40 | Consolidate oversized Overleaf diagram and broad unsupported integration claims. |
-| 40. The Makefile Approach | 47 | Use actual targets, remove nonexistent command options and misleading reproducibility guarantee. |
-| 41. Research Exercise: Audit the Robustness Check | 39 | Retain substantive clustered-SE work as an audit of the existing implementation, with optional hands-on variant. |
-| 42. VS Code Session Discovery: Scope Matters | New | Official parent fact-check, including single-writer caveat. |
-| 43. Resources | 44 | Add primary-source comparison documentation. |
+| 1. Git, GitHub, and VS Code | 1 | Retained; numbering updated. |
+| 2. Why This Workshop? | 2 | Retained; numbering updated. |
+| 3. Our 90 Minutes | 3 | Align timing, prerequisites, issue/task examples, or reference wording with the revised research workflow. |
+| 4. The Symbiosis: Agents as Builders | 4 | Retained; numbering updated. |
+| 5. VS Code: An Integrated Research Environment | 5 | Retained; numbering updated. |
+| 6. Reproducible Research Template | 6 | Retained; numbering updated. |
+| 7. Workshop Prerequisites | 7 | Align timing, prerequisites, issue/task examples, or reference wording with the revised research workflow. |
+| 8. Git Core Concepts | 8 | Retained; numbering updated. |
+| 9. The Git Workflow | 9 | Retained; numbering updated. |
+| 10. GitHub Issues: Shared Research Context | 10 | Align timing, prerequisites, issue/task examples, or reference wording with the revised research workflow. |
+| 11. GitHub Workflow: Pull Requests | 11 | Retained; numbering updated. |
+| 12. What Is Agentic AI? | 12 | Retained; numbering updated. |
+| 13. Model, Agent, and Interface | 13 | Retained; numbering updated. |
+| 14. Claude Code and Codex: Context and Planning | 14 | Retained; numbering updated. |
+| 15. Claude Code and Codex: Output, Tools, Control | 15 | Retained; numbering updated. |
+| 16. Claude Code and Codex: Sessions and Remote Work | 16 | Retained; numbering updated. |
+| 17. Claude Code and Codex: Delegation and Review | 17 | Retained; numbering updated. |
+| 18. AI-Assisted Writing Starts with the Argument | New | New author-directed writing module: concrete examples, instruction layers, skills, claims, exhibits, and author review. |
+| 19. Four Layers of Writing Direction | New | New author-directed writing module: concrete examples, instruction layers, skills, claims, exhibits, and author review. |
+| 20. Author Instructions: Write for the Paper’s Reader | New | New author-directed writing module: concrete examples, instruction layers, skills, claims, exhibits, and author review. |
+| 21. A Synthetic Paragraph: Give the Agent the Claims | New | New author-directed writing module: concrete examples, instruction layers, skills, claims, exhibits, and author review. |
+| 22. A Real Draft Placeholder Specifies the Exhibit | New | New author-directed writing module: concrete examples, instruction layers, skills, claims, exhibits, and author review. |
+| 23. A Precise Figure and Table Request | New | New author-directed writing module: concrete examples, instruction layers, skills, claims, exhibits, and author review. |
+| 24. The Author Still Reviews the Writing | New | New author-directed writing module: concrete examples, instruction layers, skills, claims, exhibits, and author review. |
+| 25. Revision Demo: From Comments to a Verified Draft | 18 | Replace the modest README demo with the candidate Refine-to-revision workflow; case selection remains explicit. |
+| 26. A Research Prompt with Clear Ownership | 19 | Replace the modest README demo with the candidate Refine-to-revision workflow; case selection remains explicit. |
+| 27. A 25-Minute Demo with Visible Checkpoints | 20 | Replace the modest README demo with the candidate Refine-to-revision workflow; case selection remains explicit. |
+| 28. You Choose the Level of Engagement | 21 | Retained; numbering updated. |
+| 29. Parallel Work Needs Distinct Ownership | 22 | Align timing, prerequisites, issue/task examples, or reference wording with the revised research workflow. |
+| 30. One Machine: Clearly Labeled Sessions | 23 | Retained; numbering updated. |
+| 31. The Orchestrator Keeps the Big Picture | 25 | Retained; numbering updated. |
+| 32. Several Projects and Machines | 26 | Retained; numbering updated. |
+| 33. Next Steps and Questions | 29 | Retained; numbering updated. |
+| 34. Matt Pocock’s Skills: Ask Better Questions | New | New reference: verified skill semantics, dependencies, installation, local discovery, and agent setup. |
+| 35. Install the Skill Collection Before the Session | New | New reference: verified skill semantics, dependencies, installation, local discovery, and agent setup. |
+| 36. Install and Invoke Your Own Research Skill | New | New reference: verified skill semantics, dependencies, installation, local discovery, and agent setup. |
+| 37. Install One Agent, Then Verify It | New | New reference: verified skill semantics, dependencies, installation, local discovery, and agent setup. |
+| 38. Separate Worktrees for Separate Writers | 24 | Move detailed orchestration explanation from the timed teaching path to reference. |
+| 39. Allocate Models and Attention by Task | 27 | Move detailed orchestration explanation from the timed teaching path to reference. |
+| 40. Finish the Task, Then Verify Closeout | 28 | Move detailed orchestration explanation from the timed teaching path to reference. |
+| 41. Visualizing Branches | 30 | Retained; numbering updated. |
+| 42. Essential Git Commands | 31 | Retained; numbering updated. |
+| 43. Worktree Commands: One Writer per Folder | 32 | Retained; numbering updated. |
+| 44. Git Best Practices | 33 | Retained; numbering updated. |
+| 45. The .gitignore File | 34 | Retained; numbering updated. |
+| 46. Resolving Merge Conflicts in VS Code | 35 | Retained; numbering updated. |
+| 47. Useful VS Code Features | 36 | Retained; numbering updated. |
+| 48. MCP: Model Context Protocol | 37 | Align timing, prerequisites, issue/task examples, or reference wording with the revised research workflow. |
+| 49. Data Privacy and Permissions | 38 | Retained; numbering updated. |
+| 50. Overleaf, Statistical Software, and VS Code | 39 | Retained; numbering updated. |
+| 51. The Makefile Approach | 40 | Retained; numbering updated. |
+| 52. Research Exercise: Audit the Robustness Check | 41 | Align timing, prerequisites, issue/task examples, or reference wording with the revised research workflow. |
+| 53. VS Code Session Discovery: Scope Matters | 42 | Retained; numbering updated. |
+| 54. Resources | 43 | Retained; numbering updated. |
 
-## Material consolidated or removed from the teaching path
+The current core ends at page 33; pages 34–54 are reference. The seven writing slides occupy pages 18–24. The private-draft teaching excerpt is page 22 and is also saved separately as a PNG.
 
-Original frame 4 is consolidated into the dinosaur-builder slide. Materials (6) join the project structure. Extension lists/workspace setup (11–13) become the research environment and reference features. Decorative dividers (9, 14, 20, 31, 36) are removed. Copilot-specific modes/context/custom-agent instructions (16–18) are replaced with the current cross-provider comparison. Git overview/branch strategy (21, 25) are covered by the retained concepts/diagrams. Common challenges (29) are distributed across worktrees, conflict review, and synchronization guidance. GitHub overview/boards (32, 34) join issues, PRs, and orchestration. MCP flow (38) is condensed. Overleaf diagram (41) joins reference integration guidance. The complementary-tools catalog (42) and unverified one-prompt claim (45) are omitted to protect the 90-minute scope. The original source remains in `original/` for review and recovery. Questions (46) join next steps.
+The main unresolved implementation is the selected research case and its prepared checkpoints. The synthetic local issue draft is in writing/synthetic_revision_issue.md. No private Refine comments/results, unpublished report, or Command Center code are copied.
 
-`README.md` now matches the proposed prerequisites and distinguishes local exercises, slide-only builds, and full analysis builds. `Makefile` adds `slides-only` without changing analysis recipes. `comparison.tex` contains the four new editable comparison slides.
+Original Beamer source and first-version small-demo files remain in original/ and demo/ for comparison. The latter are historical, not the current exercise.

@@ -73,19 +73,19 @@ You can give an agent a bounded task, inspect its changes, and decide whether th
 \toprule
 \textbf{Minutes} & \textbf{What we do} \\
 \midrule
-0--7 & The research workflow and today's goal \\
-7--18 & VS Code and the project template \\
-18--31 & Git, issues, and a reviewable change \\
-31--43 & Claude Code and Codex: ten useful comparisons \\
-43--58 & Live demo: plan, edit, inspect, verify \\
-58--68 & Short exercise or paired review \\
-68--82 & Orchestration: tasks, sessions, worktrees, resources \\
-82--90 & Questions and one next step \\
+0--5 & The research workflow and today's goal \\
+5--12 & VS Code and the research project \\
+12--22 & Git, issues, and reviewable changes \\
+22--32 & Claude Code and Codex: practical comparisons \\
+32--50 & AI-assisted writing: claims, exhibits, author direction \\
+50--75 & Revision demo: comments, issues, agents, draft \\
+75--84 & Orchestration: ownership, sessions, resources \\
+84--90 & Questions and one next step \\
 \bottomrule
 \end{tabular}
-\par\vspace{0.3cm}
-\begin{block}{Keep moving}
-If setup fails, follow the demonstration or work with a partner. The appendix is for later.
+\par\vspace{0.25cm}
+\begin{block}{Preparation decision still open}
+The revision case is being selected. Use clearly labeled prepared checkpoints and keep scientific decisions with the author.
 \end{block}
 \end{frame}
 
@@ -194,7 +194,7 @@ The dinosaur can help build the fence. We still inspect the fence.
 \end{columns}
 \par\vspace{0.35cm}
 \begin{block}{Today's exercise}
-A README edit works without Python, LaTeX, or an MCP server. Claude Code and Codex are demonstrated; you do not need both subscriptions.
+The writing review needs only the supplied passages. The scientific demo uses prepared inputs and outputs. Install Python and LaTeX only if you plan to run its full pipeline.
 \end{block}
 \end{frame}
 
@@ -267,8 +267,8 @@ git push                 # Upload to remote
 \end{itemize}
 \end{column}
 \begin{column}{0.48\textwidth}
-\begin{block}{Example: clarify the Quick Start}
-Separate a README-only exercise from a full analysis build. Verify every listed command against the Makefile. Keep analysis and data unchanged.
+\begin{block}{Example: specify a research exhibit}
+Define the population, comparison, units, uncertainty, and output asset. Link the approved model and input version. Assign a writer and an independent checker.
 \end{block}
 \end{column}
 \end{columns}
@@ -392,47 +392,55 @@ Choosing a Claude model inside Copilot still uses Copilot's agent harness. It do
 
 % Revision item 15; original frame: 39
 
-\begin{frame}{Live Demo: One Task, Visible Evidence}
-\textbf{Task:} Make the README's Quick Start match how the repository actually builds.
-\par\vspace{0.25cm}
-\begin{enumerate}\setlength{\itemsep}{0.14cm}
-\item Trace one existing paper table to its source; read the task brief and Makefile.
-\item Ask for a plan. State scope and the acceptance criteria.
-\item Make the edit in an isolated branch or output copy.
-\item Read the diff and check the commands against the project.
-\item Ask an independent session to find errors or omissions.
-\item Show a prepared issue/PR example and explain verified closeout.
+\input{writing.tex}
+
+\begin{frame}{Revision Demo: From Comments to a Verified Draft}
+\textbf{Revision case pending:} CuposBEA or the dropout-matching JMP; use a permitted Refine report or a clearly labeled synthetic comment set.
+\par\vspace{0.2cm}
+\begin{enumerate}\setlength{\itemsep}{0.15cm}
+\item Triage comments into scientific decisions, evidence requests, and writing edits.
+\item Draft issues by argument, files, and dependencies; assign visible task owners.
+\item Parallelize independent work; sequence coupled math, code, and draft edits.
+\item Review checks and exhibits, then inspect proposed PRs and integration.
+\item Verify the revised argument and compiled draft against the original comments.
 \end{enumerate}
-\par\vspace{0.25cm}
-\small Fallback: use the prepared before/after diff if authentication or the live agent stalls. We can inspect a complete change without waiting for a long run.
+\par\vspace{0.2cm}
+\begin{block}{Rehearse the handoffs}
+Prepare the baseline, small checks, and fallback checkpoints. Say which outputs were prepared and which were produced live.
+\end{block}
 \end{frame}
 
 % Revision item 16; original frame: new
 
-\begin{frame}{A Prompt You Can Inspect}
-\begin{block}{Plan first}
-Read README.md, AGENTS.md, and Makefile. Explain how someone can do a documentation exercise and how they can run a full build. List inconsistencies and propose the smallest README edit. Do not change files yet.
+\begin{frame}{A Research Prompt with Clear Ownership}
+\begin{block}{Researcher: choose the question and design}
+Read the model, code, draft, and approved task brief. Identify the assumptions the extension changes and the claims we could support. List decisions I must make before implementation.
 \end{block}
-\begin{block}{Then implement the agreed scope}
-Edit README.md only. Keep research code and data unchanged. Verify each command against the repository. Return the diff, checks you actually performed, and unresolved questions. Stop before any push or hosted action.
+\begin{block}{Agents: work against the same agreed specification}
+Theory agent: derive and explain. Implementation agent: edit the assigned code in an isolated worktree. Independent checker: construct the small-case reference calculation and challenge assumptions. Draft integrator: use only verified exhibits and approved interpretation.
 \end{block}
 \par\vspace{0.2cm}
-\small A prompt expresses intent. Permission settings and a bounded workspace provide additional control.
+\small Specify inputs, output files, checks, budget, and stop conditions for each role. Ask for mathematical disagreement before accepting a polished draft.
 \end{frame}
 
 % Revision item 17; original frame: new
 
-\begin{frame}{Ten-Minute Exercise: Review a Change}
-\begin{enumerate}\setlength{\itemsep}{0.25cm}
-\item \textbf{2 minutes}: Read the task and define what a correct result must include.
-\item \textbf{4 minutes}: Ask one agent for a README edit, or inspect the prepared diff with a partner.
-\item \textbf{3 minutes}: Find one claim to verify. Compare it with the Makefile or source file.
-\item \textbf{1 minute}: Report: ready, needs changes, or blocked. Give one reason.
-\end{enumerate}
+\begin{frame}{A 25-Minute Demo with Visible Checkpoints}
+\begin{tabular}{rl}
+\toprule
+\textbf{Minutes} & \textbf{What participants inspect} \\
+\midrule
+0--4 & Comments, author decisions, and revision scope \\
+4--12 & Issue drafts, dependency map, and distinct task owners \\
+12--18 & Parallel work, scientific disagreement, and checks \\
+18--23 & Exhibits, candidate PRs, and integration review \\
+23--25 & LaTeX diff and compiled manuscript \\
+\bottomrule
+\end{tabular}
 \par\vspace{0.3cm}
-\begin{block}{Success}
-You can explain what changed, what was checked, and what still needs a human decision.
-\end{block}
+\textbf{Participant role:} identify one claim and the evidence needed to accept it.
+\par\vspace{0.2cm}
+\small This is the prepared demonstration plan. The case and its checkpoints are not yet selected. If execution stalls, inspect a labeled prepared checkpoint.
 \end{frame}
 
 % Revision item 18; original frame: new
@@ -462,9 +470,9 @@ Move between levels as needed. Keep ownership of research choices and the decisi
 \textbf{Session} & \textbf{Task and output} & \textbf{Scope} & \textbf{Status} \\
 \midrule
 Planner & Agree scope and task brief & Read-only & Ready \\[0.18cm]
-Claude Code A & Draft Quick Start edit & README; worktree A & Working \\[0.18cm]
-Codex B & Check build instructions & Read-only; findings & Working \\[0.18cm]
-Reviewer C & Review candidate diff & Read-only; findings & Waiting for A \\
+Claude Code A & Derivation and assumptions & Theory; worktree A & Working \\[0.18cm]
+Codex B & Implement agreed model & Code; worktree B & Working \\[0.18cm]
+Reviewer C & Independent reference check & Separate check; findings & Working \\
 \bottomrule
 \end{tabular}
 \par\vspace{0.35cm}
@@ -504,29 +512,7 @@ Each task has one owner, a defined input, an expected output, and a stop conditi
 
 % Revision item 21; original frame: new
 
-\begin{frame}{Separate Worktrees for Separate Writers}
-\begin{columns}[t]
-\begin{column}{0.48\textwidth}
-\textbf{Branch}
-\begin{itemize}
-\item A line of Git history
-\item Switching branches changes the current checkout
-\end{itemize}
-\end{column}
-\begin{column}{0.48\textwidth}
-\textbf{Worktree}
-\begin{itemize}
-\item A separate working directory
-\item Lets writers use different branches at once
-\end{itemize}
-\end{column}
-\end{columns}
-\par\vspace{0.3cm}
-\begin{block}{Coordination still matters}
-Agree which files each agent owns. Keep outputs separate, review overlapping edits, and integrate one change at a time. Worktrees isolate files; they do not isolate shared databases or external services.
-\end{block}
-\small Commands are in the appendix. Start from an agreed commit and preserve existing work before branching.
-\end{frame}
+
 
 % Revision item 22; original frame: new
 
@@ -580,40 +566,17 @@ Record the shared decisions outside an implementation-heavy terminal chat. Give 
 
 % Revision item 24; original frame: new
 
-\begin{frame}{Allocate Models and Attention by Task}
-\begin{itemize}\setlength{\itemsep}{0.3cm}
-\item Use a lower-cost available option for a bounded, easy-to-check task.
-\item Reserve scarce allowance and deeper reasoning for hard design choices, ambiguous failures, and consequential review.
-\item Stop duplicate work. Reuse a concise task brief and record useful results.
-\item Give reviewers the task, diff, and evidence. Ask them to find mistakes independently.
-\end{itemize}
-\par\vspace{0.3cm}
-\begin{block}{Keep the evidence local to the claim}
-``It worked on this task'' is an observation. ``This model is always best'' requires evidence we do not have here.
-\end{block}
-\end{frame}
+
 
 % Revision item 25; original frame: new
 
-\begin{frame}{Finish the Task, Then Verify Closeout}
-\begin{enumerate}\setlength{\itemsep}{0.24cm}
-\item Compare the result with the issue's acceptance criteria.
-\item Inspect the diff, checks, and rendered outputs where relevant.
-\item Resolve reviewer findings or record what remains open.
-\item When sharing is authorized, link the PR to the issue and obtain review.
-\item After integration, verify the intended result and the issue's status.
-\end{enumerate}
-\par\vspace{0.25cm}
-\begin{block}{A useful handoff}
-What changed; where the output is; what was checked; what is blocked; which decision is needed next.
-\end{block}
-\end{frame}
+
 
 % Revision item 26; original frame: 43
 
 \begin{frame}{Next Steps and Questions}
 \begin{enumerate}\setlength{\itemsep}{0.35cm}
-\item Choose one small task in your research project.
+\item Choose one bounded scientific or writing task in your project.
 \item Write its scope and acceptance criteria.
 \item Use one agent, inspect the diff, and verify the result.
 \item Add parallel sessions when the tasks can be separated clearly.
@@ -629,6 +592,59 @@ Build commands, worktree examples, and official documentation follow.
 \appendix
 
 \section{Reference}
+
+\input{writing_reference.tex}
+
+\begin{frame}{Separate Worktrees for Separate Writers}
+\begin{columns}[t]
+\begin{column}{0.48\textwidth}
+\textbf{Branch}
+\begin{itemize}
+\item A line of Git history
+\item Switching branches changes the current checkout
+\end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{Worktree}
+\begin{itemize}
+\item A separate working directory
+\item Lets writers use different branches at once
+\end{itemize}
+\end{column}
+\end{columns}
+\par\vspace{0.3cm}
+\begin{block}{Coordination still matters}
+Agree which files each agent owns. Keep outputs separate, review overlapping edits, and integrate one change at a time. Worktrees isolate files; they do not isolate shared databases or external services.
+\end{block}
+\small Commands are in the appendix. Start from an agreed commit and preserve existing work before branching.
+\end{frame}
+
+\begin{frame}{Allocate Models and Attention by Task}
+\begin{itemize}\setlength{\itemsep}{0.3cm}
+\item Use a lower-cost available option for a bounded, easy-to-check task.
+\item Reserve scarce allowance and deeper reasoning for hard design choices, ambiguous failures, and consequential review.
+\item Stop duplicate work. Reuse a concise task brief and record useful results.
+\item Give reviewers the task, diff, and evidence. Ask them to find mistakes independently.
+\end{itemize}
+\par\vspace{0.3cm}
+\begin{block}{Keep the evidence local to the claim}
+``It worked on this task'' is an observation. ``This model is always best'' requires evidence we do not have here.
+\end{block}
+\end{frame}
+
+\begin{frame}{Finish the Task, Then Verify Closeout}
+\begin{enumerate}\setlength{\itemsep}{0.24cm}
+\item Compare the result with the issue's acceptance criteria.
+\item Inspect the diff, checks, and rendered outputs where relevant.
+\item Resolve reviewer findings or record what remains open.
+\item When sharing is authorized, link the PR to the issue and obtain review.
+\item After integration, verify the intended result and the issue's status.
+\end{enumerate}
+\par\vspace{0.25cm}
+\begin{block}{A useful handoff}
+What changed; where the output is; what was checked; what is blocked; which decision is needed next.
+\end{block}
+\end{frame}
 
 % Revision item 27; original frame: 26
 
@@ -811,7 +827,7 @@ Open the project folder, select the correct environment, and use workspace setti
 \item Inspect the requested permissions and configure only the access the task needs.
 \end{itemize}
 \par\vspace{0.3cm}
-\textbf{For this workshop:} the instructor can use a prepared connection. Participants do not need to configure MCP for the README exercise.
+\textbf{For this workshop:} the instructor can use a prepared connection. Participants do not need to configure MCP for the writing review.
 \par\vfill
 \sources{\href{https://modelcontextprotocol.io/docs/learn/architecture}{MCP architecture}; provider setup links in the source notes.}
 \end{frame}
@@ -886,7 +902,7 @@ make all
 \item Draft a bounded issue and review plan before changing the analysis.
 \end{enumerate}
 \par\vspace{0.25cm}
-\small The original clustered-SE task is already implemented. Audit the existing work, or choose an instructor-approved extension. This optional exercise can replace the README exercise after rehearsal.
+\small The original clustered-SE task is already implemented. Audit the existing work, or choose an instructor-approved extension. This is a reference exercise; the stronger main demonstration is being selected.
 \end{frame}
 
 \begin{frame}{VS Code Session Discovery: Scope Matters}

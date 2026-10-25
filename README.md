@@ -1,6 +1,6 @@
 # Research Project Template: Git, GitHub, and Agentic AI Workshop
 
-> **Local review status:** This is the first revised deck. The stronger scientific example is still being selected; the README exercise is superseded as the proposed centerpiece. See [implementation status](workshop_review/IMPLEMENTATION_STATUS.md).
+> **Local review status:** The writing module and current tool guidance are implemented. The revision case is still being selected; no new simulation has been run. See [implementation status](workshop_review/IMPLEMENTATION_STATUS.md).
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -63,11 +63,11 @@ AI_workshop/
 
 ### Monday, October 26, 2026: 90-minute workshop
 
-The session demonstrates one reviewable research task, compares Claude Code and Codex, and shows how to coordinate parallel work. The main deck ends at slide 29; the remaining slides are reference material.
+The session compares Claude Code and Codex, develops a concrete AI-assisted writing workflow, and shows how to coordinate a substantive research task. The proposed Refine-to-revision demonstration still requires a case choice and prepared checkpoints. Slides after the questions slide are reference material.
 
 ### Workshop Prerequisites
 
-To follow the demonstration, bring a browser and the workshop materials. For the local exercise, install **VS Code** and **Git**, and open a copy of this repository. The exercise edits the README; it does not require Python, LaTeX, or an MCP server. If setup is incomplete, work with a partner or review the prepared diff.
+To follow the demonstration, bring a browser and the workshop materials. For the local exercise, install **VS Code** and **Git**, and open a copy of this repository. The writing exercise reviews supplied passages and exhibit specifications. Running the full scientific demonstration will require its prepared environment; those requirements will be fixed after the example is selected. If setup is incomplete, follow the instructor or review supplied evidence with a partner.
 
 To run an agent yourself, install and sign in to **one** supported agent. Claude Code and Codex are demonstrated; both subscriptions are not required. Check your account's current access and allowance before the workshop. Native provider subscriptions, Copilot access, and API billing are separate routes. A GitHub account is needed for hosted issues and pull requests, but the local exercise stops before sharing.
 
@@ -85,7 +85,7 @@ Open the folder in VS Code and read `README.md`, `AGENTS.md`, and `Makefile`. Th
 
 ### Build only the workshop slides
 
-In this revised source bundle, a LaTeX distribution with Beamer and TikZ is sufficient to build the deck. With Make installed:
+A LaTeX distribution with Beamer and TikZ is sufficient to build the deck. With Make installed:
 
 ```bash
 make slides-only
@@ -99,7 +99,7 @@ pdflatex -halt-on-error -interaction=nonstopmode workshop_slides.tex
 pdflatex -halt-on-error -interaction=nonstopmode workshop_slides.tex
 ```
 
-The result is `tex/slides/workshop_slides.pdf`. `comparison.tex` and the included `figures/` assets must remain beside the main source.
+The result is `tex/slides/workshop_slides.pdf`. `comparison.tex, writing.tex, writing_reference.tex` and the included `figures/` assets must remain beside the main source.
 
 ### Run the full research workflow (optional)
 
@@ -163,14 +163,14 @@ These files help AI assistants understand:
 
 ## 🎓 Workshop Structure
 
-- **0–7 minutes:** Research workflow and the goal for the session
-- **7–18:** VS Code as a research environment; inspect the project template
-- **18–31:** Git, shared issues, pull requests, and review
-- **31–43:** Ten practical Claude Code/Codex comparisons
-- **43–58:** Demonstrate a bounded task, inspect its diff, and verify its claims
-- **58–68:** Short exercise or paired review
-- **68–82:** Orchestration, worktrees, resources, and verified closeout
-- **82–90:** Questions and a concrete next step
+- **0–5 minutes:** Research workflow and the goal
+- **5–12:** VS Code and the research project
+- **12–22:** Git, issues, and reviewable changes
+- **22–32:** Practical Claude Code/Codex comparisons
+- **32–50:** AI-assisted writing: claims, exhibits, author direction
+- **50–75:** Revision workflow demonstration (case selection and preparation pending)
+- **75–84:** Orchestration, ownership, sessions, and resources
+- **84–90:** Questions and a next step
 
 The comparison distinguishes the model, agent harness, and interface. Durable project instructions and reusable skills support reading, writing, analysis, and review. Parallel agents need clear ownership, isolated writing directories, and a shared record of decisions. The Command Center example is a generic private-demo illustration; the bundle contains no dashboard code or screenshots.
 

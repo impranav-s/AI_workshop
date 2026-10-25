@@ -1,42 +1,25 @@
-# Source inventory and editorial audit
+# Structural and factual audit
 
-## Baseline and preservation
+The writing module directly addresses the author's requested research workflow. It teaches claims and exhibits before prose, separates the four instruction layers, uses the author's own skills, and includes concrete synthetic prose and exhibit examples. The CuposBEA placeholder excerpt is real and minimal; it reveals no result or private connection detail.
 
-The actual `tlarroucau/AI_workshop` repository was inspected on connected Fox and compared read-only through the existing Kyubi route. Both held commit `303c8213509c3a19ac8b27a9db618dfd893f2d8a`, with identical workshop source and PDF hashes. The source checkout had one tracked modification, `tex/slides/workshop_slides.pdf`, and one untracked file, `CLAUDE.md`. Neither was changed. Work took place in a separate output copy.
+## What improved
 
-The original `workshop_slides.tex` has 2,000 lines, 47 active frames, and a 50-page local PDF because one slide uses four overlays. It uses 11pt, 16:9 Beamer, Madrid, the default blue palette, graphicx/booktabs/hyperref/TikZ, and the twemojis package. The final deck keeps the typography/theme and selected diagrams; twemojis is no longer needed.
+The modest README exercise has been removed from the teaching path. The live segment now reserves time for the proposed Refine-to-revision workflow: comment triage, issue drafts, dependencies, independent agents, mathematical/code checks, exhibits, and draft integration. The old small-demo files remain historical material only.
 
-The asset inventory included `Symbiosis.png`, `merge_conflict.png`, a repository screenshot, and existing analysis plots in PNG/PDF. The final deck uses the dinosaur-builder and merge-conflict images. The supplied source bundle includes those two required raster assets and the pre-existing paper tables/figures for the optional research exercise. No Command Center file or screenshot was opened or copied.
+The ten-feature comparison uses official sources and separates model, harness, and interface. VS Code is an integrated research environment. Instructions, skills, output style, planning, permissions, and review have distinct purposes. Model preference is described as experience rather than benchmark evidence.
 
-Build instructions were read in `Makefile`, `README.md`, `AGENTS.md`, and `.github/copilot-instructions.md`. The global and shared `academic-draft-editing`, `econ-write` (including presentation guidance), `humanizer`, and PDF guidance were read. The repository's named vendored PDF skill path is absent; the available shared PDF skill and the session PDF skill supplied the applicable guidance. Beamer was retained throughout.
+The original dinosaur-builder image and recognizable Beamer style remain. Claims that models are inherently too limited or that Git provides universal undo were removed in the first revision. Installation is preparation, not an in-room activity.
 
-`make slides` depends on `update-outputs`, which runs analysis. The new `make slides-only` target avoids that dependency and compiles the source twice with `-halt-on-error`. No analysis or simulation was run. The full analysis pipeline remains outside this revision's validation scope.
+## What remains weak or unresolved
 
-## Claims and structural problems addressed
+The scientific case is not yet chosen. The new workflow is implemented in the slides, but its research checkpoints are not. The dropout-matching Refine files are available; CuposBEA has the requested exhibit placeholder, while its intended Refine source still needs identification. No private report has been copied into teaching artifacts.
 
-| Original material | Assessment and revision |
-|---|---|
-| “Undo any mistake” / Git as a universal safety fence | Too broad. The revised joke and teaching point distinguish recorded file recovery from external actions and unsaved work. |
-| Agents “powerful, fast, but chaotic”; repeated dinosaur sizes | An unhelpful capability claim. Keep one builder image and teach scope, tools, permissions, and evidence. The actual source did not contain the literal “stupid model” phrase. |
-| Agent tools mostly introduced as a coding catalog | Reframe VS Code around papers, notes, LaTeX, Git, reading, writing, and project management. |
-| Decorative section-divider slides and long extension lists | Costly in a 90-minute workshop. Replace with a timed narrative and move practical commands to reference slides. |
-| `AGENTS.md` “only read on demand” | Not a portable description across current tools. Replace with provider-specific instructions and source qualifications. |
-| “Copilot is now free” and education upgrades as universal prerequisites | Access, quota, and billing differ. Require only one authenticated supported agent for the optional local agent exercise. |
-| MCP presented as mandatory setup and a token recipe | Remove from the critical path. The exercise works without MCP; permissions and connected services are deliberate choices. |
-| “Enables collaboration without conflicts” | Misstates Git. Retain branch/conflict teaching and explain ownership plus review. |
-| `.gitignore` means “never commit,” one per root, and blanket `*.png`/`*.pdf` ignores | Correct already-tracked-file behavior and subdirectory scope. Included assets remain needed for builds. |
-| Local model workflow guarantees “complete privacy” and necessarily lower performance | Both are unsupported blanket statements. Explain local execution versus inference and inspect the full configuration. |
-| Clustered-SE live task | Already represented by repository history and implementation. Use a traceable table/build documentation task for mechanics and retain the richer robustness audit as an optional reference exercise. |
-| “From idea to merged code in minutes” | Implies success independent of verification. Budget the steps and provide a prepared diff fallback. |
-| Overleaf “optimum” diagram | The original rendered slide cropped the lower workflow rules. Consolidate into a compact synchronization rule and account-dependent integration note. |
-| Makefile example | Uses options not represented by the actual script and implies a build guarantees reproducibility. Replace with real targets and verification. |
-| README ASU-branded-slide claim | Contradicts current default-blue Beamer source after the branding revert. Correct README; retain existing research figure colors. |
-| “Entire workshop created with one prompt” | Unverified provenance slogan. Remove from the revised instructional path. |
+The session is still ambitious. Thirty-three teaching slides fit only with a demonstration-led rhythm and short Git/tool exposition. The writing discussion gets 18 minutes. Detailed setup and three orchestration explanations moved to reference. If participants need a separate 20-minute exercise, cut another segment explicitly.
 
-## Deliberate omissions and remaining choices
+The exact installed provider features and plugin commands still need classroom rehearsal. Documentation support is not a live test on the instructor's account. Optional remote/advisor features should not become prerequisites.
 
-Long tool-shopping lists, personal-website creation, detailed Copilot dropdown instructions, and complementary-product tours are omitted from the 90-minute path. The original source is preserved alongside the review diff so these can be recovered. These are scope decisions, not claims that the tools lack those features.
+The existing repository's analysis outputs are baseline teaching assets, not newly verified research. The full analysis pipeline was not run. The original clustered-standard-error task was already implemented, so it remains an audit reference rather than a new achievement.
 
-Audience experience, desired hands-on intensity, and the exact private dashboard screen remain instructor choices. The delivered proposal uses mixed-experience, demonstration-led assumptions and a generic dashboard illustration. Official feature support does not prove that each installed classroom client exposes the same interface. The source notes separate documented support from features that still need rehearsal.
+## Checks and scope
 
-No push, PR, issue, email, sharing change, research simulation, or alteration to an unrelated project was performed.
+The final deck is compiled and visually inspected as recorded in validation.md. Source edits, the current change map, and the previous version remain reviewable. Main and the preserved unpublished-work branch are retained. No private Command Center implementation or screenshot is included. No new simulation, external issue, assignment, PR, merge, push, email, publication, or sharing change was performed.
