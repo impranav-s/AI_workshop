@@ -237,6 +237,251 @@ Copilot, provider subscriptions, and API billing have different access and usage
 \end{frame}
 
 
+\section{VS Code and Agentic AI}
+
+\begin{frame}[plain]
+    \centering
+    \vspace{1cm}
+    \textbf{\Huge The Environment}
+
+    \vspace{0.5cm}
+    {\Large Visual Studio Code}
+
+    \vspace{1.5cm}
+    \begin{tikzpicture}
+        \node[circle, draw=green!60!black, fill=green!10, very thick, minimum size=3cm, align=center] {\Large The\\Park};
+    \end{tikzpicture}
+\end{frame}
+
+% Original slide 10
+\begin{frame}{What is VS Code?}
+\begin{columns}[t]
+\begin{column}[t]{0.5\textwidth}
+\textbf{Visual Studio Code}
+\vspace{0.2cm}
+\begin{itemize}
+    \setlength{\itemsep}{0.3cm}
+    \item Free, open-source editor by Microsoft
+    \item Cross-platform (Windows, Mac, Linux)
+    \item Extensible via marketplace
+    \item Integrated terminal
+    \item Built-in Git support
+    \item AI assistant integration
+\end{itemize}
+\end{column}
+
+\begin{column}[t]{0.5\textwidth}
+\textbf{Why VS Code for Research?}
+\vspace{0.2cm}
+\begin{itemize}
+    \setlength{\itemsep}{0.3cm}
+    \item Read, write, and edit code and papers in one place
+    \item Manage entire project lifecycle
+    \item Collaborate seamlessly
+    \item Automate repetitive tasks
+    \item Leverage AI for productivity
+\end{itemize}
+\end{column}
+\end{columns}
+
+\vspace{0.5cm}
+\textbf{Similar AI Editors:} Cursor, Windsurf, Antigravity
+\end{frame}
+
+
+% Original slide 11
+\begin{frame}{Useful Extensions for Research \& Productivity}
+\begin{columns}
+\begin{column}{0.48\textwidth}
+\scriptsize
+\begin{tabular}{ll}
+\toprule
+\textbf{Extension} & \textbf{Purpose} \\
+\midrule
+\multicolumn{2}{l}{\textit{AI \& Productivity}} \\
+GitHub Copilot & AI code assistant \\
+Claude Code & AI coding agent \\
+Codex & OpenAI assistant \\
+Web Search & Copilot web search \\
+VS Code Speech & Speech-to-text input \\
+\midrule
+\multicolumn{2}{l}{\textit{Data Science}} \\
+Python & Language support \\
+Pylance & IntelliSense, type check \\
+Jupyter & Notebook support \\
+R & R language support \\
+Stata Enhanced & Stata syntax + run \\
+\midrule
+\multicolumn{2}{l}{\textit{Documentation}} \\
+LaTeX Workshop & Compile LaTeX \\
+LaTeX Language & Syntax \& snippets \\
+LTeX & Grammar/spell check \\
+Markdown All in One & Markdown preview \\
+\bottomrule
+\end{tabular}
+\end{column}
+
+
+\begin{column}{0.48\textwidth}
+\scriptsize
+\begin{tabular}{ll}
+\toprule
+\textbf{Extension} & \textbf{Purpose} \\
+\midrule
+\multicolumn{2}{l}{\textit{Version Control \& GitHub}} \\
+GitHub PR \& Issues & Manage PRs/issues \\
+% GitLens & Git visualization \\
+Git History & View git log \\
+GitHub Actions & CI/CD workflows \\
+\midrule
+\multicolumn{2}{l}{\textit{Data \& Utilities}} \\
+Rainbow CSV & CSV colorization \\
+Excel Viewer & View Excel files \\
+Code Snap & Code screenshots \\
+Auto Align & Align code formatting \\
+\midrule
+\multicolumn{2}{l}{\textit{Development Tools}} \\
+Remote SSH & Remote development \\
+Live Server & Local web server \\
+Makefile Tools & Makefile support \\
+\bottomrule
+\end{tabular}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+% Original slide 12
+\begin{frame}{Essential VS Code Features}
+\begin{columns}[t]
+\begin{column}{0.48\textwidth}
+\begin{minipage}[t][3cm][t]{\textwidth}
+\textbf{Navigation \& Interface:}
+\begin{itemize}
+    \item \textbf{Ctrl/Cmd+Shift+P}: Command Palette
+    \item \textbf{Ctrl/Cmd+P}: Quick file open
+    \item \textbf{Ctrl+`}: Toggle terminal
+    % \item \textbf{F5}: Start debugger
+\end{itemize}
+\end{minipage}
+
+\textbf{Multi-Cursor Magic:}
+\begin{itemize}
+    \item \textbf{Ctrl/Cmd+D}: Select next occurrence
+    \item \textbf{Alt+Click}: Add cursor anywhere
+    \item \textbf{Ctrl/Cmd+Shift+L}: Select all occurrences
+\end{itemize}
+\end{column}
+
+\begin{column}{0.48\textwidth}
+\begin{minipage}[t][3cm][t]{\textwidth}
+\textbf{Code Editing:}
+\begin{itemize}
+    \item \textbf{Alt+↑/↓}: Move line up/down
+    \item \textbf{Ctrl/Cmd+/}: Toggle comment
+    \item \textbf{Ctrl/Cmd+Shift+K}: Delete line
+    \item \textbf{Ctrl/Cmd+Shift+D}: Duplicate line
+\end{itemize}
+\end{minipage}
+
+\textbf{Code Navigation:}
+\begin{itemize}
+    \item \textbf{Ctrl/Cmd+Click}: Go to definition
+    \item \textbf{Alt+←/→}: Navigate back/forward
+\end{itemize}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+
+% Original slide 13
+\begin{frame}{VS Code Workspace Setup}
+\textbf{Recommended Workspace Structure:}
+\begin{itemize}
+    \item Open entire project folder as workspace
+    % \item Use multi-root workspaces for complex projects
+    \item Configure settings per workspace (Python path, linters, etc.)
+    \item Save workspace file (.code-workspace) for team sharing
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Settings Sync:}
+\begin{itemize}
+    \item Sync extensions and settings across machines
+    \item Use GitHub or Microsoft account
+    \item Maintain consistency across your own environments
+\end{itemize}
+
+% \vspace{0.3cm}
+
+% \textbf{Real-Time Collaboration:}
+% \begin{itemize}
+%     \item \textbf{Live Share extension}: Co-edit files with co-authors in real-time
+%     \item Share terminals, debuggers, and servers
+%     \item Great for remote pair programming and debugging sessions
+% \end{itemize}
+\vspace{0.2cm}
+\begin{itemize}
+    \item \textbf{Agent panel}: Supported local Claude Code and Codex sessions can appear in the sessions list; enable the \textit{External} filter when available.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[plain]
+    \centering
+    \vspace{1cm}
+    \textbf{\Huge Raw Power}
+
+    \vspace{0.5cm}
+    {\Large AI Agents in Action}
+
+    \vspace{1.5cm}
+    \begin{tikzpicture}
+        \node[star, star points=5, draw=red!60!black, fill=red!10, very thick, minimum size=3cm, align=center] {\Large Power};
+    \end{tikzpicture}
+\end{frame}
+
+% Original slide 15
+\begin{frame}{What is Agentic AI?}
+\begin{columns}[t]
+\begin{column}[t]{0.48\textwidth}
+\begin{block}{Traditional AI Assistants}
+\begin{itemize}
+    \item Respond to queries
+    \item Generate code snippets
+    \item Provide suggestions
+\end{itemize}
+\end{block}
+\end{column}
+
+\begin{column}[t]{0.48\textwidth}
+\begin{block}{Agentic AI}
+\begin{itemize}
+    \item Autonomous task completion
+    \item Multi-step reasoning
+    \item Context-aware assistance
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+
+\vspace{0.5cm}
+
+\textbf{Where Do You Place Yourself?}
+\begin{center}
+Research question $\rightarrow$ Project design $\rightarrow$ Methods and tasks $\rightarrow$ Exact code
+\end{center}
+\begin{itemize}
+    \item Choose how closely to guide each task
+    \item You own the question, assumptions, and interpretation
+\end{itemize}
+\end{frame}
+
+
+\section{Git: Version Control Fundamentals}
+
 \begin{frame}[plain]
     \centering
     \vspace{1cm}
@@ -250,8 +495,6 @@ Copilot, provider subscriptions, and API billing have different access and usage
         \node[rectangle, draw=blue!60!black, fill=blue!10, very thick, minimum size=3cm, minimum width=3cm, align=center] {\Large Local\\Safety};
     \end{tikzpicture}
 \end{frame}
-
-\section{Git: Version Control Fundamentals}
 
 % Original slide 21
 \begin{frame}{What is Git?}
@@ -613,6 +856,8 @@ Reproducibility & Use Makefile, document dependencies \\
 \end{frame}
 
 
+\section{GitHub: Collaboration Platform}
+
 \begin{frame}[plain]
     \centering
     \vspace{1cm}
@@ -626,8 +871,6 @@ Reproducibility & Use Makefile, document dependencies \\
         \node[rectangle, draw=blue!60!black, fill=blue!10, very thick, minimum size=3cm, minimum width=3cm, align=center] {\Large Cloud\\Memory};
     \end{tikzpicture}
 \end{frame}
-
-\section{GitHub: Collaboration Platform}
 
 % Original slide 32
 \begin{frame}{What is GitHub?}
@@ -790,239 +1033,24 @@ Reproducibility & Use Makefile, document dependencies \\
     \end{column}
 \end{columns}
 
-\vspace{0.3cm}
-\textbf{Demo:} Creating and reviewing a PR, did Copilot finish working?
 \end{frame}
 
 
-\section{VS Code and Agentic AI}
-
-% Original slide 10
-\begin{frame}{What is VS Code?}
-\begin{columns}[t]
-\begin{column}[t]{0.5\textwidth}
-\textbf{Visual Studio Code}
-\vspace{0.2cm}
-\begin{itemize}
-    \setlength{\itemsep}{0.3cm}
-    \item Free, open-source editor by Microsoft
-    \item Cross-platform (Windows, Mac, Linux)
-    \item Extensible via marketplace
-    \item Integrated terminal
-    \item Built-in Git support
-    \item AI assistant integration
-\end{itemize}
-\end{column}
-
-\begin{column}[t]{0.5\textwidth}
-\textbf{Why VS Code for Research?}
-\vspace{0.2cm}
-\begin{itemize}
-    \setlength{\itemsep}{0.3cm}
-    \item Read, write, and edit code and papers in one place
-    \item Manage entire project lifecycle
-    \item Collaborate seamlessly
-    \item Automate repetitive tasks
-    \item Leverage AI for productivity
-\end{itemize}
-\end{column}
-\end{columns}
-
-\vspace{0.5cm}
-\textbf{Similar AI Editors:} Cursor, Windsurf, Antigravity
-\end{frame}
-
-
-% Original slide 11
-\begin{frame}{Useful Extensions for Research \& Productivity}
-\begin{columns}
-\begin{column}{0.48\textwidth}
-\scriptsize
-\begin{tabular}{ll}
-\toprule
-\textbf{Extension} & \textbf{Purpose} \\
-\midrule
-\multicolumn{2}{l}{\textit{AI \& Productivity}} \\
-GitHub Copilot & AI code assistant \\
-Claude Code & AI coding agent \\
-Codex & OpenAI assistant \\
-Web Search & Copilot web search \\
-VS Code Speech & Speech-to-text input \\
-\midrule
-\multicolumn{2}{l}{\textit{Data Science}} \\
-Python & Language support \\
-Pylance & IntelliSense, type check \\
-Jupyter & Notebook support \\
-R & R language support \\
-Stata Enhanced & Stata syntax + run \\
-\midrule
-\multicolumn{2}{l}{\textit{Documentation}} \\
-LaTeX Workshop & Compile LaTeX \\
-LaTeX Language & Syntax \& snippets \\
-LTeX & Grammar/spell check \\
-Markdown All in One & Markdown preview \\
-\bottomrule
-\end{tabular}
-\end{column}
-
-
-\begin{column}{0.48\textwidth}
-\scriptsize
-\begin{tabular}{ll}
-\toprule
-\textbf{Extension} & \textbf{Purpose} \\
-\midrule
-\multicolumn{2}{l}{\textit{Version Control \& GitHub}} \\
-GitHub PR \& Issues & Manage PRs/issues \\
-% GitLens & Git visualization \\
-Git History & View git log \\
-GitHub Actions & CI/CD workflows \\
-\midrule
-\multicolumn{2}{l}{\textit{Data \& Utilities}} \\
-Rainbow CSV & CSV colorization \\
-Excel Viewer & View Excel files \\
-Code Snap & Code screenshots \\
-Auto Align & Align code formatting \\
-\midrule
-\multicolumn{2}{l}{\textit{Development Tools}} \\
-Remote SSH & Remote development \\
-Live Server & Local web server \\
-Makefile Tools & Makefile support \\
-\bottomrule
-\end{tabular}
-\end{column}
-\end{columns}
-\end{frame}
-
-
-% Original slide 12
-\begin{frame}{Essential VS Code Features}
-\begin{columns}[t]
-\begin{column}{0.48\textwidth}
-\begin{minipage}[t][3cm][t]{\textwidth}
-\textbf{Navigation \& Interface:}
-\begin{itemize}
-    \item \textbf{Ctrl/Cmd+Shift+P}: Command Palette
-    \item \textbf{Ctrl/Cmd+P}: Quick file open
-    \item \textbf{Ctrl+`}: Toggle terminal
-    % \item \textbf{F5}: Start debugger
-\end{itemize}
-\end{minipage}
-
-\textbf{Multi-Cursor Magic:}
-\begin{itemize}
-    \item \textbf{Ctrl/Cmd+D}: Select next occurrence
-    \item \textbf{Alt+Click}: Add cursor anywhere
-    \item \textbf{Ctrl/Cmd+Shift+L}: Select all occurrences
-\end{itemize}
-\end{column}
-
-\begin{column}{0.48\textwidth}
-\begin{minipage}[t][3cm][t]{\textwidth}
-\textbf{Code Editing:}
-\begin{itemize}
-    \item \textbf{Alt+↑/↓}: Move line up/down
-    \item \textbf{Ctrl/Cmd+/}: Toggle comment
-    \item \textbf{Ctrl/Cmd+Shift+K}: Delete line
-    \item \textbf{Ctrl/Cmd+Shift+D}: Duplicate line
-\end{itemize}
-\end{minipage}
-
-\textbf{Code Navigation:}
-\begin{itemize}
-    \item \textbf{Ctrl/Cmd+Click}: Go to definition
-    \item \textbf{Alt+←/→}: Navigate back/forward
-\end{itemize}
-\end{column}
-\end{columns}
-
-\end{frame}
-
-
-% Original slide 13
-\begin{frame}{VS Code Workspace Setup}
-\textbf{Recommended Workspace Structure:}
-\begin{itemize}
-    \item Open entire project folder as workspace
-    % \item Use multi-root workspaces for complex projects
-    \item Configure settings per workspace (Python path, linters, etc.)
-    \item Save workspace file (.code-workspace) for team sharing
-\end{itemize}
-
-\vspace{0.3cm}
-
-\textbf{Settings Sync:}
-\begin{itemize}
-    \item Sync extensions and settings across machines
-    \item Use GitHub or Microsoft account
-    \item Maintain consistency across your own environments
-\end{itemize}
-
-% \vspace{0.3cm}
-
-% \textbf{Real-Time Collaboration:}
-% \begin{itemize}
-%     \item \textbf{Live Share extension}: Co-edit files with co-authors in real-time
-%     \item Share terminals, debuggers, and servers
-%     \item Great for remote pair programming and debugging sessions
-% \end{itemize}
-\vspace{0.2cm}
-\begin{itemize}
-    \item \textbf{Agent panel}: Supported local Claude Code and Codex sessions can appear in the sessions list; enable the \textit{External} filter when available.
-\end{itemize}
-\end{frame}
-
+\section{Advanced Topics and Integrations}
 
 \begin{frame}[plain]
     \centering
     \vspace{1cm}
-    \textbf{\Huge Raw Power}
+    \textbf{\Huge Integrations}
 
     \vspace{0.5cm}
-    {\Large AI Agents in Action}
+    {\Large Putting It All Together}
 
     \vspace{1.5cm}
     \begin{tikzpicture}
-        \node[star, star points=5, draw=red!60!black, fill=red!10, very thick, minimum size=3cm, align=center] {\Large Power};
+        \node[rectangle, draw=orange!60!black, fill=orange!10, very thick, minimum size=3cm, minimum width=3cm, align=center] {\Large MCP};
     \end{tikzpicture}
 \end{frame}
-
-% Original slide 15
-\begin{frame}{What is Agentic AI?}
-\begin{columns}[t]
-\begin{column}[t]{0.48\textwidth}
-\begin{block}{Traditional AI Assistants}
-\begin{itemize}
-    \item Respond to queries
-    \item Generate code snippets
-    \item Provide suggestions
-\end{itemize}
-\end{block}
-\end{column}
-
-\begin{column}[t]{0.48\textwidth}
-\begin{block}{Agentic AI}
-\begin{itemize}
-    \item Autonomous task completion
-    \item Multi-step reasoning
-    \item Context-aware assistance
-\end{itemize}
-\end{block}
-\end{column}
-\end{columns}
-
-\vspace{0.5cm}
-
-\textbf{Where Do You Place Yourself?}
-\begin{center}
-Research question $\rightarrow$ Project design $\rightarrow$ Methods and tasks $\rightarrow$ Exact code
-\end{center}
-\begin{itemize}
-    \item Choose how closely to guide each task
-    \item You own the question, assumptions, and interpretation
-\end{itemize}
-\end{frame}
-
 
 % Original slide 16
 \begin{frame}{Copilot, Codex, and Claude Code}
@@ -1164,22 +1192,6 @@ A reusable role combines instructions, tools, and sometimes a model. The harness
 \end{itemize}
 \end{frame}
 
-
-\begin{frame}[plain]
-    \centering
-    \vspace{1cm}
-    \textbf{\Huge Integrations}
-
-    \vspace{0.5cm}
-    {\Large Putting It All Together}
-
-    \vspace{1.5cm}
-    \begin{tikzpicture}
-        \node[rectangle, draw=orange!60!black, fill=orange!10, very thick, minimum size=3cm, minimum width=3cm, align=center] {\Large MCP};
-    \end{tikzpicture}
-\end{frame}
-
-\section{Advanced Topics and Integrations}
 
 % Original slide 37
 \begin{frame}{MCP: Model Context Protocol}
