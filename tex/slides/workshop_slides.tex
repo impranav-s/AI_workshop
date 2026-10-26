@@ -237,6 +237,20 @@ Copilot, provider subscriptions, and API billing have different access and usage
 \end{frame}
 
 
+\begin{frame}[plain]
+    \centering
+    \vspace{1cm}
+    \textbf{\Huge The Guardrails (Local)}
+
+    \vspace{0.5cm}
+    {\Large Git Version Control}
+
+    \vspace{1.5cm}
+    \begin{tikzpicture}
+        \node[rectangle, draw=blue!60!black, fill=blue!10, very thick, minimum size=3cm, minimum width=3cm, align=center] {\Large Local\\Safety};
+    \end{tikzpicture}
+\end{frame}
+
 \section{Git: Version Control Fundamentals}
 
 % Original slide 21
@@ -339,6 +353,91 @@ git log                  # View commit history
 git diff                 # See unstaged changes
 \end{verbatim}
 \end{block}
+\end{frame}
+
+
+% Original slide 28
+\begin{frame}[fragile]{The .gitignore File}
+\textbf{What is .gitignore?}
+\begin{itemize}
+    \item Tells Git which untracked files to ignore
+    \item Helps exclude generated files, credentials, or large binaries
+    \item Usually at the root; subdirectories can have their own
+\end{itemize}
+
+\vspace{0.2cm}
+
+\textbf{Example .gitignore for Research Projects:}
+\begin{columns}
+\begin{column}{0.48\textwidth}
+\scriptsize
+\begin{verbatim}
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.egg-info/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+\end{verbatim}
+\end{column}
+
+\begin{column}{0.48\textwidth}
+\scriptsize
+\begin{verbatim}
+# LaTeX
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.fls
+*.synctex.gz
+
+# Generated outputs
+output/
+*.pdf
+*.png
+\end{verbatim}
+\end{column}
+\end{columns}
+
+% \vspace{0.2cm}
+% \textbf{Pro tip:} Use \url{gitignore.io} to generate templates for your language/tools!
+\end{frame}
+
+
+% Original slide 27
+\begin{frame}{Git Best Practices}
+\begin{block}{Commit Messages}
+\begin{itemize}
+    \item Be descriptive: "Add regression analysis for Model 2"
+    \item Use imperative mood: "Fix data loading bug"
+    \item Reference issues: "Closes \#42"
+\end{itemize}
+\end{block}
+
+\begin{block}{What to Commit}
+\begin{itemize}
+    \item \textcolor{green}{DO}: Source code, scripts, documentation
+    \item \textcolor{green}{DO}: Raw sample data (if reasonable size)
+    \item \textcolor{red}{DON'T}: Unneeded generated outputs (rebuild from scripts)
+    \item \textcolor{red}{DON'T}: Large binary files (use Git LFS if needed)
+    \item \textcolor{red}{DON'T}: Passwords or API keys
+\end{itemize}
+\end{block}
+
+% \begin{block}{Commit Frequency}
+% \begin{itemize}
+%     \item Commit often (atomic commits)
+%     \item Each commit = one logical change
+%     \item Makes history easier to understand
+% \end{itemize}
+% \end{block}
 \end{frame}
 
 
@@ -459,91 +558,6 @@ git worktree remove ../task-a
 \end{frame}
 
 
-% Original slide 27
-\begin{frame}{Git Best Practices}
-\begin{block}{Commit Messages}
-\begin{itemize}
-    \item Be descriptive: "Add regression analysis for Model 2"
-    \item Use imperative mood: "Fix data loading bug"
-    \item Reference issues: "Closes \#42"
-\end{itemize}
-\end{block}
-
-\begin{block}{What to Commit}
-\begin{itemize}
-    \item \textcolor{green}{DO}: Source code, scripts, documentation
-    \item \textcolor{green}{DO}: Raw sample data (if reasonable size)
-    \item \textcolor{red}{DON'T}: Unneeded generated outputs (rebuild from scripts)
-    \item \textcolor{red}{DON'T}: Large binary files (use Git LFS if needed)
-    \item \textcolor{red}{DON'T}: Passwords or API keys
-\end{itemize}
-\end{block}
-
-% \begin{block}{Commit Frequency}
-% \begin{itemize}
-%     \item Commit often (atomic commits)
-%     \item Each commit = one logical change
-%     \item Makes history easier to understand
-% \end{itemize}
-% \end{block}
-\end{frame}
-
-
-% Original slide 28
-\begin{frame}[fragile]{The .gitignore File}
-\textbf{What is .gitignore?}
-\begin{itemize}
-    \item Tells Git which untracked files to ignore
-    \item Helps exclude generated files, credentials, or large binaries
-    \item Usually at the root; subdirectories can have their own
-\end{itemize}
-
-\vspace{0.2cm}
-
-\textbf{Example .gitignore for Research Projects:}
-\begin{columns}
-\begin{column}{0.48\textwidth}
-\scriptsize
-\begin{verbatim}
-# Python
-__pycache__/
-*.pyc
-.ipynb_checkpoints/
-*.egg-info/
-
-# R
-.Rhistory
-.RData
-.Rproj.user/
-
-\end{verbatim}
-\end{column}
-
-\begin{column}{0.48\textwidth}
-\scriptsize
-\begin{verbatim}
-# LaTeX
-*.aux
-*.bbl
-*.blg
-*.log
-*.out
-*.fls
-*.synctex.gz
-
-# Generated outputs
-output/
-*.pdf
-*.png
-\end{verbatim}
-\end{column}
-\end{columns}
-
-% \vspace{0.2cm}
-% \textbf{Pro tip:} Use \url{gitignore.io} to generate templates for your language/tools!
-\end{frame}
-
-
 % Original slide 29
 \begin{frame}{Common Challenges \& Solutions}
 
@@ -598,6 +612,20 @@ Reproducibility & Use Makefile, document dependencies \\
 \end{itemize}
 \end{frame}
 
+
+\begin{frame}[plain]
+    \centering
+    \vspace{1cm}
+    \textbf{\Huge The Guardrails (Cloud)}
+
+    \vspace{0.5cm}
+    {\Large GitHub Collaboration}
+
+    \vspace{1.5cm}
+    \begin{tikzpicture}
+        \node[rectangle, draw=blue!60!black, fill=blue!10, very thick, minimum size=3cm, minimum width=3cm, align=center] {\Large Cloud\\Memory};
+    \end{tikzpicture}
+\end{frame}
 
 \section{GitHub: Collaboration Platform}
 
@@ -945,6 +973,20 @@ Makefile Tools & Makefile support \\
 \end{frame}
 
 
+\begin{frame}[plain]
+    \centering
+    \vspace{1cm}
+    \textbf{\Huge Raw Power}
+
+    \vspace{0.5cm}
+    {\Large AI Agents in Action}
+
+    \vspace{1.5cm}
+    \begin{tikzpicture}
+        \node[star, star points=5, draw=red!60!black, fill=red!10, very thick, minimum size=3cm, align=center] {\Large Power};
+    \end{tikzpicture}
+\end{frame}
+
 % Original slide 15
 \begin{frame}{What is Agentic AI?}
 \begin{columns}[t]
@@ -1122,6 +1164,20 @@ A reusable role combines instructions, tools, and sometimes a model. The harness
 \end{itemize}
 \end{frame}
 
+
+\begin{frame}[plain]
+    \centering
+    \vspace{1cm}
+    \textbf{\Huge Integrations}
+
+    \vspace{0.5cm}
+    {\Large Putting It All Together}
+
+    \vspace{1.5cm}
+    \begin{tikzpicture}
+        \node[rectangle, draw=orange!60!black, fill=orange!10, very thick, minimum size=3cm, minimum width=3cm, align=center] {\Large MCP};
+    \end{tikzpicture}
+\end{frame}
 
 \section{Advanced Topics and Integrations}
 
