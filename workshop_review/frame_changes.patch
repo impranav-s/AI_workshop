@@ -1,0 +1,756 @@
+--- original/slide-03.tex
++++ revised/slide-03.tex
+@@ -14,7 +14,7 @@
+ \textbf{What If We Could:}
+ \begin{itemize}
+     \item Work in one environment: code, writing, collaboration
+-    \item Track every change and undo any mistake
++    \item Track changes and recover earlier versions
+     \item Let AI operate \textit{inside} the project with guardrails
+     % \item Automate the boring parts of research
+ \end{itemize}
+--- original/slide-04.tex
++++ revised/slide-04.tex
+@@ -21,7 +21,7 @@
+         
+         \begin{column}{0.33\textwidth}
+             \centering
+-            \onslide<2->{
++            \onslide<1->{
+                 \textbf{\large The Dinosaurs}\\
+                 \vspace{0.1cm}
+                 \textit{(AI Agents)}\\
+@@ -37,7 +37,7 @@
+         
+         \begin{column}{0.33\textwidth}
+             \centering
+-            \onslide<3->{
++            \onslide<1->{
+                 \textbf{\large The Guardrails}\\
+                 \vspace{0.1cm}
+                 \textit{(Git \& GitHub)}\\
+@@ -54,7 +54,7 @@
+     
+     \vspace{0.8cm}
+     \centering
+-    \onslide<4->{
++    \onslide<1->{
+         \begin{quote}
+         \textit{``Your scientists were so preoccupied with whether or not they could, they didn't stop to think if they should... \textbf{Git lets you undo if they shouldn't.}"}
+         \end{quote}
+--- original/slide-05.tex
++++ revised/slide-05.tex
+@@ -18,7 +18,7 @@
+                 \small Agents gain \textit{hands}. They can execute tests, debug, and browse the web.
+                 
+                 \item \textbf{Git/GitHub $\rightarrow$ Memory} \\
+-                \small Issues \& PRs provide persistent context ("Pseudo-Memory") and documentation.
++                \small Issues \& PRs provide persistent context and documentation.
+                 
+                 \item \textbf{Agents $\rightarrow$ Mastery} \\
+                 \small They lower the cost of learning the tools. \\
+--- original/slide-07.tex
++++ revised/slide-06.tex
+@@ -2,12 +2,12 @@
+ \hypertarget{main-project-structure}{}
+ \textbf{Repository Structure:}
+ \begin{itemize}
+-    \item \texttt{data/}: Usually only processed data
+-    \item \texttt{scripts/}: Analysis code
++    \item \texttt{data/}: Sample data for demonstration
++    \item \texttt{scripts/}: Analysis, plotting, and table generation
+     \item \texttt{output/}: Generated figures and tables
+-    \item \texttt{tex/}: LaTeX documents (paper, slides)
++    \item \texttt{tex/}: LaTeX templates (paper, slides)
+     \item \texttt{Makefile}: Automation workflow
+-    \item \texttt{README.md}: Project documentation
++    \item \texttt{README.md}: Project documentation and agent instructions
+     \item \texttt{.gitignore}: Excluded files
+ \end{itemize}
+ 
+@@ -15,6 +15,7 @@
+ 
+ \textbf{Key Principle:} Everything generated from scripts, nothing manual!
+ 
+-\vspace{0.3cm}
++\vspace{0.15cm}
++{\small \url{https://github.com/tlarroucau/AI_workshop}}\\
+ \hyperlink{appendix-makefile}{\beamerbutton{See Makefile slide (Appendix)}}
+ \end{frame}
+--- original/slide-08.tex
++++ revised/slide-07.tex
+@@ -1,35 +1,31 @@
+ \begin{frame}{Workshop Prerequisites}
+ \begin{columns}[t]
+-    \begin{column}{0.48\textwidth}
+-        \textbf{1. Accounts}
+-        \begin{itemize}
+-            \item \textbf{GitHub Account}: Create at \url{github.com}
+-            \item \textbf{Education Benefits}: Apply for student/educator pack at \url{education.github.com} (Upgrade to Pro!)
+-        \end{itemize}
+-        
+-        \vspace{0.2cm}
+-        
+-        \textbf{2. Software}
+-        \begin{itemize}
+-            \item \textbf{VS Code}: Download from \url{code.visualstudio.com}
+-            \item \textbf{Git}: Install from \url{git-scm.com}
+-            \item \textit{Optional}: Python \& LaTeX distribution
+-        \end{itemize}
+-    \end{column}
+-
+-    \begin{column}{0.48\textwidth}
+-        \textbf{3. Extensions \& Setup}
+-        \begin{itemize}
+-            \item \textbf{Link GitHub}: Sign in to GitHub within VS Code (Accounts menu)
+-            \item \textbf{Copilot}: Install ``GitHub Copilot" extension 
+-            \item \textbf{MCP Servers}: We will use Github MCP server for integration (I will show how)
+-        \end{itemize}
+-        
+-        \vspace{0.2cm}
+-        
+-        \begin{block}{Note on Access}
+-        GitHub Copilot is now free! However, upgrading to Copilot Pro (via Education pack) offers better models and limits. Verification can take a few days.
+-        \end{block}
+-    \end{column}
++\begin{column}{0.48\textwidth}
++\textbf{1. Accounts}
++\begin{itemize}
++    \item \textbf{GitHub}: Create an account at \url{github.com}
++    \item \textbf{Education Benefits}: Check eligibility and activate your benefit at \url{education.github.com}
++\end{itemize}
++\vspace{0.2cm}
++\textbf{2. Software}
++\begin{itemize}
++    \item \textbf{VS Code}: \url{code.visualstudio.com}
++    \item \textbf{Git}: \url{git-scm.com}
++    \item \textit{To run the template}: Python, LaTeX, and Make
++\end{itemize}
++\end{column}
++\begin{column}{0.48\textwidth}
++\textbf{3. Extensions \& Setup}
++\begin{itemize}
++    \item Sign in to GitHub within VS Code
++    \item Set up one agent: Copilot, Codex, or Claude Code
++    \item Sign in and test access before the workshop
++    \item \textit{Optional}: GitHub MCP integration
++\end{itemize}
++\vspace{0.2cm}
++\begin{block}{Note on Access}
++Copilot, provider subscriptions, and API billing have different access and usage limits. Education verification and activation can take time.
++\end{block}
++\end{column}
+ \end{columns}
+ \end{frame}
+--- original/slide-10.tex
++++ revised/slide-23.tex
+@@ -19,7 +19,7 @@
+ \vspace{0.2cm}
+ \begin{itemize}
+     \setlength{\itemsep}{0.3cm}
+-    \item Write code \textit{and} papers in one place
++    \item Read, write, and edit code and papers in one place
+     \item Manage entire project lifecycle
+     \item Collaborate seamlessly
+     \item Automate repetitive tasks
+@@ -29,5 +29,5 @@
+ \end{columns}
+ 
+ \vspace{0.5cm}
+-\textbf{Similar AI Editors:} VsCode $\rightarrow$ Cursor $\rightarrow$ Windsurf $\rightarrow$ Antigravity
++\textbf{Similar AI Editors:} Cursor, Windsurf, Antigravity
+ \end{frame}
+--- original/slide-13.tex
++++ revised/slide-26.tex
+@@ -13,7 +13,7 @@
+ \begin{itemize}
+     \item Sync extensions and settings across machines
+     \item Use GitHub or Microsoft account
+-    \item Maintain consistency in team environments
++    \item Maintain consistency across your own environments
+ \end{itemize}
+ 
+ % \vspace{0.3cm}
+@@ -24,4 +24,8 @@
+ %     \item Share terminals, debuggers, and servers
+ %     \item Great for remote pair programming and debugging sessions
+ % \end{itemize}
++\vspace{0.2cm}
++\begin{itemize}
++    \item \textbf{Agent panel}: Supported local Claude Code and Codex sessions can appear in the sessions list; enable the \textit{External} filter when available.
++\end{itemize}
+ \end{frame}
+--- original/slide-15.tex
++++ revised/slide-27.tex
+@@ -23,13 +23,12 @@
+ 
+ \vspace{0.5cm}
+ 
+-\textbf{Key Tools:}
++\textbf{Where Do You Place Yourself?}
++\begin{center}
++Research question $\rightarrow$ Project design $\rightarrow$ Methods and tasks $\rightarrow$ Exact code
++\end{center}
+ \begin{itemize}
+-    \item GitHub Copilot (VS Code chat modes + Github)
+-    \item Cursor, Windsurf, and Antigravity AI Agents
+-    \item OpenAI Codex
+-    \item Claude Code
+-    % \item Cline + Continue (offline capable!)
+-    % \item Cursor, Windsurf
++    \item Choose how closely to guide each task
++    \item You own the question, assumptions, and interpretation
+ \end{itemize}
+ \end{frame}
+--- original/slide-16.tex
++++ revised/slide-28.tex
+@@ -1,50 +1,38 @@
+-\begin{frame}{VS Code Copilot Chat Modes}
++\begin{frame}{Copilot, Codex, and Claude Code}
++\framesubtitle{\small \textbf{Model}: reasoning. \quad \textbf{Harness}: context, tools, permissions. \quad \textbf{Interface}: where you work.}
++\vspace{0.1cm}
+ \begin{columns}[t]
+ \begin{column}{0.48\textwidth}
+-\begin{minipage}[t][2.8cm][t]{\textwidth}
+-\textbf{1. Ask Mode (Chat Panel)} \twemoji{t-rex}
++\begin{block}{GitHub Copilot}
+ \begin{itemize}\setlength{\itemsep}{0pt}
+-    \item Answer questions about code
+-    \item Explain complex functions
+-    \item Suggest best practices
++    \item Useful when your work centers on VS Code and GitHub
++    \item Ask, Agent, and Plan roles
++    \item Project instructions, skills, and custom agents
+ \end{itemize}
+-\end{minipage}
+-
+-\begin{minipage}[t][2.8cm][t]{\textwidth}
+-\textbf{2. Edit Mode (+ Inline)} \scalebox{1.5}{\twemoji{t-rex}}
++\end{block}
++\begin{block}{OpenAI Codex}
+ \begin{itemize}\setlength{\itemsep}{0pt}
+-    \item Modify existing code
+-    \item Refactor functions
+-    \item Apply changes directly
++    \item Project work across files, commands, and review
++    \item \texttt{AGENTS.md} and reusable skills
++    \item \texttt{/plan}, \texttt{/review}; resume sessions
+ \end{itemize}
+-\end{minipage}
++\end{block}
+ \end{column}
+-
+ \begin{column}{0.48\textwidth}
+-\begin{minipage}[t][2.8cm][t]{\textwidth}
+-\textbf{3. Agent Mode} \smash{\scalebox{2.5}{\twemoji{t-rex}}}
++\begin{block}{Claude Code}
+ \begin{itemize}\setlength{\itemsep}{0pt}
+-    \item Multi-file operations
+-    \item Workspace-wide changes
+-    \item Project scaffolding
++    \item Terminal workflows and project-specific tools
++    \item \texttt{CLAUDE.md} and reusable skills
++    \item Plan mode; configurable output styles
+ \end{itemize}
+-\end{minipage}
+-
+-\begin{minipage}[t][2.8cm][t]{\textwidth}
+-\textbf{4. Plan Mode (New!)} \twemoji{t-rex}
++\end{block}
++\begin{block}{When to Use Which?}
+ \begin{itemize}\setlength{\itemsep}{0pt}
+-    \item High-level reasoning
+-    \item Break down complex tasks
+-    \item Create implementation plans
++    \item Match the task, tools, and access you have
++    \item Compare results on work you can verify
++    \item Budget usage; use independent reviewers
+ \end{itemize}
+-\end{minipage}
++\end{block}
+ \end{column}
+ \end{columns}
+-
+-\vspace{0.3cm}
+-% \textbf{Advanced Feature:} \textit{Agent Sessions} maintain context across multiple interactions, allowing for iterative refinement of complex tasks without losing history.
+-
+-\vspace{0.3cm}
+-\textbf{Note:} We can use Local, Background, and Cloud agents in parallel!
+-% \textbf{Demo:} Using different chat modes!
+ \end{frame}
+--- original/slide-17.tex
++++ revised/slide-29.tex
+@@ -1,41 +1,32 @@
+-\begin{frame}{VS Code Custom Context \& Skills}
++\begin{frame}{Custom Context \& Skills}
+ \begin{columns}[t]
+-\begin{column}{0.3\textwidth}
+-\textbf{Custom Instructions}\\
+-{\scriptsize\texttt{copilot-instructions.md}}
+-\begin{itemize}\setlength{\itemsep}{2pt}
+-    \item \textbf{Always} in Copilot's context
+-    \item Project style \& patterns
+-\end{itemize}
+-
+-\vspace{0.2cm}
+-{\scriptsize\texttt{AGENTS.md}}
+-\begin{itemize}\setlength{\itemsep}{2pt}
+-    \item Similar, but only read \textit{on demand}
++\begin{column}{0.31\textwidth}
++\textbf{Project Instructions}
++\begin{itemize}\setlength{\itemsep}{3pt}
++    \item Conventions that apply across tasks
++    \item Copilot: {\scriptsize\texttt{copilot-instructions.md}}
++    \item Codex: \texttt{AGENTS.md}
++    \item Claude: \texttt{CLAUDE.md}
++    \item Discovery and scope depend on the harness
+ \end{itemize}
+ \end{column}
+-
+-\begin{column}{0.3\textwidth}
+-\textbf{Prompt Files}\\
+-{\scriptsize\texttt{.github/prompts/*.prompt.md}}
+-\begin{itemize}\setlength{\itemsep}{2pt}
+-    \item Reusable task prompts
+-    \item Can specify a model
+-    \item Invoked by the user
++\begin{column}{0.31\textwidth}
++\textbf{Task \& Output}
++\begin{itemize}\setlength{\itemsep}{3pt}
++    \item \textbf{Prompt}: this task's goal, context, and constraints
++    \item Prompt files save reusable requests
++    \item \textbf{Output style}: how the agent explains its work
++    \item Claude has named styles; Codex uses instructions and supported personality settings
+ \end{itemize}
+ \end{column}
+-
+-\begin{column}{0.3\textwidth}
+-\textbf{Agent Skills}\\
+-{\scriptsize\texttt{.github/skills/}}
+-\begin{itemize}\setlength{\itemsep}{2pt}
+-    \item Modular script bundles
+-    \item \textbf{Progressively loaded} when needed
+-    \item Install/discover via \texttt{npx skills.sh} (install Node first)
++\begin{column}{0.31\textwidth}
++\textbf{Reusable Skills}
++\begin{itemize}\setlength{\itemsep}{3pt}
++    \item \texttt{SKILL.md}: instructions and supporting files
++    \item Loaded when relevant or explicitly invoked
++    \item Matt Pocock's \texttt{grill-me}: interview your idea
++    \item \texttt{grill-with-docs}: repository glossary and design decisions
+ \end{itemize}
+ \end{column}
+ \end{columns}
+-
+-\vspace{0.4cm}
+-\textbf{Demo:} \texttt{copilot-instructions.md} $\rightarrow$ \texttt{summarize.prompt.md} $\rightarrow$ \texttt{youtube-transcript/} skill
+ \end{frame}
+--- original/slide-18.tex
++++ revised/slide-30.tex
+@@ -1,41 +1,32 @@
+-\begin{frame}{Custom Agents in VS Code}
++\begin{frame}{Agent Interfaces: CLI, Editor, and Desktop}
+ \begin{columns}[t]
+-\begin{column}{0.48\textwidth}
+-\textbf{What Are Custom Agents?}
+-\begin{itemize}\setlength{\itemsep}{3pt}
+-    \item User-defined agent \textbf{personas} that control how the AI behaves
+-    \item Appear in the chat mode dropdown alongside Ask / Edit / Agent
+-    \item \textbf{Plan mode} is itself a built-in custom agent!
+-\end{itemize}
+-
+-\vspace{0.3cm}
+-\textbf{Structure of a Custom Agent:}
+-\begin{itemize}\setlength{\itemsep}{3pt}
+-    \item \textbf{Name} \& description
+-    \item \textbf{Tools} it can access
+-    \item \textbf{Handoffs} to other agents
+-    \item Detailed \textbf{instructions} (system prompt)
++\begin{column}{0.31\textwidth}
++\textbf{Terminal / CLI}
++\begin{itemize}
++    \item Work beside shell commands and scripts
++    \item Useful on a remote host through SSH
++    \item Navigate files and changes through terminal tools
+ \end{itemize}
+ \end{column}
+-
+-\begin{column}{0.48\textwidth}
+-\textbf{How to Create One:}
+-\begin{enumerate}\setlength{\itemsep}{3pt}
+-    \item Chat dropdown $\rightarrow$ \textit{Configure Custom Agents}
+-    \item Choose scope: \textbf{User} (global) or \textbf{Workspace}
+-    \item Define name, tools, and behavior
+-    \item Save --- it appears in the dropdown instantly
+-\end{enumerate}
+-
+-\vspace{0.3cm}
+-\textbf{Community Gallery:}
+-\begin{itemize}\setlength{\itemsep}{3pt}
+-    \item Browse \& install agents shared on GitHub
+-    \item Examples: code reviewer, research assistant, planner
++\begin{column}{0.31\textwidth}
++\textbf{IDE Extension}
++\begin{itemize}
++    \item Read files and inspect changes beside the conversation
++    \item Useful for close editing and review
++    \item Features depend on the extension and integration
++\end{itemize}
++\end{column}
++\begin{column}{0.31\textwidth}
++\textbf{Desktop / Agents Window}
++\begin{itemize}
++    \item Manage sessions across tasks and projects
++    \item Useful for delegation and oversight
++    \item Remote control requires a running host and supported access
+ \end{itemize}
+ \end{column}
+ \end{columns}
+-
+-% \vspace{0.3cm}
+-% \textbf{Demo:} Create a \textit{Research Agent} custom agent with domain-specific tools \& instructions
++\vspace{0.2cm}
++\begin{block}{Custom Agents}
++A reusable role combines instructions, tools, and sometimes a model. The harness controls its capabilities; choosing a Claude model inside Copilot still uses the Copilot harness.
++\end{block}
+ \end{frame}
+--- original/slide-19.tex
++++ revised/slide-31.tex
+@@ -19,9 +19,9 @@
+ 
+ \textbf{Fully Local AI Solutions:}
+ \begin{itemize}
+-    \item \textbf{Continue} + \textbf{Ollama}: Run local LLMs (Llama, CodeLlama, etc.)
+-    \item \textbf{Cline} + local models: Autonomous agent without cloud
+-    \item Complete offline workflow: No data leaves your machine
+-    \item Trade-off: Lower performance than cloud models, but complete privacy
++    \item \textbf{Continue} + \textbf{Ollama}: Run models on your machine
++    \item \textbf{Cline} + local models: Configure an agent with a local model
++    \item Check model hosting, network tools, extensions, and telemetry
++    \item Performance depends on the model, task, and available hardware
+ \end{itemize}
+ \end{frame}
+--- original/slide-21.tex
++++ revised/slide-08.tex
+@@ -2,7 +2,7 @@
+ \begin{itemize}
+     \item \textbf{Distributed version control system}
+     \item Tracks changes to files over time
+-    \item Enables collaboration without conflicts
++    \item Helps coordinate changes with collaborators
+     \item Essential for reproducible research
+ \end{itemize}
+ 
+@@ -10,7 +10,7 @@
+ 
+ \begin{block}{Why Git for Research?}
+ \begin{itemize}
+-    \item Complete history of your work
++    \item History of your committed work
+     \item Experiment safely with branches
+     \item Collaborate with co-authors
+     \item Publish code alongside papers
+--- original/slide-22.tex
++++ revised/slide-09.tex
+@@ -1,13 +1,13 @@
+ \begin{frame}[fragile]{Git Core Concepts}
+ \begin{enumerate}
+     \item \textbf{Repository (repo)}: Project folder tracked by Git
+-    
++
+     \item \textbf{Commit}: Snapshot of your project at a point in time
+-    
++
+     \item \textbf{Branch}: Parallel version of your repository
+-    
++
+     \item \textbf{Merge}: Combine changes from different branches
+-    
++
+     \item \textbf{Remote}: Repository hosted online (e.g., GitHub)
+ \end{enumerate}
+ 
+--- original/slide-23.tex
++++ revised/slide-10.tex
+@@ -3,12 +3,12 @@
+ \begin{tikzpicture}[node distance=2cm, auto, thick]
+     \tikzstyle{box} = [rectangle, draw, fill=blue!20, text width=4em, text centered, rounded corners, minimum height=2em]
+     \tikzstyle{arrow} = [->, >=stealth]
+-    
++
+     \node [box] (working) {Working\\Directory};
+     \node [box, right=of working] (staging) {Staging\\Area};
+     \node [box, right=of staging] (local) {Local\\Repo};
+     \node [box, right=of local] (remote) {Remote\\Repo};
+-    
++
+     \draw [arrow] (working) -- node {git add} (staging);
+     \draw [arrow] (staging) -- node {git commit} (local);
+     \draw [arrow] (local) -- node {git push} (remote);
+--- original/slide-24.tex
++++ revised/slide-11.tex
+@@ -13,7 +13,7 @@
+ git add .                # Stage all changes
+ git commit -m "msg"      # Commit with message
+ git fetch                # Download remote changes
+-git pull                 # Fetch + merge changes
++git pull                 # Fetch + integrate changes
+ git push origin main     # Push to remote
+ git log                  # View commit history
+ git diff                 # See unstaged changes
+--- original/slide-27.tex
++++ revised/slide-15.tex
+@@ -11,7 +11,7 @@
+ \begin{itemize}
+     \item \textcolor{green}{DO}: Source code, scripts, documentation
+     \item \textcolor{green}{DO}: Raw sample data (if reasonable size)
+-    \item \textcolor{red}{DON'T}: Generated outputs (rebuild from scripts)
++    \item \textcolor{red}{DON'T}: Unneeded generated outputs (rebuild from scripts)
+     \item \textcolor{red}{DON'T}: Large binary files (use Git LFS if needed)
+     \item \textcolor{red}{DON'T}: Passwords or API keys
+ \end{itemize}
+--- original/slide-28.tex
++++ revised/slide-16.tex
+@@ -1,12 +1,12 @@
+ \begin{frame}[fragile]{The .gitignore File}
+ \textbf{What is .gitignore?}
+ \begin{itemize}
+-    \item Tells Git which files to ignore (never commit)
+-    \item Prevents committing generated files, credentials, or large binaries
+-    \item One per repository (in root directory)
++    \item Tells Git which untracked files to ignore
++    \item Helps exclude generated files, credentials, or large binaries
++    \item Usually at the root; subdirectories can have their own
+ \end{itemize}
+ 
+-\vspace{0.3cm}
++\vspace{0.2cm}
+ 
+ \textbf{Example .gitignore for Research Projects:}
+ \begin{columns}
+--- original/slide-32.tex
++++ revised/slide-19.tex
+@@ -25,7 +25,7 @@
+ \end{columns}
+ 
+ \vspace{0.5cm}
+-\textbf{Free for academic use!} (github.com/education)
++\textbf{Education benefits for eligible students and teachers} (github.com/education)
+ 
+ \vspace{0.3cm}
+ \textbf{Demo:} Showing Github and Creating Personal Website
+--- original/slide-37.tex
++++ revised/slide-32.tex
+@@ -2,7 +2,7 @@
+ \textbf{What is MCP?}
+ \begin{itemize}
+     \item Protocol that gives AI agents access to external tools and services
+-    \item Enables \textit{direct interaction} with APIs (not just generating code for you)
++    \item Enables \textit{direct interaction} with APIs
+ \end{itemize}
+ 
+ \vspace{0.5cm}
+@@ -16,7 +16,7 @@
+     \item \textbf{Playwright}: Browser automation and interaction
+     \item \textbf{Context7}: Up-to-date library documentation
+     \item \textbf{Firecrawl}: Web scraping and data extraction
+-    \item \textbf{Filesystem} \& \textbf{Fetch}: Built-in VS Code tools
++    \item Built-in tools and MCP servers are configured separately
+ \end{itemize}
+ 
+ % \vspace{0.3cm}
+@@ -29,10 +29,10 @@
+ \textbf{Setup (GitHub MCP):}
+ \scriptsize
+ \begin{enumerate}
+-    \item Install MCP server (npx)
+-    \item Get GitHub token
+-    \item Configure in Copilot settings
+-    \item Done!
++    \item Choose a supported server in your agent
++    \item Authenticate and check permissions
++    \item Enable only the tools you need
++    \item Test a read-only request
+ \end{enumerate}
+ \end{column}
+ \end{columns}
+--- original/slide-38.tex
++++ revised/slide-33.tex
+@@ -1,34 +1,26 @@
+-\begin{frame}{How AI Tools Connect: The Big Picture}
++\begin{frame}{Orchestration: The Big Picture}
+ \begin{center}
+-\begin{tikzpicture}[node distance=1.5cm, auto, thick, scale=0.85, every node/.style={scale=0.65}]
+-    \tikzstyle{box} = [rectangle, draw, fill=blue!20, text width=5.5em, text centered, rounded corners, minimum height=2.5em]
+-    \tikzstyle{agent} = [rectangle, draw, fill=green!20, text width=5.5em, text centered, rounded corners, minimum height=2.5em]
+-    \tikzstyle{tool} = [rectangle, draw, fill=orange!20, text width=5.5em, text centered, rounded corners, minimum height=2.5em]
++\begin{tikzpicture}[node distance=0.8cm, auto, thick, scale=0.9, every node/.style={scale=0.9}]
++    \tikzstyle{box} = [rectangle, draw, fill=blue!20, text width=6em, text centered, rounded corners, minimum height=2.5em]
++    \tikzstyle{agent} = [rectangle, draw, fill=green!20, text width=6em, text centered, rounded corners, minimum height=2.5em]
++    \tikzstyle{tool} = [rectangle, draw, fill=orange!20, text width=7em, text centered, rounded corners, minimum height=2.5em]
+     \tikzstyle{arrow} = [->, >=stealth, thick]
+-    
+-    \node [box] (vscode) {VS Code\\Editor};
+-    \node [agent, right=of vscode] (copilot) {AI Agent\\(Cline/Copilot)};
+-    \node [tool, above right=0.8cm and 1cm of copilot] (mcp) {MCP\\Protocol};
+-    \node [box, right=of mcp] (github) {GitHub\\API};
+-    \node [box, below=of github] (files) {File System};
+-    \node [box, above=of github] (web) {Web/Search};
+-    
+-    \draw [arrow] (vscode) -- node {prompt} (copilot);
+-    \draw [arrow] (copilot) -- node[above] {uses} (mcp);
+-    \draw [arrow] (mcp) -- node[above] {} (github);
+-    \draw [arrow] (mcp) -- node[right] {} (files);
+-    \draw [arrow] (mcp) -- node[right] {} (web);
+-    \draw [arrow, dashed] (github) to [bend left=45] node[below] {creates issue/PR} (vscode);
++    \node [box] (researcher) {Researcher};
++    \node [agent, right=of researcher] (assistant) {Assistant /\\Orchestrator};
++    \node [tool, right=of assistant] (board) {Shared Goal\\Issues / Board};
++    \node [agent, above right=0.15cm and 0.8cm of board] (a) {Agent A\\Worktree A};
++    \node [agent, below right=0.15cm and 0.8cm of board] (b) {Agent B\\Worktree B};
++    \draw [arrow] (researcher) -- (assistant);
++    \draw [arrow] (assistant) -- (board);
++    \draw [arrow] (board) -- (a);
++    \draw [arrow] (board) -- (b);
+ \end{tikzpicture}
+ \end{center}
+-
+-\vspace{-0.8cm}
+-\textbf{Example Flow:}
+-\begin{enumerate}
+-    \scriptsize
+-    \item You: "Create issue for clustered SE analysis and add to project board"
+-    \item AI Agent → MCP → GitHub API → Issue created + added to board
+-    \item VS Code shows notification with issue link
+-    \item Agent can then create branch, write code, commit, create PR automatically!
+-\end{enumerate}
++\vspace{-0.05cm}
++\begin{itemize}\setlength{\itemsep}{1pt}
++    \item Assign distinct tasks and owners. Run independent work in parallel; sequence coupled edits.
++    \item Keep sessions visible and controllable. One machine can use labeled Claude Code and Codex sessions.
++    \item The assistant coordinates projects, machines, inputs, and outputs. A private Command Center can provide this view.
++    \item Match models to tasks and usage limits. Use independent review; link PRs to issues and verify closeout.
++\end{itemize}
+ \end{frame}
+--- original/slide-40.tex
++++ revised/slide-34.tex
+@@ -5,7 +5,7 @@
+ 
+ \begin{block}{Statistical Software}
+ \begin{itemize}
+-    \item \textbf{Stata/MATLAB}: Not natively integrated in VS Code
++    \item \textbf{Stata/MATLAB}: Integration depends on extensions and local software
+     \item \textbf{Solution}: Run through integrated terminal with commands
+     \item Extensions available for syntax highlighting
+     \item Execute code blocks via terminal shortcuts
+@@ -15,13 +15,12 @@
+ \begin{block}{Overleaf Integration}
+ \begin{itemize}
+     \item \textbf{Via Dropbox}: Sync local folder with Overleaf project (some lag)
+-    \item \textbf{Via Git}: Clone Overleaf project, push/pull changes (more control)
++    \item \textbf{Via Git}: Clone Overleaf project, push/pull changes (Premium)
+     \item \textbf{Via GitHub}: Sync Overleaf project with GitHub repository (requires Premium)
+-    \item \textbf{Alternative}: Use LaTeX Workshop extension in VS Code directly and Copy/Paste files
++    \item \textbf{Alternative}: Compile locally with LaTeX Workshop; transfer source files when needed
+     % \item Trade-off: Real-time collaboration vs. local control
+ \end{itemize}
+ \end{block}
+ 
+-\vspace{0.1cm}
+-\textbf{Bottom line:} Not perfect, but workable with some adjustments!
++
+ \end{frame}
+--- original/slide-41.tex
++++ revised/slide-35.tex
+@@ -2,11 +2,11 @@
+     \centering
+     \begin{tikzpicture}[node distance=4cm, auto, >=stealth, thick]
+         % Nodes
+-        \node[rectangle, draw=blue!60!black, fill=blue!5, very thick, minimum width=3cm, minimum height=1.5cm, rounded corners, align=center] (overleaf) {\textbf{Overleaf}\\\textit{(Editor-in-Chief)}};
++        \node[rectangle, draw=blue!60!black, fill=blue!5, very thick, minimum width=3cm, minimum height=1cm, rounded corners, align=center] (overleaf) {\textbf{Overleaf}\\\textit{(Editor-in-Chief)}};
+         
+-        \node[rectangle, draw=black!70, fill=black!5, very thick, minimum width=2.5cm, minimum height=1.5cm, rounded corners, align=center, right of=overleaf, node distance=6cm] (github) {\textbf{GitHub}\\\textit{(The Bridge)}};
++        \node[rectangle, draw=black!70, fill=black!5, very thick, minimum width=2.5cm, minimum height=1cm, rounded corners, align=center, right of=overleaf, node distance=6cm] (github) {\textbf{GitHub}\\\textit{(The Bridge)}};
+         
+-        \node[rectangle, draw=green!60!black, fill=green!5, very thick, minimum width=3cm, minimum height=1.5cm, rounded corners, align=center, below of=github, node distance=3.5cm] (local) {\textbf{VS Code}\\\textit{(Integrator)}};
++        \node[rectangle, draw=green!60!black, fill=green!5, very thick, minimum width=3cm, minimum height=1cm, rounded corners, align=center, below of=github, node distance=1.9cm] (local) {\textbf{VS Code}\\\textit{(Integrator)}};
+ 
+         % Arrows
+         % 1. Overleaf -> GitHub
+@@ -22,14 +22,14 @@
+         \draw[->, purple!70!black] (local.east) to [bend right=60] node[right, font=\footnotesize] {4. Merge \& Push} (github.east);
+ 
+         % 3. Local work
+-        \node[below of=local, node distance=2cm, align=center, font=\footnotesize] (work) {\textbf{3. Create Feature Branch}\\\textit{(Do local work)}};
++        \node[below of=local, node distance=1.25cm, align=center, font=\footnotesize] (work) {\textbf{3. Create Feature Branch}\\\textit{(Do local work)}};
+         \draw[dashed, ->] (local) -- (work);
+     \end{tikzpicture}
+ 
+-    \vspace{0.3cm}
++    \vspace{-0.1cm}
+     \small
+     \begin{block}{Workflow Rules}
+-    \begin{itemize}
++    \begin{itemize}\setlength{\itemsep}{0pt}
+         \item \textbf{Overleaf} owns \texttt{main} (authoritative draft)
+         \item \textbf{Local work} happens exclusively on \texttt{feature/*} branches
+         \item \textbf{Sync} often: Pull \texttt{main} before branching
+--- original/slide-43.tex
++++ revised/slide-38.tex
+@@ -1,22 +1,30 @@
+-\begin{frame}{Next Steps}
+-\textbf{First:}
++\begin{frame}{Next Steps \& Resources}
++\begin{columns}[t]
++\begin{column}{0.52\textwidth}
++\textbf{Next Steps:}
+ \begin{enumerate}
+-    \item Fork/clone workshop template repository
++    \item Fork/clone the workshop repository
+     \item Install VS Code and extensions
+-    \item Set up GitHub account (education benefits)
++    \item Set up GitHub and one AI agent
+     \item Practice basic Git commands
+-    \item Run \texttt{make all} to build template
+-    \item Ask your favorite AI agent to explain any concepts from the slides you don't understand
++    \item Run \texttt{make all} to build the template
++    \item Apply the workflow to a small project
+ \end{enumerate}
+-
+-\vspace{0.3cm}
+-
+-\textbf{Second:}
++\end{column}
++\begin{column}{0.44\textwidth}
++\textbf{Documentation:}
+ \begin{itemize}
+-    \item Apply workflow to a small project
+-    \item Create repository for current research
+-    \item Experiment with Copilot
+-    \item Set up project board
++    \item Git: \url{git-scm.com/doc}
++    \item GitHub: \url{docs.github.com}
++    \item VS Code: \url{code.visualstudio.com/docs}
+ \end{itemize}
+-
++\textbf{Learning:}
++\begin{itemize}
++    \item \url{skills.github.com}
++    \item \url{software-carpentry.org}
++\end{itemize}
++\end{column}
++\end{columns}
++\vspace{0.2cm}
++\url{https://github.com/tlarroucau/AI_workshop}
+ \end{frame}
+--- original/slide-47.tex
++++ revised/slide-40.tex
+@@ -19,7 +19,7 @@
+ 
+ \vspace{0.3cm}
+ 
+-\textbf{Why it matters for AI:} When agents modify your code, \texttt{make all} re-runs the full pipeline --- ensuring reproducibility even after AI-generated changes.
++\textbf{Why it matters for AI:} When agents modify your code, \texttt{make all} re-runs the full pipeline --- so you can inspect regenerated outputs after AI-generated changes.
+ \end{column}
+ 
+ \begin{column}{0.48\textwidth}

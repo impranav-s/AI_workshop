@@ -1,0 +1,242 @@
+[
+  {
+    "new": 1,
+    "original": 1,
+    "title": "Git, GitHub, and VS Code",
+    "exact_original_frame": true
+  },
+  {
+    "new": 2,
+    "original": 2,
+    "title": "Workshop Overview",
+    "exact_original_frame": true
+  },
+  {
+    "new": 3,
+    "original": 3,
+    "title": "Why This Workshop?",
+    "exact_original_frame": false
+  },
+  {
+    "new": 4,
+    "original": 4,
+    "title": "The ``Jur-AI-ssic Park\" Approach to Research",
+    "exact_original_frame": false
+  },
+  {
+    "new": 5,
+    "original": 5,
+    "title": "The Symbiosis: Agents as Builders",
+    "exact_original_frame": false
+  },
+  {
+    "new": 6,
+    "original": 7,
+    "title": "Reproducible Research Template",
+    "exact_original_frame": false
+  },
+  {
+    "new": 7,
+    "original": 8,
+    "title": "Workshop Prerequisites",
+    "exact_original_frame": false
+  },
+  {
+    "new": 8,
+    "original": 21,
+    "title": "What is Git?",
+    "exact_original_frame": false
+  },
+  {
+    "new": 9,
+    "original": 22,
+    "title": "Git Core Concepts",
+    "exact_original_frame": true
+  },
+  {
+    "new": 10,
+    "original": 23,
+    "title": "The Git Workflow",
+    "exact_original_frame": true
+  },
+  {
+    "new": 11,
+    "original": 24,
+    "title": "Essential Git Commands",
+    "exact_original_frame": false
+  },
+  {
+    "new": 12,
+    "original": 25,
+    "title": "Branching Strategy",
+    "exact_original_frame": true
+  },
+  {
+    "new": 13,
+    "original": 26,
+    "title": "Visualizing Branches",
+    "exact_original_frame": true
+  },
+  {
+    "new": 14,
+    "original": "worktrees",
+    "title": "Git Worktrees: Separate Folders for Parallel Work",
+    "exact_original_frame": false
+  },
+  {
+    "new": 15,
+    "original": 27,
+    "title": "Git Best Practices",
+    "exact_original_frame": false
+  },
+  {
+    "new": 16,
+    "original": 28,
+    "title": "The .gitignore File",
+    "exact_original_frame": false
+  },
+  {
+    "new": 17,
+    "original": 29,
+    "title": "Common Challenges \\& Solutions",
+    "exact_original_frame": true
+  },
+  {
+    "new": 18,
+    "original": 30,
+    "title": "Resolving Merge Conflicts in VS Code",
+    "exact_original_frame": true
+  },
+  {
+    "new": 19,
+    "original": 32,
+    "title": "What is GitHub?",
+    "exact_original_frame": false
+  },
+  {
+    "new": 20,
+    "original": 33,
+    "title": "GitHub Workflow: Issues",
+    "exact_original_frame": true
+  },
+  {
+    "new": 21,
+    "original": 34,
+    "title": "GitHub Project Boards",
+    "exact_original_frame": true
+  },
+  {
+    "new": 22,
+    "original": 35,
+    "title": "GitHub Workflow: Pull Requests",
+    "exact_original_frame": true
+  },
+  {
+    "new": 23,
+    "original": 10,
+    "title": "What is VS Code?",
+    "exact_original_frame": false
+  },
+  {
+    "new": 24,
+    "original": 11,
+    "title": "Useful Extensions for Research \\& Productivity",
+    "exact_original_frame": true
+  },
+  {
+    "new": 25,
+    "original": 12,
+    "title": "Essential VS Code Features",
+    "exact_original_frame": true
+  },
+  {
+    "new": 26,
+    "original": 13,
+    "title": "VS Code Workspace Setup",
+    "exact_original_frame": false
+  },
+  {
+    "new": 27,
+    "original": 15,
+    "title": "What is Agentic AI?",
+    "exact_original_frame": false
+  },
+  {
+    "new": 28,
+    "original": 16,
+    "title": "Copilot, Codex, and Claude Code",
+    "exact_original_frame": false
+  },
+  {
+    "new": 29,
+    "original": 17,
+    "title": "Custom Context \\& Skills",
+    "exact_original_frame": false
+  },
+  {
+    "new": 30,
+    "original": 18,
+    "title": "Agent Interfaces: CLI, Editor, and Desktop",
+    "exact_original_frame": false
+  },
+  {
+    "new": 31,
+    "original": 19,
+    "title": "Data Privacy \\& Security Considerations",
+    "exact_original_frame": false
+  },
+  {
+    "new": 32,
+    "original": 37,
+    "title": "MCP: Model Context Protocol",
+    "exact_original_frame": false
+  },
+  {
+    "new": 33,
+    "original": 38,
+    "title": "Orchestration: The Big Picture",
+    "exact_original_frame": false
+  },
+  {
+    "new": 34,
+    "original": 40,
+    "title": "Common Frictions in Academic Research",
+    "exact_original_frame": false
+  },
+  {
+    "new": 35,
+    "original": 41,
+    "title": "Optimum Workflow: Overleaf + VS Code",
+    "exact_original_frame": false
+  },
+  {
+    "new": 36,
+    "original": 42,
+    "title": "Complementary Research Tools",
+    "exact_original_frame": true
+  },
+  {
+    "new": 37,
+    "original": "writing",
+    "title": "Author Instructions: Write for the Paper's Reader",
+    "exact_original_frame": false
+  },
+  {
+    "new": 38,
+    "original": 43,
+    "title": "Next Steps \\& Resources",
+    "exact_original_frame": false
+  },
+  {
+    "new": 39,
+    "original": 46,
+    "title": "Questions?",
+    "exact_original_frame": true
+  },
+  {
+    "new": 40,
+    "original": 47,
+    "title": "The Makefile Approach",
+    "exact_original_frame": false
+  }
+]
