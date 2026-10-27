@@ -54,7 +54,7 @@
     \item Research projects grow messy fast
     % \item ``It worked on my machine'' syndrome
     \item Co-authoring via email and Dropbox can be chaotic
-    \item AI tools exist but live \textit{outside} the workflow
+    \item AI use remains scattered across the research workflow.
 \end{itemize}
 \end{column}
 
@@ -63,7 +63,7 @@
 \begin{itemize}
     \item Work in one environment: code, writing, collaboration
     \item Track changes and recover earlier versions
-    \item Let AI operate \textit{inside} the project with guardrails
+    \item Let AI operate with shared project context and guardrails across the research pipeline.
     % \item Automate the boring parts of research
 \end{itemize}
 \end{column}
@@ -164,8 +164,8 @@
             
             \begin{itemize}
                 \itemsep1em
-                \item \textbf{VS Code $\rightarrow$ Capability} \\
-                \small Agents gain \textit{hands}. They can execute tests, debug, and browse the web.
+                \item \textbf{VS Code $\rightarrow$ Integrated Workspace} \\
+                \small Agents access project files and execution tools in one place.
                 
                 \item \textbf{Git/GitHub $\rightarrow$ Memory} \\
                 \small Issues \& PRs provide persistent context and documentation.
@@ -190,6 +190,7 @@
     \item \texttt{tex/}: LaTeX templates (paper, slides)
     \item \texttt{Makefile}: Automation workflow
     \item \texttt{README.md}: Project documentation and agent instructions
+    \item \texttt{AGENTS.md}, \texttt{CLAUDE.md}: Agent instructions
     \item \texttt{.gitignore}: Excluded files
 \end{itemize}
 
@@ -422,10 +423,6 @@ Makefile Tools & Makefile support \\
 %     \item Share terminals, debuggers, and servers
 %     \item Great for remote pair programming and debugging sessions
 % \end{itemize}
-\vspace{0.2cm}
-\begin{itemize}
-    \item \textbf{Agent panel}: Supported local Claude Code and Codex sessions can appear in the sessions list; enable the \textit{External} filter when available.
-\end{itemize}
 \end{frame}
 
 
@@ -504,9 +501,7 @@ Open-source harness/app-server: inspect or build interfaces. Personality setting
 \vspace{0.1cm}
 {\scriptsize Support varies by model, provider, version and platform.}
 
-\vspace{0.1cm}
-\hrule height 0.2pt
-\vspace{0.1cm}
+\vspace{0.35cm}
 \textbf{Proactive personal assistants:} OpenAI dots; Anthropic Claude Duet (research preview).
 \begin{itemize}\setlength{\itemsep}{0pt}
     \item \footnotesize \textbf{GitHub Copilot}: alternative integrated workflow/model-access option.
@@ -612,6 +607,38 @@ Open-source harness/app-server: inspect or build interfaces. Personality setting
     \item Check model hosting, network tools, extensions, and telemetry
     \item Performance depends on the model, task, and available hardware
 \end{itemize}
+\end{frame}
+
+
+% Original slide writing
+\begin{frame}{Writing with Agents}
+\framesubtitle{Write for the Paper's Reader}
+\begin{columns}[t]
+\begin{column}{0.48\textwidth}
+\textbf{Start with the Argument}
+\begin{itemize}\setlength{\itemsep}{5pt}
+    \item Establish the claims, interpretation, and exhibits before drafting prose
+    \item State the economic argument directly for the intended reader
+    \item Verify findings and citations; never invent results
+\end{itemize}
+\vspace{0.2cm}
+\textbf{Reusable Writing Skills}
+\begin{itemize}\setlength{\itemsep}{2pt}
+    \item \texttt{academic-draft-editing}
+    \item \texttt{econ-write}, \texttt{humanizer}
+\end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{Give Explicit Author Instructions}
+\begin{itemize}\setlength{\itemsep}{5pt}
+    \item Match the existing prose; make minimal edits
+    \item Avoid coined terms, stock trailing clauses, and contrastive padding
+    \item Keep chat history and internal workflow out of the paper
+    \item Introduce notation only when necessary; define every symbol
+    \item Recheck the prose: models can return to their default style
+\end{itemize}
+\end{column}
+\end{columns}
 \end{frame}
 
 
@@ -1171,23 +1198,89 @@ Reproducibility & Use Makefile, document dependencies \\
 \end{frame}
 
 
-\section{Advanced Topics and Integrations}
+\section{Orchestration and Integrations}
 
 \begin{frame}[plain]
     \centering
     \vspace{1cm}
-    \textbf{\Huge Integrations}
+    \textbf{\Huge Orchestration and Integrations}
 
     \vspace{0.5cm}
     {\Large Putting It All Together}
-
-    \vspace{1.5cm}
-    \begin{tikzpicture}
-        \node[rectangle, draw=orange!60!black, fill=orange!10, very thick, minimum size=3cm, minimum width=3cm, align=center] {\Large MCP};
-    \end{tikzpicture}
 \end{frame}
 
-% Original slide 37
+
+\begin{frame}{Orchestration: The Big Picture}
+\begin{center}
+\begin{tikzpicture}[node distance=0.8cm, auto, thick, scale=0.9, every node/.style={scale=0.9}]
+    \tikzstyle{box} = [rectangle, draw, fill=blue!20, text width=6em, text centered, rounded corners, minimum height=2.5em]
+    \tikzstyle{agent} = [rectangle, draw, fill=green!20, text width=6em, text centered, rounded corners, minimum height=2.5em]
+    \tikzstyle{tool} = [rectangle, draw, fill=orange!20, text width=7em, text centered, rounded corners, minimum height=2.5em]
+    \tikzstyle{arrow} = [->, >=stealth, thick]
+    \node [box] (researcher) {Researcher};
+    \node [agent, right=of researcher] (assistant) {Assistant /\\Orchestrator};
+    \node [tool, right=of assistant] (board) {Shared Goal\\Issues / Board};
+    \node [agent, above right=0.15cm and 0.8cm of board] (a) {Agent A\\Worktree A};
+    \node [agent, below right=0.15cm and 0.8cm of board] (b) {Agent B\\Worktree B};
+    \draw [arrow] (researcher) -- (assistant);
+    \draw [arrow] (assistant) -- (board);
+    \draw [arrow] (board) -- (a);
+    \draw [arrow] (board) -- (b);
+\end{tikzpicture}
+\end{center}
+\vspace{-0.05cm}
+\small
+\begin{itemize}\setlength{\itemsep}{0pt}
+    \item Assign distinct tasks and owners. Run independent work in parallel; sequence coupled edits.
+    \item Keep sessions visible and controllable. One machine can use labeled Claude Code and Codex sessions.
+    \item The assistant coordinates projects, machines, inputs, and outputs. A custom interface, such as a private Command Center, can provide this view.
+    \item Match models to tasks and usage limits. Use independent review; link PRs to issues and verify closeout.
+\end{itemize}
+\vspace{0.1cm}
+{\small\textbf{Dot demonstration}}
+\end{frame}
+
+
+\begin{frame}{Where Do You Place Yourself?}
+\begin{center}
+Research question $\rightarrow$ Project design $\rightarrow$ Methods and tasks $\rightarrow$ Exact code
+\end{center}
+\begin{itemize}
+    \item Choose how closely to guide each task
+    \item You own the question, assumptions, and interpretation
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Complementary Research Tools}
+\begin{table}
+\small
+\begin{tabular}{lp{6cm}}
+\toprule
+\textbf{Tool} & \textbf{Purpose} \\
+\midrule
+\textbf{Refine} & Paper review and feedback \\
+\midrule
+\textbf{NotebookLM} & Organize context from a collection of sources \\
+\midrule
+\textbf{Pangram} & AI-writing signal check \\
+\midrule
+\textbf{Granola} & Meeting notes and context \\
+\midrule
+\textbf{Elicit} & Literature discovery and synthesis \\
+& Extract data from papers \\
+% \midrule
+% \textbf{GPT/Claude/Gemini} & General research assistance \\
+% & Draft writing, brainstorming \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.2cm}
+\textbf{Integration:} Use alongside Git/GitHub workflow for complete research pipeline
+\end{frame}
+
+
 \begin{frame}{MCP: Model Context Protocol}
 \textbf{What is MCP?}
 \begin{itemize}
@@ -1229,65 +1322,6 @@ Reproducibility & Use Makefile, document dependencies \\
 \end{frame}
 
 
-% Original slide 38
-\begin{frame}{Orchestration: The Big Picture}
-\begin{center}
-\begin{tikzpicture}[node distance=0.8cm, auto, thick, scale=0.9, every node/.style={scale=0.9}]
-    \tikzstyle{box} = [rectangle, draw, fill=blue!20, text width=6em, text centered, rounded corners, minimum height=2.5em]
-    \tikzstyle{agent} = [rectangle, draw, fill=green!20, text width=6em, text centered, rounded corners, minimum height=2.5em]
-    \tikzstyle{tool} = [rectangle, draw, fill=orange!20, text width=7em, text centered, rounded corners, minimum height=2.5em]
-    \tikzstyle{arrow} = [->, >=stealth, thick]
-    \node [box] (researcher) {Researcher};
-    \node [agent, right=of researcher] (assistant) {Assistant /\\Orchestrator};
-    \node [tool, right=of assistant] (board) {Shared Goal\\Issues / Board};
-    \node [agent, above right=0.15cm and 0.8cm of board] (a) {Agent A\\Worktree A};
-    \node [agent, below right=0.15cm and 0.8cm of board] (b) {Agent B\\Worktree B};
-    \draw [arrow] (researcher) -- (assistant);
-    \draw [arrow] (assistant) -- (board);
-    \draw [arrow] (board) -- (a);
-    \draw [arrow] (board) -- (b);
-\end{tikzpicture}
-\end{center}
-\vspace{-0.05cm}
-\begin{itemize}\setlength{\itemsep}{1pt}
-    \item Assign distinct tasks and owners. Run independent work in parallel; sequence coupled edits.
-    \item Keep sessions visible and controllable. One machine can use labeled Claude Code and Codex sessions.
-    \item The assistant coordinates projects, machines, inputs, and outputs. A private Command Center can provide this view.
-    \item Match models to tasks and usage limits. Use independent review; link PRs to issues and verify closeout.
-\end{itemize}
-\end{frame}
-
-
-% Original slide 40
-\begin{frame}{Common Frictions in Academic Research}
-\textbf{Integration Challenges:}
-
-\vspace{0.2cm}
-
-\begin{block}{Statistical Software}
-\begin{itemize}
-    \item \textbf{Stata/MATLAB}: Integration depends on extensions and local software
-    \item \textbf{Solution}: Run through integrated terminal with commands
-    \item Extensions available for syntax highlighting
-    \item Execute code blocks via terminal shortcuts
-\end{itemize}
-\end{block}
-
-\begin{block}{Overleaf Integration}
-\begin{itemize}
-    \item \textbf{Via Dropbox}: Sync local folder with Overleaf project (some lag)
-    \item \textbf{Via Git}: Clone Overleaf project, push/pull changes (Premium)
-    \item \textbf{Via GitHub}: Sync Overleaf project with GitHub repository (requires Premium)
-    \item \textbf{Alternative}: Compile locally with LaTeX Workshop; transfer source files when needed
-    % \item Trade-off: Real-time collaboration vs. local control
-\end{itemize}
-\end{block}
-
-
-\end{frame}
-
-
-% Original slide 41
 \begin{frame}{Optimum Workflow: Overleaf + VS Code}
     \centering
     \begin{tikzpicture}[node distance=4cm, auto, >=stealth, thick]
@@ -1325,66 +1359,6 @@ Reproducibility & Use Makefile, document dependencies \\
         \item \textbf{Sync} often: Pull \texttt{main} before branching
     \end{itemize}
     \end{block}
-\end{frame}
-
-
-% Original slide 42
-\begin{frame}{Complementary Research Tools}
-\begin{table}
-\small
-\begin{tabular}{lp{6cm}}
-\toprule
-\textbf{Tool} & \textbf{Purpose} \\
-\midrule
-\textbf{Refine} & AI-powered writing revision and style improvement \\
-(refine.ink) & Interactive editing with suggestions \\
-\midrule
-\textbf{NotebookLM} & Structured reading and note-taking \\
-(Google) & Create study guides from papers \\
-         & Create academic podcasts! \\
-\midrule
-\textbf{Elicit} & Literature discovery and synthesis \\
-& Extract data from papers \\
-% \midrule
-% \textbf{GPT/Claude/Gemini} & General research assistance \\
-% & Draft writing, brainstorming \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\vspace{0.2cm}
-\textbf{Integration:} Use alongside Git/GitHub workflow for complete research pipeline
-\end{frame}
-
-
-% Original slide writing
-\begin{frame}{Author Instructions: Write for the Paper's Reader}
-\begin{columns}[t]
-\begin{column}{0.48\textwidth}
-\textbf{Start with the Argument}
-\begin{itemize}\setlength{\itemsep}{5pt}
-    \item Establish the claims, interpretation, and exhibits before drafting prose
-    \item State the economic argument directly for the intended reader
-    \item Verify findings and citations; never invent results
-\end{itemize}
-\vspace{0.2cm}
-\textbf{Reusable Writing Skills}
-\begin{itemize}\setlength{\itemsep}{2pt}
-    \item \texttt{academic-draft-editing}
-    \item \texttt{econ-write}, \texttt{humanizer}
-\end{itemize}
-\end{column}
-\begin{column}{0.48\textwidth}
-\textbf{Give Explicit Author Instructions}
-\begin{itemize}\setlength{\itemsep}{5pt}
-    \item Match the existing prose; make minimal edits
-    \item Avoid coined terms, stock trailing clauses, and contrastive padding
-    \item Keep chat history and internal workflow out of the paper
-    \item Introduce notation only when necessary; define every symbol
-    \item Recheck the prose: models can return to their default style
-\end{itemize}
-\end{column}
-\end{columns}
 \end{frame}
 
 

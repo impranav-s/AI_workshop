@@ -157,3 +157,25 @@ The two difference columns select useful implementations without forcing exclusi
 - [Introducing Claude Duet](https://claude.com/resources/articles/claude-duet) is dated **October 21, 2026**. It announced an already-open research preview, initially by waitlist for US Pro/Max subscribers, through a separate mobile app and claude.ai. It is not described as unannounced. Its product surfaces and availability are not equated with dots or the coding harnesses.
 
 The ecosystem line is visually separated from harness capabilities. GitHub Copilot retains one brief footer as an alternative integrated workflow/model-access option. No personal-assistant demo, new frame, installation or product configuration is added.
+
+
+## Lecture release reconciliation — October 26, 2026
+
+The release is built from one canonical `tex/slides/workshop_slides.tex` on the existing review branch. Source/PDF conflict copies and local Git metadata were backed up outside the Dropbox editing path and remain in place. Versions were compared by content against approved commits, not selected by timestamp.
+
+- The canonical pre-release source exactly matched `413499e`.
+- The Fox source with the `1` suffix matched the `370cd67` layout, with its old introductory researcher-role block commented out; the later approved action/verification introduction is retained.
+- The older Fox source matched the `c3625b0` layout plus distinct author edits. Its revised motivation/workspace wording, repository instruction-file row, removal of the obsolete agent-panel cue, and corrected complementary-tool roles are carried forward. Its stale Git ordering and demos do not replace the later approved versions.
+- All three conflicted PDFs exactly matched the text of approved historical PDFs (`370cd67`, `413499e`, and `9c23759`). They contain no additional unique teaching text. The release PDF is regenerated from the reconciled source.
+
+The final comparison change is local spacing only: the awkward horizontal rule is removed and the existing ecosystem footer is placed lower with more breathing room. All previously verified substantive comparison text and essential experimental/research-preview labels remain.
+
+The existing writing frame is moved once, immediately after Data Privacy & Security, as **Writing with Agents**, with **Write for the Paper's Reader** as its subtitle. All substantive writing rules and skill names are retained.
+
+The author explicitly resolved the missing researcher-role/dot-cue gap during this release: replace the removed Common Frictions frame with the saved verbatim researcher-role text and add the exact brief cue **Dot demonstration** to existing Orchestration. This keeps 45 pages and introduces no new teaching text or additional demo instructions. The generic custom-interface/private Command Center bridge is retained without publishing its implementation.
+
+Final-section order: **Orchestration and Integrations / Putting It All Together** divider; **Orchestration: The Big Picture**; **Where Do You Place Yourself?**; **Complementary Research Tools**; **MCP: Model Context Protocol**; **Optimum Workflow: Overleaf + VS Code**. The large MCP divider square and final Common Frictions frame are removed; Git Common Challenges & Solutions is retained. Tool roles are restored from the Fox author version: Refine—paper review/feedback; NotebookLM—context from sources; Pangram—AI-writing signal check; Granola—meeting notes/context. Elicit's existing role is preserved.
+
+### Student skill-material status
+
+Only the original repository-authored legacy YouTube transcript example is bundled. Its original files and authorship history remain unchanged; its declared dependency is already in the project requirements. It is not certified here as a portable cross-tool skill package. The author's private writing-skill originals are not copied into the public repository. Third-party skill packages remain upstream links with their own attribution and redistribution terms; no new third-party package is redistributed. The bundled skill files contain no private machine paths, credential-like literals, confidential research examples, or private Command Center implementation. No installation, account connection, or global setting change was performed.

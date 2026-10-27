@@ -4,7 +4,7 @@
 
 This repository serves as a **template for reproducible research projects** created by **Tomas Larroucau** and accompanies the workshop: *"Git, GitHub, and VS Code: Agentic AI for Project Management and Research Productivity."*
 
-Workshop: **Monday, October 26, 2026**. The 40-slide deck covers Git, GitHub, VS Code and agentic harnesses, then orchestration, writing, and integrations. Allow 90 minutes, with additional discussion up to two hours.
+Workshop: **Monday, October 26, 2026**. The lecture deck begins with setup, VS Code, agent capabilities and writing, then Git/GitHub guardrails, orchestration, and integrations. Allow 90 minutes, with additional discussion up to two hours.
 
 ## 🎯 Purpose
 
@@ -120,6 +120,15 @@ pdflatex -interaction=nonstopmode -halt-on-error workshop_slides.tex
 
 The original slide assets are in `tex/slides/figures/`. LaTeX Workshop can compile and display the PDF in VS Code. Installation details and source links for the workshop's agent features and optional skills are in [workshop_review/source_notes.md](workshop_review/source_notes.md).
 
+The current lecture deck is [workshop_slides.pdf](tex/slides/workshop_slides.pdf); its canonical source is [workshop_slides.tex](tex/slides/workshop_slides.tex).
+
+### Skill material status
+
+- The writing skills named in the slides (`academic-draft-editing`, `econ-write`, and `humanizer`) are references to the author's existing tools; their private originals are not bundled here.
+- Optional third-party skills are linked in the source notes. Use their upstream installation instructions and attribution/redistribution terms; this repository does not redistribute those skill packages.
+- The original YouTube transcript example remains in `.github/skills/youtube-transcript/`. It is a legacy example, not a validated cross-tool skill package; it requires `youtube-transcript-api` and tool-specific setup. Its original files and authorship history are retained.
+- Command Center is a private example. Its implementation, private machine configuration, credentials, and research inputs are not included.
+
 ## 🔧 Makefile Targets
 
 | Target | Description |
@@ -162,19 +171,20 @@ These files help AI assistants understand:
 
 ## 🎓 Workshop Modules
 
+### Introduction, VS Code, and Agents
+- Setup, repository structure, VS Code, and agent capabilities
+- Harness comparisons, interfaces, instructions, skills, privacy, and Writing with Agents
+
 ### Git
 - Commits, branches, merges, worktrees, and conflict resolution
 
 ### GitHub
 - Issues, project boards, pull requests, and collaboration
 
-### VS Code and Agentic Harnesses
-- An environment for reading, writing, editing, Git, and agent work
-- Copilot, Codex, and Claude Code; interfaces, instructions, and skills
-
-### Advanced Topics and Integrations
-- Orchestration, independent review, and AI-assisted writing
-- MCP, Overleaf, Refine, NotebookLM, and Elicit
+### Orchestration and Integrations
+- Orchestration, independent review, and custom interfaces
+- Refine, NotebookLM, Pangram, Granola, and Elicit
+- MCP as a connection mechanism, followed by the Overleaf workflow
 
 ## 📝 Using This Template
 
