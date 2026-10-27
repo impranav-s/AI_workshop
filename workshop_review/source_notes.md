@@ -106,3 +106,54 @@ The two examples, `academic-draft-editing` and `humanizer`, are the author's exi
 ### Slide 17: access surfaces
 
 Only Terminal / CLI, IDE Extension, and Desktop remain. The nine useful interface bullets are retained verbatim. Headings and first bullet baselines are aligned, and the former Custom Agents block is removed. Remote access is qualified by a running host and supported access, consistent with the remote-control references above. No agents-panel demonstration or additional harness comparison is introduced.
+
+
+## Latest approved slides 14–15 revision — October 26, 2026
+
+This revision changes only the introductory action/verification distinction and the following harness comparison. Slides 16–17, all other frames, section order, dividers, and the appendix remain unchanged. The subtitle about convergence is the author's teaching message, supported by overlapping current capabilities and already-announced products; it is not a measured rate of convergence or a model-performance ranking.
+
+### Slide 14: action and verification
+
+The CHAT and AGENT bullet text is author-supplied. The comparison emphasizes acting on the project and checking results. It does not assert that chat cannot reason, use context, or offer sophisticated approaches. The qualification is: “Within your instructions and permissions.”
+
+**Author-review gap:** the current deck has no separate dedicated hierarchy/researcher-role frame. Its only existing discussion was attached to this introduction. That material is removed from the introductory slide as requested and preserved verbatim below for the author's future placement. No replacement frame was invented, and no other frame was changed to absorb it.
+
+```latex
+\textbf{Where Do You Place Yourself?}
+\begin{center}
+Research question $\rightarrow$ Project design $\rightarrow$ Methods and tasks $\rightarrow$ Exact code
+\end{center}
+\begin{itemize}
+    \item Choose how closely to guide each task
+    \item You own the question, assumptions, and interpretation
+\end{itemize}
+```
+
+### Slide 15: grouped overlap and concrete implementations
+
+The visible groups summarize categories of supported capabilities, not identical configuration or universal access. Existing instruction, skills, hooks, MCP, and output-guidance sources in the preceding addendum continue to apply. Additional checks for this revision:
+
+- **Context and customization:** [Claude Code context management](https://code.claude.com/docs/en/how-claude-code-works) includes automatic compaction and `/compact`. [Codex developer commands](https://learn.chatgpt.com/docs/developer-commands) document compaction, personality, reasoning controls, and session operations. Context persistence and compaction behavior differ.
+- **Tools and control:** [Claude model configuration](https://code.claude.com/docs/en/model-config) documents configurable effort for supported models and organization caps. Codex exposes model-dependent reasoning controls in its developer commands. A setting name or effort label is not a cross-model intelligence benchmark. The shared category includes permissions and approvals in both tools.
+- **Workflow:** [Claude sessions](https://code.claude.com/docs/en/sessions) document multiple conversations, `/branch`, and `--fork-session`; [Codex commands](https://learn.chatgpt.com/docs/developer-commands) document `/fork`, side chats, and parallel continuation. [Claude Remote Control](https://code.claude.com/docs/en/remote-control) and the Codex command reference establish remote continuation, subject to their distinct account, runtime, and platform requirements. Codex CLI `remote-control` is explicitly experimental; this slide makes no desktop-only claim.
+
+### Primary sources for the selected differences
+
+| Claim | Primary source and qualification |
+|---|---|
+| Claude programmable mods | [Claude Code mods announcement](https://claude.com/resources/articles/claude-code-mods): plugin-distributed TypeScript customizations can change behavior and UI. The detailed runtime/version qualifications in the preceding addendum remain applicable. |
+| Claude named output styles | [Output styles](https://code.claude.com/docs/en/output-styles): built-in and custom styles supply instructions about role, tone and response format. This does not make tone guidance exclusive to Claude. |
+| Claude Advisor | [Advisor tool](https://code.claude.com/docs/en/advisor): a built-in, experimental server-side mechanism for consulting another selected model at key decisions. It requires Anthropic's API endpoint and accepted model pairings, and can be used by eligible subscription or API-billed accounts; it does not require every user to use an API key. Third-party model-provider endpoints listed in the documentation are unsupported. The consultation costs and accepted pairings are left to the reference rather than crowded onto the slide. |
+| Claude permissions | [Permissions](https://code.claude.com/docs/en/permissions): permission modes and tool/path rules coexist with sandboxing. The Codex comparison does not imply that Claude lacks a sandbox or cannot guide tone. |
+| Codex open source and interfaces | [Official Codex repository](https://github.com/openai/codex) and [App Server protocol](https://learn.chatgpt.com/docs/app-server): the open-source CLI/harness and app-server support inspection and custom client interfaces. This is not a claim that every desktop component or model weight is open source. |
+| Codex controls | [Agent approvals and security](https://learn.chatgpt.com/docs/agent-approvals-security): sandbox boundaries govern technically permitted execution; approval policy governs when approval is requested. Personality support depends on the selected model, as documented in the developer commands. |
+| Codex CLI remote control | [Developer commands](https://learn.chatgpt.com/docs/developer-commands): `codex remote-control` is experimental, including managed server and pairing operations. Local CLI 0.164.0 exposes this command; eligibility and a working remote connection are not established merely by command help. |
+
+The two difference columns select useful implementations without forcing exclusive counterparts. Neither hooks, skills, reasoning controls, goals, remote control nor HTML generation is assigned exclusively to one harness. The optional presenter-specific approval-frequency observation is omitted for readability; no universal approval-frequency comparison is asserted.
+
+### Separate ecosystem note: dots and Claude Duet
+
+- [OpenAI dots](https://learn.chatgpt.com/docs/dots) are reached through ChatGPT's mobile app, desktop app, or desktop browser. They are not a Codex CLI mode. They can coordinate/delegate Work and Codex tasks, including supported connected-host work. Account rollout, connected-computer access, and task permissions still apply; this is not automatic access to every terminal session.
+- [Introducing Claude Duet](https://claude.com/resources/articles/claude-duet) is dated **October 21, 2026**. It announced an already-open research preview, initially by waitlist for US Pro/Max subscribers, through a separate mobile app and claude.ai. It is not described as unannounced. Its product surfaces and availability are not equated with dots or the coding harnesses.
+
+The ecosystem line is visually separated from harness capabilities. GitHub Copilot retains one brief footer as an alternative integrated workflow/model-access option. No personal-assistant demo, new frame, installation or product configuration is added.

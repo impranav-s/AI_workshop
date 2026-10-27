@@ -447,70 +447,69 @@ Makefile Tools & Makefile support \\
 \begin{frame}{What is Agentic AI?}
 \begin{columns}[t]
 \begin{column}[t]{0.48\textwidth}
-\begin{block}{Traditional AI Assistants}
+\begin{block}{CHAT}
 \begin{itemize}
-    \item Respond to queries
-    \item Generate code snippets
-    \item Provide suggestions
+    \item Answers questions
+    \item Suggests approaches
+    \item Generates code snippets
 \end{itemize}
 \end{block}
 \end{column}
 
 \begin{column}[t]{0.48\textwidth}
-\begin{block}{Agentic AI}
+\begin{block}{AGENT}
 \begin{itemize}
-    \item Autonomous task completion
-    \item Multi-step reasoning
-    \item Context-aware assistance
+    \item Uses tools to act on the project
+    \item Edits files or runs tasks
+    \item Checks results and iterates toward a goal
 \end{itemize}
 \end{block}
 \end{column}
 \end{columns}
 
-\vspace{0.5cm}
-
-\textbf{Where Do You Place Yourself?}
+\vspace{0.3cm}
 \begin{center}
-Research question $\rightarrow$ Project design $\rightarrow$ Methods and tasks $\rightarrow$ Exact code
+\small Within your instructions and permissions.
 \end{center}
-\begin{itemize}
-    \item Choose how closely to guide each task
-    \item You own the question, assumptions, and interpretation
-\end{itemize}
 \end{frame}
 
 
 % Original slide 16
-\begin{frame}{Codex and Claude Code: Harness Workflows}
-% Sources checked 2026-10-26: workshop_review/source_notes.md (slides 15--17).
-\framesubtitle{\small \textbf{Model}: reasoning. \quad \textbf{Harness}: context, tools, permissions. \quad \textbf{Interface}: where you work.}
-\small
-\textbf{Both:} project instructions, reusable skills, MCP/tools, hooks, permission controls, and output guidance.
-
-\vspace{0.15cm}
-\renewcommand{\arraystretch}{1.15}
-\begin{tabular}{@{}p{0.14\textwidth}@{\hspace{0.025\textwidth}}p{0.395\textwidth}@{\hspace{0.025\textwidth}}p{0.415\textwidth}@{}}
-\toprule
- & \textbf{Claude Code} & \textbf{OpenAI Codex} \tabularnewline
-\midrule
-\raggedright\textbf{Shape behavior}
- & \raggedright Named output styles; JS/TS mods in plugins customize session behavior/UI.
- & \raggedright Instructions and supported personality settings; skills/hooks for repeated workflows. \tabularnewline
-\addlinespace[0.35em]
-\raggedright\textbf{Control actions}
- & \raggedright Tool/path rules and permission modes.
- & \raggedright Approval policy and sandbox scope configured separately. \tabularnewline
-\addlinespace[0.35em]
-\raggedright\textbf{Continue remotely}
- & \raggedright \texttt{claude remote-control}: continue from browser/mobile; keep the host online.
- & \raggedright Desktop pairing (Mac/Windows); experimental \texttt{codex remote-control} also exists. \tabularnewline
-\bottomrule
-\end{tabular}
+\begin{frame}{Codex and Claude Code}
+% Sources checked 2026-10-26: workshop_review/source_notes.md (latest slides 14--15 revision).
+\framesubtitle{\small Similar capabilities, different implementations---and converging quickly.}
+\footnotesize
+\textbf{Shared capabilities}
+\begin{itemize}\setlength{\itemsep}{1pt}
+    \item \textbf{Context/customization:} project instructions, reusable skills, output guidance, context management.
+    \item \textbf{Tools/control:} MCP/tools, hooks, permissions/approvals, configurable reasoning effort on supported models.
+    \item \textbf{Workflow:} parallel conversations, session branches/forks, remote continuation (Codex CLI: experimental).
+\end{itemize}
 
 \vspace{0.1cm}
-{\scriptsize Custom mods add code to maintain; support varies by version, plan and platform.}
+\textbf{Different implementations today}
+\begin{columns}[T,onlytextwidth]
+\begin{column}[T]{0.485\textwidth}
+\raggedright
+\textbf{Claude Code}\\
+TypeScript mods extend behavior/UI; named output styles. Advisor (experimental; Anthropic API) consults another model at key decisions.
+\end{column}
+\begin{column}[T]{0.485\textwidth}
+\raggedright
+\textbf{Codex}\\
+Open-source harness/app-server: inspect or build interfaces. Personality settings. Sandbox: where actions can run; approvals: when to ask.
+\end{column}
+\end{columns}
+
+\vspace{0.1cm}
+{\scriptsize Support varies by model, provider, version and platform.}
+
+\vspace{0.1cm}
+\hrule height 0.2pt
+\vspace{0.1cm}
+\textbf{Proactive personal assistants:} OpenAI dots; Anthropic Claude Duet (research preview).
 \begin{itemize}\setlength{\itemsep}{0pt}
-    \item \footnotesize \textbf{GitHub Copilot}: integrated editor/GitHub workflow, with model choice.
+    \item \footnotesize \textbf{GitHub Copilot}: alternative integrated workflow/model-access option.
 \end{itemize}
 \end{frame}
 
