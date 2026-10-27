@@ -481,113 +481,108 @@ Research question $\rightarrow$ Project design $\rightarrow$ Methods and tasks $
 
 
 % Original slide 16
-\begin{frame}{Copilot, Codex, and Claude Code}
+\begin{frame}{Codex and Claude Code: Harness Workflows}
+% Sources checked 2026-10-26: workshop_review/source_notes.md (slides 15--17).
 \framesubtitle{\small \textbf{Model}: reasoning. \quad \textbf{Harness}: context, tools, permissions. \quad \textbf{Interface}: where you work.}
+\small
+\textbf{Both:} project instructions, reusable skills, MCP/tools, hooks, permission controls, and output guidance.
+
+\vspace{0.15cm}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}p{0.14\textwidth}@{\hspace{0.025\textwidth}}p{0.395\textwidth}@{\hspace{0.025\textwidth}}p{0.415\textwidth}@{}}
+\toprule
+ & \textbf{Claude Code} & \textbf{OpenAI Codex} \tabularnewline
+\midrule
+\raggedright\textbf{Shape behavior}
+ & \raggedright Named output styles; JS/TS mods in plugins customize session behavior/UI.
+ & \raggedright Instructions and supported personality settings; skills/hooks for repeated workflows. \tabularnewline
+\addlinespace[0.35em]
+\raggedright\textbf{Control actions}
+ & \raggedright Tool/path rules and permission modes.
+ & \raggedright Approval policy and sandbox scope configured separately. \tabularnewline
+\addlinespace[0.35em]
+\raggedright\textbf{Continue remotely}
+ & \raggedright \texttt{claude remote-control}: continue from browser/mobile; keep the host online.
+ & \raggedright Desktop pairing (Mac/Windows); experimental \texttt{codex remote-control} also exists. \tabularnewline
+\bottomrule
+\end{tabular}
+
 \vspace{0.1cm}
-\begin{columns}[t]
-\begin{column}{0.48\textwidth}
-\begin{block}{GitHub Copilot}
+{\scriptsize Custom mods add code to maintain; support varies by version, plan and platform.}
 \begin{itemize}\setlength{\itemsep}{0pt}
-    \item Useful when your work centers on VS Code and GitHub
-    \item Ask, Agent, and Plan roles
-    \item Project instructions, skills, and custom agents
+    \item \footnotesize \textbf{GitHub Copilot}: integrated editor/GitHub workflow, with model choice.
 \end{itemize}
-\end{block}
-\begin{block}{OpenAI Codex}
-\begin{itemize}\setlength{\itemsep}{0pt}
-    \item Project work across files, commands, and review
-    \item \texttt{AGENTS.md} and reusable skills
-    \item \texttt{/plan}, \texttt{/review}; resume sessions
-\end{itemize}
-\end{block}
-\end{column}
-\begin{column}{0.48\textwidth}
-\begin{block}{Claude Code}
-\begin{itemize}\setlength{\itemsep}{0pt}
-    \item Terminal workflows and project-specific tools
-    \item \texttt{CLAUDE.md} and reusable skills
-    \item Plan mode; configurable output styles
-\end{itemize}
-\end{block}
-\begin{block}{When to Use Which?}
-\begin{itemize}\setlength{\itemsep}{0pt}
-    \item Match the task, tools, and access you have
-    \item Compare results on work you can verify
-    \item Budget usage; use independent reviewers
-\end{itemize}
-\end{block}
-\end{column}
-\end{columns}
 \end{frame}
 
 
 % Original slide 17
 \begin{frame}{Custom Context \& Skills}
-\begin{columns}[t]
-\begin{column}{0.31\textwidth}
-\textbf{Project Instructions}
-\begin{itemize}\setlength{\itemsep}{3pt}
-    \item Conventions that apply across tasks
-    \item Copilot: {\scriptsize\texttt{copilot-instructions.md}}
-    \item Codex: \texttt{AGENTS.md}
-    \item Claude: \texttt{CLAUDE.md}
-    \item Discovery and scope depend on the harness
-\end{itemize}
-\end{column}
-\begin{column}{0.31\textwidth}
-\textbf{Task \& Output}
-\begin{itemize}\setlength{\itemsep}{3pt}
-    \item \textbf{Prompt}: this task's goal, context, and constraints
-    \item Prompt files save reusable requests
-    \item \textbf{Output style}: how the agent explains its work
-    \item Claude has named styles; Codex uses instructions and supported personality settings
-\end{itemize}
-\end{column}
-\begin{column}{0.31\textwidth}
-\textbf{Reusable Skills}
-\begin{itemize}\setlength{\itemsep}{3pt}
-    \item \texttt{SKILL.md}: instructions and supporting files
-    \item Loaded when relevant or explicitly invoked
-    \item Matt Pocock's \texttt{grill-me}: interview your idea
-    \item \texttt{grill-with-docs}: repository glossary and design decisions
-\end{itemize}
-\end{column}
-\end{columns}
+% Sources checked 2026-10-26: workshop_review/source_notes.md (slides 15--17).
+\framesubtitle{\footnotesize Conceptual organization; loading and precedence depend on the tool.}
+
+\vspace{0.15cm}
+\begin{center}
+\begin{tikzpicture}[
+    guidance/.style={rectangle, rounded corners=2pt, draw=blue!60!black, fill=blue!5, text width=7.8cm, align=left, inner sep=5pt, font=\footnotesize},
+    workflow/.style={rectangle, rounded corners=2pt, draw=green!50!black, fill=green!5, text width=3.8cm, align=left, inner sep=5pt, font=\footnotesize},
+    flow/.style={->, >=stealth, thick, blue!65!black}
+]
+    \node[guidance] (project) at (0,0) {\textbf{Persistent project instructions}\\
+        \texttt{AGENTS.md} / \texttt{CLAUDE.md} / tool-specific rules\\
+        \emph{Project load:} conventions, context, enduring rules.};
+    \node[guidance] (task) at (0,-1.85) {\textbf{Task prompt}\\
+        Goal, scope, inputs, constraints, requested deliverable.\\
+        \emph{Current request:} supplied when you ask for the task.};
+    \node[guidance] (output) at (0,-3.7) {\textbf{Output requirements / styles}\\
+        \emph{Task/session:} audience, tone, format, editing rules.\\
+        Claude: named styles; Codex: instructions/settings.};
+    \node[workflow] (skills) at (6.6,-1.85) {\textbf{Reusable skills}\\
+        \texttt{SKILL.md}: workflows + resources\\
+        Loaded when relevant\\or explicitly invoked\\[0.15cm]
+        \texttt{academic-draft-editing}\\
+        \texttt{humanizer}};
+    \draw[flow] (project.south) -- node[right, font=\scriptsize] {project context} (task.north);
+    \draw[flow] (output.north) -- node[right, font=\scriptsize] {response requirements} (task.south);
+    \draw[flow, green!50!black] (skills.west) -- (task.east);
+\end{tikzpicture}
+\end{center}
+
+{\footnotesize Agents can help install/use skills; check each tool's supported locations and discovery rules.}
 \end{frame}
 
 
 % Original slide 18
 \begin{frame}{Agent Interfaces: CLI, Editor, and Desktop}
-\begin{columns}[t]
-\begin{column}{0.31\textwidth}
-\textbf{Terminal / CLI}
-\begin{itemize}
+% Sources checked 2026-10-26: workshop_review/source_notes.md (slides 15--17).
+\begin{columns}[T,onlytextwidth]
+\begin{column}[T]{0.31\textwidth}
+\textbf{\strut Terminal / CLI}\par
+\vspace{0.3cm}
+\begin{itemize}\setlength{\itemsep}{0.9em}
     \item Work beside shell commands and scripts
     \item Useful on a remote host through SSH
     \item Navigate files and changes through terminal tools
 \end{itemize}
 \end{column}
-\begin{column}{0.31\textwidth}
-\textbf{IDE Extension}
-\begin{itemize}
+\begin{column}[T]{0.31\textwidth}
+\textbf{\strut IDE Extension}\par
+\vspace{0.3cm}
+\begin{itemize}\setlength{\itemsep}{0.9em}
     \item Read files and inspect changes beside the conversation
     \item Useful for close editing and review
     \item Features depend on the extension and integration
 \end{itemize}
 \end{column}
-\begin{column}{0.31\textwidth}
-\textbf{Desktop / Agents Window}
-\begin{itemize}
+\begin{column}[T]{0.31\textwidth}
+\textbf{\strut Desktop}\par
+\vspace{0.3cm}
+\begin{itemize}\setlength{\itemsep}{0.9em}
     \item Manage sessions across tasks and projects
     \item Useful for delegation and oversight
     \item Remote control requires a running host and supported access
 \end{itemize}
 \end{column}
 \end{columns}
-\vspace{0.2cm}
-\begin{block}{Custom Agents}
-A reusable role combines instructions, tools, and sometimes a model. The harness controls its capabilities; choosing a Claude model inside Copilot still uses the Copilot harness.
-\end{block}
 \end{frame}
 
 

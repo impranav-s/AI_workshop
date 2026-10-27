@@ -69,3 +69,40 @@ Choose a plugin or copied-skill route for each agent to avoid duplicate installa
 ## Writing (slide 37)
 
 The author-instruction slide draws on Tomas's user-owned `academic-draft-editing`, `econ-write`, and `humanizer` guidance and the instructions he explicitly requested for this workshop. Private skill files, assistant instructions, research drafts, results, and machine details are not included. Scientific claims and exhibits remain the author's responsibility. This slide makes no universal writing-model ranking and includes no detector discussion.
+
+## Verified redesign of slides 15–17 — October 26, 2026
+
+This dated addendum supplies the sources and qualifications for the three redesigned agent slides. The earlier numbered comparison notes describe a previous layout. The current comparison selects harness mechanisms and useful workflows; it makes no model-intelligence or universal performance ranking.
+
+Local versions checked without starting a remote session: Codex CLI **0.164.0** and Claude Code **2.1.311**. Both installed binaries document a `remote-control` command in `--help`; Codex labels its command experimental. No software, plugins, or skills were installed for this revision.
+
+### Slide 15: shared capabilities and selected differences
+
+The shared strip names supported capability categories, not identical configuration, discovery, permissions, or event behavior:
+
+| Capability | Official primary references and scope |
+|---|---|
+| Project instructions | Codex reads scoped [`AGENTS.md` guidance](https://learn.chatgpt.com/docs/agent-configuration/agents-md). Claude Code loads [`CLAUDE.md` and related guidance](https://code.claude.com/docs/en/memory); recent versions also have a configurable `AGENTS.md` fallback. The slide does not equate their loading rules. |
+| Reusable skills | Both use `SKILL.md` workflows/resources: [Codex skills](https://learn.chatgpt.com/docs/build-skills), [Claude Code skills](https://code.claude.com/docs/en/skills). Explicit invocation and relevance-based loading have tool-specific controls. |
+| MCP/tools | Both provide configurable MCP connections: [Codex MCP](https://learn.chatgpt.com/docs/extend/mcp), [Claude Code MCP](https://code.claude.com/docs/en/mcp). Available tools depend on configuration and access. |
+| Hooks | Both document lifecycle hooks: [Codex hooks](https://learn.chatgpt.com/docs/hooks), [Claude Code hooks](https://code.claude.com/docs/en/hooks). Their event sets and handlers differ. Codex requires review/trust for non-managed hooks. |
+| Output guidance | Claude Code provides [named and custom output styles](https://code.claude.com/docs/en/output-styles). Codex supports instructions and [`/personality` when the current model supports it](https://learn.chatgpt.com/docs/developer-commands). The comparison does not claim that these mechanisms are interchangeable. |
+| Action controls | Claude Code offers [tool/path rules and permission modes](https://code.claude.com/docs/en/permissions). Codex distinguishes [sandbox scope from approval policy](https://learn.chatgpt.com/docs/agent-approvals-security). These are selected mechanisms, not exclusive capabilities or guarantees about a particular session's policy. |
+
+**Mods is the exact official name.** The [Claude Code mods reference](https://code.claude.com/docs/en/plugins/mods/overview) describes JavaScript/TypeScript event handlers packaged in plugins, which can alter behavior and rendered UI. The CLI requires v2.1.287 or later; the desktop runtime requires v2.1.286. VS Code rendering starts at extension v2.1.299, with v2.1.304 needed for some sessions without feature-flag evaluation. Support differs by surface. The slide's code-maintenance tradeoff is an instructor judgment about creating custom plugin code; users can also install existing mods.
+
+**Remote control needs two distinct qualifications.** [Claude Code Remote Control](https://code.claude.com/docs/en/remote-control) can start from the CLI and continue through a browser or the mobile app while execution stays on the host. It requires eligible subscription authentication and applicable organization permissions; API-key-only and third-party endpoint configurations are excluded. The host/process must remain available.
+
+For Codex, the documented [mobile-to-desktop pairing workflow](https://learn.chatgpt.com/docs/remote-connections) starts in the ChatGPT desktop app on a supported Mac/Windows host, with account, workspace, device and rollout requirements. Separately, the official [CLI reference](https://learn.chatgpt.com/docs/cli/reference) documents experimental `codex remote-control`, including managed-server operation and pairing commands. Therefore the slide explicitly acknowledges CLI remote control; it does not generalize the desktop pairing instructions into a claim that Codex CLI cannot support remote control. Checking command help establishes command availability in the installed version, not account eligibility or a successful connection.
+
+The sole Copilot footer points to an alternative integrated environment with model choice. The [VS Code harness guide](https://code.visualstudio.com/docs/agents/run/agent-harnesses) distinguishes selecting a model from selecting its harness and access surface. A Claude model selected within a Copilot session still uses that session's harness.
+
+### Slide 16: conceptual instruction organization
+
+The diagram describes sources of guidance for one task, not a universal instruction-precedence hierarchy. Project instructions supply enduring context; the task prompt supplies the current request; output requirements may be supplied in that prompt or session configuration. The skills branch feeds the task when invoked or selected as relevant. Actual loading and precedence remain tool-specific, as the instruction, skills, and output-style references above explain.
+
+The two examples, `academic-draft-editing` and `humanizer`, are the author's existing workshop skills. Agents can help install/use skills, but the target tool's supported locations must be checked. For example, current Codex repository discovery uses `.agents/skills`, while Claude Code project skills use `.claude/skills`; neither path is presented as a universal discovery directory. No installation was performed.
+
+### Slide 17: access surfaces
+
+Only Terminal / CLI, IDE Extension, and Desktop remain. The nine useful interface bullets are retained verbatim. Headings and first bullet baselines are aligned, and the former Custom Agents block is removed. Remote access is qualified by a running host and supported access, consistent with the remote-control references above. No agents-panel demonstration or additional harness comparison is introduced.
